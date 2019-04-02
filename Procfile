@@ -1,1 +1,1 @@
-web: gunicorn tradeworld.wsgi --log-file -
+web: gunicorn tenderwiz.wsgi --log-file -
