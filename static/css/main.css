@@ -1,0 +1,25 @@
+body{
+    background-color: grey;
+}
+
+/************header css***********************/
+#header_section{
+    background-color: blue;
+    min-height: 100px;
+}
+
+.data_wrapper{
+    margin-left: 50px;
+    margin-right: 50px;
+    margin-top: 0px;
+    margin-bottom: 0px;
+
+    padding: 5px;
+}
+
+/************footer css***********************/
+#footer_section{
+    background-color: black;
+    min-height: 100px;
+}
+
