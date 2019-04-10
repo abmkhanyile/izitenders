@@ -1,0 +1,16 @@
+{% extends "base.html" %}
+{% load staticfiles %}
+{% block title %}Contact Us{% endblock %}
+{% block content %}
+
+<div class="container_div p-3">
+    <div class="container"><h1>Contact Us</h1>
+        <hr>
+    </div>
+
+    {% include 'contact_us_form.html' %}
+
+
+</div>
+
+{% endblock %}

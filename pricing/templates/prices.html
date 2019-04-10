@@ -1,0 +1,114 @@
+<div class="container p-5 row">
+    <table class="table table-responsive mt-3 w-100">
+        <thead>
+        <tr>
+            <td scope="col"></td>
+            <td scope="col">Features</td>
+            <td scope="col" class="text-center">Monthly</td>
+            <td scope="col" class="text-center">Annual</td>
+        </tr>
+        </thead>
+        <tbody>
+        <tr>
+            <td class="package-name" scope="row" style="color: #CD7F32;">Bronze</td>
+            <td>
+                <ul class="list-tick text-muted">
+                    <li>Unlimited Search Keywords for Email Alerts</li>
+                    <li>1 Email recipient</li>
+                    <li>1 Province tenders</li>
+                </ul>
+            </td>
+            <td>
+                <div class="package-price text-center">
+                    <span style="font-size: 22px; color: blue;">R{{ packages.0.price }}</span><span>/Month</span><br>
+                    <a class="btn btn-success btn-sm" role="button"
+                       href="{% url 'subscribe' billing_cycle=0 pk=packages.0.id  %}">select</a>
+                </div>
+            </td>
+            <td>
+                <div class="package-price text-center">
+                    <span style="font-size: 22px; color: blue;">R{{ packages.0.annualPrice }}</span><span>/Annum</span><br>
+                    <a class="btn btn-success btn-sm" role="button"
+                       href="{% url 'subscribe' billing_cycle=1 pk=packages.0.id  %}">select</a>
+                </div>
+            </td>
+        </tr>
+
+        <tr>
+            <td class="package-name" scope="row" style="color: #C0C0C0;">Silver</td>
+            <td>
+                <ul class="list-tick text-muted">
+                    <li>Unlimited Search Keywords for Email Alerts</li>
+                    <li>5 Email recipient</li>
+                    <li>3 Provinces</li>
+                </ul>
+            </td>
+            <td>
+                <div class="package-price text-center">
+                    <span style="font-size: 22px; color: blue;">R{{ packages.1.price }}</span><span>/Month</span><br>
+                    <a class="btn btn-success btn-sm" role="button"
+                       href="{% url 'subscribe' billing_cycle=0 pk=packages.1.id  %}">select</a>
+                </div>
+            </td>
+            <td>
+                <div class="package-price text-center">
+                    <span style="font-size: 22px; color: blue;">R{{ packages.1.annualPrice }}</span><span>/Annum</span><br>
+                    <a class="btn btn-success btn-sm" role="button"
+                       href="{% url 'subscribe' billing_cycle=1 pk=packages.1.id  %}">select</a>
+                </div>
+            </td>
+        </tr>
+
+        <tr>
+            <td class="package-name" scope="row" style="color: #FFD700;">Gold</td>
+            <td>
+                <ul class="list-tick text-muted">
+                    <li>Unlimited Search Keywords for Email Alerts</li>
+                    <li>20 Email recipient</li>
+                    <li>All Provinces</li>
+                </ul>
+            </td>
+            <td>
+                <div class="package-price text-center">
+                    <span style="font-size: 22px; color: blue;">R{{ packages.2.price }}</span><span>/Month</span><br>
+                    <a class="btn btn-success btn-sm" role="button"
+                       href="{% url 'subscribe' billing_cycle=0 pk=packages.2.id  %}">select</a>
+                </div>
+            </td>
+            <td>
+                <div class="package-price text-center">
+                    <span style="font-size: 22px; color: blue;">R{{ packages.2.annualPrice }}</span><span>/Annum</span><br>
+                    <a class="btn btn-success btn-sm" role="button"
+                       href="{% url 'subscribe' billing_cycle=1 pk=packages.2.id  %}">select</a>
+                </div>
+            </td>
+        </tr>
+
+        <tr>
+            <td class="package-name" scope="row" style="color: black;">Corporate</td>
+            <td>
+                <ul class="list-tick text-muted">
+                    <li>Unlimited Search Keywords for Email Alerts</li>
+                    <li>21 to 50 Email recipients</li>
+                    <li>All Provinces + Africa</li>
+                </ul>
+            </td>
+            <td>
+                <div class="package-price text-center">
+                    <span style="font-size: 22px; color: blue;">R{{ packages.3.price }}</span><span>/Month</span><br>
+                    <a class="btn btn-success btn-sm" role="button"
+                       href="{% url 'subscribe' billing_cycle=0 pk=packages.3.id  %}">select</a>
+                </div>
+            </td>
+            <td>
+                <div class="package-price text-center">
+                    <span style="font-size: 22px; color: blue;">R{{ packages.3.annualPrice }}</span><span>/Annum</span><br>
+                    <a class="btn btn-success btn-sm" role="button"
+                       href="{% url 'subscribe' billing_cycle=1 pk=packages.3.id %}">select</a>
+                </div>
+            </td>
+        </tr>
+
+        </tbody>
+    </table>
+</div>

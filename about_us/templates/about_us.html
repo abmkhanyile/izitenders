@@ -1,0 +1,69 @@
+{% extends "base.html" %}
+{% load staticfiles %}
+{% block title %}About Us{% endblock %}
+{% block content %}
+
+<div class="container_div p-3">
+    <h1>About Us</h1>
+        <div class="row">
+            <div class="col-md-8">
+                <hr>
+                <div class="pt-5">
+                    <p>Leads Hub sources Leads and Tenders all over South Africa and Africa. Tenders are sourced from
+                        more than 1000 websites and over 200 newspapers. Leads and Tenders are consolidated and then
+                        matched accordingly to our subscribers. Each of our subscribers will then be sent an email
+                        containing tenders that match their business profile.</p>
+                </div>
+            </div>
+            <div class="col-md-4">
+                <img src="{% static 'Media/images/about_us_imgs/business_img1.jpg' %}"/>
+            </div>
+        </div>
+
+        <div class="row">
+            <div class="col-md-4">
+                <img src="{% static 'Media/images/about_us_imgs/business_img2.jpg' %}"/>
+            </div>
+            <div class="col-md-8">
+                <hr>
+                <div class="pt-5">
+                    <p>Even though most tenders are publicly advertised, most of them go unnoticed because they get
+                        advertised on local newspapers and municipality websites. For example, there are 278
+                        municipalities and more than 250 local newspapers in South Africa and this is exactly the reason
+                        some tenders go unnoticed, this is where our service becomes valuable as we scout the internet,
+                        government bulletins and newspapers for all tender opportunities.</p>
+                </div>
+            </div>
+        </div>
+
+        <div class="row">
+            <div class="col-md-8">
+                <hr>
+                <div class="pt-5">
+                    <p>We use software robots to source tender opportunities from websites and electronic newspapers,
+                        this allows us to shorten the turn-around time from the time we source a tender to the time we
+                        send it to our subscribers. </p>
+                </div>
+            </div>
+            <div class="col-4">
+                <img src="{% static 'Media/images/about_us_imgs/business_img3.jpg' %}"/>
+            </div>
+        </div>
+
+        <div class="row">
+            <div class="col-4">
+                <img src="{% static 'Media/images/about_us_imgs/business_img4.jpg' %}"/>
+            </div>
+            <div class="col-md-8">
+                <hr>
+                <div class="pt-5">
+                    <p>Our Corporate package includes tenders in sub-Saharan African countries that speak English (e.g.
+                        Ghana, Nigeria, Kenya, Rwanda etc). This package is particularly designed to cater for those
+                        companies that have business interest outside South Africa. Companies that may not be situated
+                        in South Africa may also find this package attractive.</p>
+                </div>
+            </div>
+        </div>
+</div>
+
+{% endblock %}

@@ -3,6 +3,127 @@
 {% block title %}Leads Hub{% endblock %}
 {% block content %}
 
-<h1>TESTING</h1>
+
+<nav>
+    <div class="nav nav-tabs nav-fill" id="nav-tab" role="tablist">
+        <a class="nav-item nav-link active" id="nav-home-tab" data-toggle="tab" href="#nav-home" role="tab"
+           aria-controls="nav-home" aria-selected="true"><i class="fa fa-folder-open fa-lg"></i><br>Tenders</a>
+        <a class="nav-item nav-link" id="nav-profile-tab" data-toggle="tab" href="#nav-profile" role="tab"
+           aria-controls="nav-profile" aria-selected="false"><i class="fa fa-tag fa-lg"></i><br/>Pricing</a>
+        <a class="nav-item nav-link" id="nav-contact-tab" data-toggle="tab" href="#nav-contact" role="tab"
+           aria-controls="nav-contact" aria-selected="false"><i class="fa fa-file-word-o fa-lg" aria-hidden="true"></i><br/>Articles</a>
+        <a class="nav-item nav-link" id="nav-about-tab" data-toggle="tab" href="#nav-about" role="tab"
+           aria-controls="nav-about" aria-selected="false"><i class="fa fa-phone fa-lg" aria-hidden="true"></i><br/>Contact us</a>
+    </div>
+</nav>
+
+<div style="background-color: white; border: 1px solid #ddd; border-top-style: hidden;">
+
+    <div class="tab-content py-3 px-3 px-sm-0" id="nav-tabContent" style="background-color: white;">
+        <div class="tab-pane fade show active" id="nav-home" role="tabpanel" aria-labelledby="nav-home-tab">
+
+            <div class="container">
+
+                <div class="input-group mb-3">
+                    <div class="input-group-prepend">
+                        <button class="btn btn-outline-secondary dropdown-toggle" type="button" data-toggle="dropdown"
+                                aria-haspopup="true" aria-expanded="false">All Provinces
+                        </button>
+                        <div class="dropdown-menu">
+                            <a class="dropdown-item" href="#">Action</a>
+                            <a class="dropdown-item" href="#">Another action</a>
+                            <a class="dropdown-item" href="#">Something else here</a>
+                            <a class="dropdown-item" href="#">Separated link</a>
+                        </div>
+                    </div>
+                    <input type="text" class="form-control" aria-label="Text input with dropdown button">
+
+                    <div class="input-group-append">
+                        <button class="btn btn-primary" type="button"><i class="fa fa-search" aria-hidden="true"></i></button>
+                    </div>
+                </div>
+
+            </div>
+
+            <div class="row">
+                <div class="col-md-3 col-sm-12 col-xs-12">
+                    <div class="filter_container_div m-1 p-1" style="border: 1px solid #ddd;">
+                        searching field go here.
+                    </div>
+                </div>
+
+                <div class="col-md-9 col-sm-12 col-xs-12">
+
+                    <!--<div class="row" id="tenderSearchDiv">-->
+                    <!--<form class="form-inline w-100" method="post">-->
+                    <!--{% csrf_token %}-->
+                    <!--<div class="col-md-4">-->
+                    <!--{{ search_form.searchField }}-->
+                    <!--</div>-->
+                    <!--<div class="col-md-3 provSelection mr-0 ml-0">-->
+                    <!--{{ search_form.categorySelectionField }}-->
+                    <!--</div>-->
+                    <!--<div class="col-md-3 provSelection">-->
+                    <!--{{ search_form.provinceSelectionField }}-->
+                    <!--</div>-->
+                    <!--<div class="col-md-2">-->
+                    <!--{% if user.is_authenticated %}-->
+                    <!--<input type="submit" class="btn btn-primary" value="Search">-->
+                    <!--{% else %}-->
+                    <!--<a class="btn btn-primary subscribeDialogCall" role="button" href="javascript:void(0)">Search</a>-->
+                    <!--{% endif %}-->
+                    <!--</div>-->
+                    <!--</form>-->
+                    <!--</div>-->
+
+                    <div class="m-1">
+                        <table class="table table-responsive table-hover table-sm tenders_table" width="100%">
+                        <thead style="font-size: 0.875em; color: grey;">
+                        <tr>
+                            <th width="70%">DESCRIPTION</th>
+                            <th width="15%">CLOSING DATE</th>
+                            <th width="15%">BRIEFING SESSION DATE</th>
+                        </tr>
+                        </thead>
+                        <tbody>
+                        </tbody>
+                    </table>
+                    </div>
+
+                </div>
+            </div>
+
+
+        </div>
+        <div class="tab-pane fade" id="nav-profile" role="tabpanel" aria-labelledby="nav-profile-tab">
+            {% include 'prices.html' %}
+        </div>
+        <div class="tab-pane fade" id="nav-contact" role="tabpanel" aria-labelledby="nav-contact-tab">
+            Et et consectetur ipsum labore excepteur est proident excepteur ad velit occaecat qui minim occaecat veniam.
+            Fugiat veniam incididunt anim aliqua enim pariatur veniam sunt est aute sit dolor anim. Velit non irure
+            adipisicing aliqua ullamco irure incididunt irure non esse consectetur nostrud minim non minim occaecat.
+            Amet
+            duis do nisi duis veniam non est eiusmod tempor incididunt tempor dolor ipsum in qui sit. Exercitation
+            mollit
+            sit culpa nisi culpa non adipisicing reprehenderit do dolore. Duis reprehenderit occaecat anim ullamco ad
+            duis
+            occaecat ex.
+
+            Et et consectetur ipsum labore excepteur est proident excepteur ad velit occaecat qui minim occaecat veniam.
+            Fugiat veniam incididunt anim aliqua enim pariatur veniam sunt est aute sit dolor anim. Velit non irure
+            adipisicing aliqua ullamco irure incididunt irure non esse consectetur nostrud minim non minim occaecat.
+            Amet
+            duis do nisi duis veniam non est eiusmod tempor incididunt tempor dolor ipsum in qui sit. Exercitation
+            mollit
+            sit culpa nisi culpa non adipisicing reprehenderit do dolore. Duis reprehenderit occaecat anim ullamco ad
+            duis
+            occaecat ex.
+        </div>
+        <div class="tab-pane fade" id="nav-about" role="tabpanel" aria-labelledby="nav-about-tab">
+            {% include 'contact_us_form.html' %}
+        </div>
+    </div>
+</div>
+
 
 {% endblock %}

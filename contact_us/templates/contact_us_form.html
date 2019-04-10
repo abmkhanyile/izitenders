@@ -1,0 +1,59 @@
+<div class="container p-5 row">
+        <div class="col-md-6">
+            <form method="post">
+                {% csrf_token %}
+
+                {{ contact_form.name.errors }}
+                <label for="{{ contact_form.name.id_for_label }}">Name</label>
+                {{ contact_form.name }}
+                <br>
+
+                {{ contact_form.surname.errors }}
+                <label for="{{ contact_form.surname.id_for_label }}">Surname</label>
+                {{ contact_form.surname }}
+                <br>
+
+                {{ contact_form.email.errors }}
+                <label for="{{ contact_form.email.id_for_label }}">Email</label>
+                {{ contact_form.email }}
+                <br>
+
+                {{ contact_form.contact_num.errors }}
+                <label for="{{ contact_form.contact_num.id_for_label }}">Contact Number</label>
+                {{ contact_form.contact_num }}
+                <br>
+
+                {{ contact_form.message.errors }}
+                <label for="{{ contact_form.message.id_for_label }}">Message</label>
+                {{ contact_form.message }}
+
+                <br>
+
+                <input class="btn btn-primary pull-right" type="submit" value="Send"/>
+            </form>
+        </div>
+        <div class="col-md-6">
+            <div class="bus_hr_container p-5 mt-3 bg-dark text-white">
+                <h4>Our Business Hours</h4>
+                <table class="table table-responsive">
+                    <tr>
+                        <td>Live Chat:</td>
+                        <td>Mon - Fri: 08:00am to 04:30pm</td>
+                    </tr>
+                </table>
+
+                <br />
+                <h5>Address:</h5>
+                <p>
+                    Unit 5A, BFT Building<br />
+                    21 Union Street, Lot 122<br />
+                    Empangeni, <br />
+                    3880
+                </p>
+                <br />
+                <h5>Email:</h5>
+                <a href="mailto:info@tenderwiz.co.za">info@tenderwiz.co.za</a>
+            </div>
+        </div>
+
+    </div>
