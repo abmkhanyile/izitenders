@@ -1,0 +1,36 @@
+{% load staticfiles %}
+
+
+
+<div class="filter_container_div m-1 p-1" style="border: 1px solid #ddd;">
+    <div class="p-1" style="background-color: black; font-size: 0.85em; color: white;"><strong>REFINE SEARCH</strong>
+    </div>
+    <hr class="mt-1 mb-3">
+    <div style="font-size: 0.8em;"><strong>LOCATION</strong></div>
+    <div class="inner_filter_container p-1">
+        <ul class="provinces_list">
+            {% for province in provinces %}
+            <li><a href="#">{{ province.province_name }}</a></li>
+            {% endfor %}
+        </ul>
+    </div>
+
+    <br>
+
+    <div style="font-size: 0.8em;"><strong>CATEGORIES</strong></div>
+    <div class="cat_outer_container">
+        <div class="cats_container p-1">
+        <ul class="provinces_list">
+            {% for category in categories %}
+            <li><a href="#">{{ category.catDescription }}</a></li>
+            {% endfor %}
+        </ul>
+    </div>
+    </div>
+    <script type="text/javascript">
+    $(".cat_outer_container").niceScroll(".cats_container",{cursorcolor:"aquamarine"});
+    </script>
+
+</div>
+
+

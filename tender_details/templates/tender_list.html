@@ -1,0 +1,40 @@
+{% load tz %}
+
+<table class="table table-responsive table-hover table-sm tenders_table" width="100%">
+    <thead class="tender_headers">
+    <tr>
+        {% if user.is_authenticated %}
+        <th width="2%"><input type="checkbox" class="tender_selAll_cb"></th>
+        {% endif %}
+
+        <th width="70%">DESCRIPTION</th>
+        <th width="15%">CLOSING DATE</th>
+        <th width="15%">BRIEFING SESSION DATE</th>
+    </tr>
+    </thead>
+    <tbody>
+    {% for tender in tenders %}
+
+    {% if tender.check_if_expired %}
+    <tr class="tenderFontSize" style="background: #ffbfbf;">
+        {% else %}
+    <tr class="tenderFontSize">
+        {% endif %}
+
+        {% if user.is_authenticated %}
+        <td><input type="checkbox" class="tender_cb" data-tender_id="{{ tender.id }}"/></td>
+        {% endif %}
+
+
+        {% if user.is_authenticated %}
+        <td><a href={% url 'tender' tender_pk=tender.id %}>{{ tender.summary|upper }}</a></td>
+        {% else %}
+        <td><a class="subscribeDialogCall" href="javascript:void(0)">{{ tender.summary|upper }}</a></td>
+        {% endif %}
+        <td>{{ tender.closingDate|localtime }}</td>
+        <td>{{ tender.siteInspectionDate|localtime }}</td>
+
+    </tr>
+    {% endfor %}
+    </tbody>
+</table>

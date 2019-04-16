@@ -45,6 +45,8 @@ INSTALLED_APPS = [
     'pricing',
     'articleApp',
     'dashboard',
+    'tender_loader',
+    'tender_matching_engine',
     'tender_details',
     'ckeditor',
 ]

@@ -44,5 +44,102 @@ html, body{
     background-color: #DCD3DB;
 }
 
-/**********scroll tabs css*********************/
+/**********tender headers css*********************/
+.tender_headers{
+    color: grey;
+    font-size: 0.85em;
+}
+
+/**********container div for filters*************/
+.filter_container_div{
+    height: 700px;
+}
+
+.inner_filter_container{
+    overflow-y: auto;
+    border: 1px solid #ddd;
+}
+
+.cats_container{
+    height: 398px;
+    overflow-y: auto;
+    border: 1px solid #ddd;
+
+}
+
+.provinces_list{
+    list-style-type: none;
+    font-size: 0.8em;
+}
+
+.provinces_list{
+    margin: 0;
+    padding: 0;
+}
+
+
+.caret {
+  cursor: pointer;
+  -webkit-user-select: none; /* Safari 3.1+ */
+  -moz-user-select: none; /* Firefox 2+ */
+  -ms-user-select: none; /* IE 10+ */
+  user-select: none;
+}
+
+.caret::before{
+    content: "\25B6";
+    color: red;
+    display: inline-block;
+    margin-right: 6px;
+    font-size: 0.85em;
+}
+
+.caret-down::before {
+  -ms-transform: rotate(90deg); /* IE 9 */
+  -webkit-transform: rotate(90deg); /* Safari */'
+  transform: rotate(90deg);
+}
+
+.nested {
+  display: none;
+}
+
+.active {
+  display: block;
+}
+
+.search_item_container{
+    background-color: #ccffff;
+    padding: 3px;
+}
+
+.tenderFontSize{
+    font-size: 0.75em;
+}
+
+
+/*****************scroll bar css for the filter div**********/
+.cats_container::-webkit-scrollbar-track
+{
+	-webkit-box-shadow: inset 0 0 6px rgba(0,0,0,0.1);
+	background-color: #F5F5F5;
+	border-radius: 10px;
+}
+
+.cats_container::-webkit-scrollbar
+{
+	width: 10px;
+	background-color: #F5F5F5;
+}
+
+.cats_container::-webkit-scrollbar-thumb
+{
+	border-radius: 10px;
+	background-color: #FFF;
+	background-image: -webkit-linear-gradient(top,
+											  #e4f5fc 0%,
+											  #bfe8f9 50%,
+											  #9fd8ef 51%,
+											  #2ab0ed 100%);
+}
 
