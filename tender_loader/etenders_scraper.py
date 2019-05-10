@@ -59,7 +59,6 @@ def main():
             sauce = urllib.request.urlopen('https://etenders.treasury.gov.za/content/advertised-tenders')
             soup = BeautifulSoup(sauce, 'html.parser')
 
-            print(soup)
 
             last_tender_page = soup.find('li', {'class': 'pager-last last'}).a.get('href')
 
@@ -70,9 +69,11 @@ def main():
 
             website_data = set()
 
+            print(tot_page_num)
+
             t_counter = 0
             while t_counter <= int(tot_page_num):
-                website_data.update(get_tender_page('http://www.etenders.gov.za/content/advertised-tenders?field_tender_category_tid=All&field_region_tid={}&field_sector_tid=All&field_testing_dept_tid=All&field_tender_type_tid=All&page=3'.format(provinces_dict[province], t_counter)))
+                website_data.update(get_tender_page('https://etenders.treasury.gov.za/content/advertised-tenders?field_tender_category_tid=All&field_region_tid={}&field_sector_tid=All&field_testing_dept_tid=All&field_tender_type_tid=All&page={}'.format(provinces_dict[province], t_counter)))
                 t_counter += 1
 
             website_data = website_data - log_data      #removes all the tenders that have already been sourced by checking the log.
@@ -112,6 +113,7 @@ def main():
 
 def get_tender_page(url):
     try:
+        print(url)
         sauce_1 = urllib.request.urlopen(url)
         soup_1 = BeautifulSoup(sauce_1, 'html.parser')
         table_body = soup_1.find('div', {'class': 'view-content'}).tbody
@@ -139,7 +141,7 @@ def get_tender_page(url):
 def save_tender_to_db(data_rec_str, t_location):
     try:
         url_data_ls = data_rec_str.strip().split(';', 6)
-        sauce_2 = urllib.request.urlopen('http://www.etenders.gov.za{}'.format(url_data_ls[0]))
+        sauce_2 = urllib.request.urlopen('https://etenders.treasury.gov.za{}'.format(url_data_ls[0]))
         soup_2 = BeautifulSoup(sauce_2, 'html.parser')
 
         # finds the container div in the html.

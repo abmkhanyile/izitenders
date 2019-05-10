@@ -8,51 +8,59 @@ from tender_details.models import Province, Category, Keywords
 
 class CustomUserForm(UserCreationForm):
     first_name = forms.CharField(widget=forms.TextInput(attrs={
-        'class': 'form-control textInput',
+        'class': 'textInput field-divided',
         'id': 'firstname-99a6d115-5e68-4355-a7d0-529207feb0b3_2983',
-        'name': 'firstname',
+        'name': 'firstname field1',
         'required': 'required',
         'data-rule-required': 'true',
-        'data-msg-required': 'Please enter your first name'
+        'data-msg-required': 'Please enter your first name',
+        'placeholder': 'Firstname'
     }))
     last_name = forms.CharField(widget=forms.TextInput(attrs={
-        'class': 'form-control textInput',
+        'class': 'textInput field-divided',
         'id': 'lastname-99a6d115-5e68-4355-a7d0-529207feb0b3_2983',
-        'name': 'lastname',
+        'name': 'lastname field2',
         'required': 'required',
         'data-rule-required': 'true',
-        'data-msg-required': 'Please enter your last name'
+        'data-msg-required': 'Please enter your last name',
+        'placeholder': 'Lastname'
     }))
     email = forms.EmailField(widget=forms.EmailInput(attrs={
-        'class': 'form-control textInput',
+        'class': 'textInput field-long',
         'id': 'email-99a6d115-5e68-4355-a7d0-529207feb0b3_2983',
-        'name': 'email',
+        'name': 'email field3',
         'required': 'required',
         'data-rule-required': 'true',
         'data-msg-required': 'Please enter a valid email address'
     }))
 
     password1 = forms.CharField(widget=forms.PasswordInput(attrs={
-        'class': 'form-control textInput',
+        'class': 'textInput field-divided',
         'id': 'password1-99a6d115-5e68-4355-a7d0-529207feb0b3_2983',
-        'name': 'password1',
+        'name': 'password1 field1',
         'required': 'required',
         'data-rule-required': 'true',
-        'data-msg-required': 'Please enter password 1'
+        'data-msg-required': 'Please enter password 1',
+        'placeholder': 'Password',
+        'type': 'password'
     }))
     password2 = forms.CharField(widget=forms.PasswordInput(attrs={
-        'class': 'form-control textInput',
+        'class': 'field-divided',
         'id': 'password2-99a6d115-5e68-4355-a7d0-529207feb0b3_2983',
-        'name': 'password2',
+        'name': 'password2 field2',
         'required': 'required',
         'data-rule-required': 'true',
-        'data-msg-required': 'Please enter password 2'
+        'data-msg-required': 'Please enter password 2',
+        'placeholder': 'Confirm Password'
     }))
 
     class Meta:
         model = User
         widgets = {
-            'username': forms.TextInput(attrs={'class': 'form-control'}),
+            'username': forms.TextInput(attrs={'class': 'textInput field-long',
+                                               'name': 'username',
+                                               'placeholder': 'Username'
+                                               }),
         }
         fields = ("username",
                   "first_name",
@@ -112,7 +120,7 @@ class CompanyProfileForm(ModelForm):
 
         widgets = {
             'companyName': forms.TextInput(attrs={
-                'class': 'form-control',
+                'class': 'field-long',
                 'id': 'companyNameId',
                 'name': 'companyName',
                 'required': 'required',
@@ -120,7 +128,7 @@ class CompanyProfileForm(ModelForm):
                 'data-msg-required': 'Please enter company name'
             }),
             'companyRegNum': forms.TextInput(attrs={
-                'class': 'form-control',
+                'class': 'field-long',
                 'id': 'companyRegNumId',
                 'name': 'companyRegNum',
                 'required': 'required',
@@ -128,15 +136,15 @@ class CompanyProfileForm(ModelForm):
                 'data-msg-required': 'Please enter company reg number'
             }),
             'contactNumber': forms.TextInput(attrs={
-                'class': 'form-control input_field',
+                'class': 'field-long input_field',
                 'id': 'contactNum',
                 'name': 'contactNumber',
                 'required': 'required',
                 'data-rule-required': 'true',
                 'data-msg-required': 'Please enter contact number'
             }),
-            'address': forms.TextInput(attrs={
-                'class': 'form-control',
+            'address': forms.Textarea(attrs={
+                'class': 'field-textarea field-long',
                 'id': 'addressId',
                 'name': 'address',
                 'required': 'required',
@@ -144,7 +152,7 @@ class CompanyProfileForm(ModelForm):
                 'data-msg-required': 'Please enter the address'
             }),
             'areaCode': forms.TextInput(attrs={
-                'class': 'form-control',
+                'class': 'field-long',
                 'id': 'areaCodeId',
                 'name': 'areaCode',
                 'required': 'required',
@@ -152,7 +160,7 @@ class CompanyProfileForm(ModelForm):
                 'data-msg-required': 'Please enter the areaCode'
             }),
             'deliveryEmails': forms.TextInput(attrs={
-                'class': 'form-control textInput',
+                'class': 'field-long textInput',
                 'id': 'deliveryEmailId',
                 'name': 'deliveryEmails',
                 'required': 'required',

@@ -16,6 +16,7 @@ Including another URLconf
 from django.contrib import admin
 from django.urls import path, include
 from django.conf.urls import url
+from tenderwiz.views import privacy_policy_view, termsAndConditions_view
 
 urlpatterns = [
     url(r'^admin/', admin.site.urls),
@@ -23,4 +24,7 @@ urlpatterns = [
     url(r'^user_accounts/', include('user_accounts.urls')),
     url(r'^about_us/', include('about_us.urls')),
     url(r'^contact_us/', include('contact_us.urls')),
+    url(r'^pricing/', include('pricing.urls')),
+    url(r'^privacy_policy/$', privacy_policy_view, name='privacy_policy'),
+    url(r'^termsAndConditions/$', termsAndConditions_view, name='termsAndConditions')
 ]

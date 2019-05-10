@@ -3,8 +3,8 @@ from django.http import HttpResponseRedirect, Http404
 from django.contrib import auth
 from django.template.context_processors import csrf
 from packages.models import Packages
-from .forms import (CompanyProfileForm,
-                    CustomUserForm,
+from .forms import (CustomUserForm,
+                    CompanyProfileForm,
                     CompanyProfileEditForm,
                     BankingDetailsForm,
                     )
@@ -45,7 +45,11 @@ def auth_view(request):
         messages.warning(request, "Sorry, that's not a valid username and password")
         return HttpResponseRedirect('/user_account/login')
 
-def subscribe_view(request, billing_cycle, pk):
+
+
+
+
+def register_view(request, billing_cycle, pk):
     packageOption = Packages.objects.get(id=pk)
     if billing_cycle == '1' or billing_cycle == '0':
         b_cycle = billing_cycle
@@ -75,7 +79,7 @@ def subscribe_view(request, billing_cycle, pk):
                 user = userRegForm.save()  # if the userRegForm is valid then it gets saved to the db.
             else:
                 messages.error(request, 'Invalid reCAPTCHA. Please try again.')
-                return render(request, 'user_account/subscribe.html',
+                return render(request, 'register.html',
                               {'userRegForm': userRegForm, 'package': packageOption, 'billing_cycle': b_cycle,
                                'companyProfileForm': companyForm})
 
@@ -112,25 +116,27 @@ def subscribe_view(request, billing_cycle, pk):
                         bankingDetailsObj.user_CompanyProfile_id = compProfile.user_id
                     bankingDetailsObj.save()
 
-            return HttpResponseRedirect('/user_account/registration_success')
+            return HttpResponseRedirect('/user_accounts/registration_success')
         else:
             bDetailsForm = BankingDetailsForm()
-            return render(request, 'user_account/subscribe.html', {'userRegForm': userRegForm, 'package': packageOption, 'billing_cycle': b_cycle, 'companyProfileForm': companyForm, 'bankingDetailsForm': bDetailsForm})
+            return render(request, 'register.html', {'userRegForm': userRegForm, 'package': packageOption, 'billing_cycle': b_cycle, 'companyProfileForm': companyForm, 'bankingDetailsForm': bDetailsForm})
     else:
         userRegForm = CustomUserForm()
         companyProfileForm = CompanyProfileForm()
         bankingDetailsForm = BankingDetailsForm()
-        compDetails = OurDetails.objects.all()[0]
+        # compDetails = OurDetails.objects.all()[0]
 
         args = {'userRegForm': userRegForm,
                 'package': packageOption,
                 'billing_cycle': b_cycle,
                 'companyProfileForm': companyProfileForm,
                 'bankingDetailsForm': bankingDetailsForm,
-                'compDetails': compDetails
+                # 'compDetails': compDetails
         }
         args.update(csrf(request))
-        return render(request, 'user_account/subscribe.html', args)
+        return render(request, 'register.html', args)
+
+
 
 def profile_view(request):
     companyProfile = CompanyProfile.objects.get(pk=request.user.id)

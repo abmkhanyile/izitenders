@@ -19,7 +19,7 @@
     </div>
 </nav>
 
-<div style="background-color: white; border: 1px solid #ddd; border-top-style: hidden;">
+<div class="mb-3" style="background-color: white; border: 1px solid #ddd; border-top-style: hidden;">
 
     <div class="tab-content py-3 px-3 px-sm-0" id="nav-tabContent" style="background-color: white;">
         <div class="tab-pane fade show active" id="nav-home" role="tabpanel" aria-labelledby="nav-home-tab">
@@ -28,15 +28,12 @@
 
                 <div class="input-group mb-3">
                     <div class="input-group-prepend">
-                        <button class="btn btn-outline-secondary dropdown-toggle" type="button" data-toggle="dropdown"
-                                aria-haspopup="true" aria-expanded="false">All Provinces
-                        </button>
-                        <div class="dropdown-menu">
-                            <a class="dropdown-item" href="#">Action</a>
-                            <a class="dropdown-item" href="#">Another action</a>
-                            <a class="dropdown-item" href="#">Something else here</a>
-                            <a class="dropdown-item" href="#">Separated link</a>
-                        </div>
+                        <select class="form-control">
+                            <option value="All Provinces">All Provinces</option>
+                            {% for province in provinces %}
+                                <option value={{ province.province_name }}>{{ province.province_name }}</option>
+                            {% endfor %}
+                        </select>
                     </div>
                     <input type="text" class="form-control" aria-label="Text input with dropdown button">
 
@@ -115,6 +112,41 @@
         </div>
     </div>
 </div>
+
+<div class="tiles_container_div p-3" style="background-color: white;">
+    <div class="row">
+        <div class="col-sm-4">
+            <a href="#">
+            <div class="p-3 bg-light deco_divs" align="center">
+                <i class="fa fa-question" style="font-size:60px;color:lightblue;text-shadow:2px 2px 4px #000000;"></i><br>
+                <strong>Why TenderWiz?</strong>
+            </div>
+        </a>
+
+
+        </div>
+        <div class="col-sm-4">
+           <a href="#">
+            <div class="p-3 bg-light deco_divs" align="center">
+                <i class="fa fa-pencil" style="font-size:60px;color:lightblue;text-shadow:2px 2px 4px #000000;"></i><br>
+                <strong>Company Registration</strong>
+            </div>
+        </a>
+        </div>
+        <div class="col-sm-4">
+            <a href="#">
+            <div class="p-3 bg-light deco_divs" align="center">
+                <i class="fa fa-pencil-square-o" style="font-size:60px;color:lightblue;text-shadow:2px 2px 4px #000000;"></i><br>
+                <strong>Register</strong>
+            </div>
+        </a>
+        </div>
+    </div>
+</div>
+
+
+
+
 
 
 {% endblock %}

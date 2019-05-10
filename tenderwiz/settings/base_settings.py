@@ -51,6 +51,7 @@ INSTALLED_APPS = [
     'tender_matching_engine',
     'tender_details',
     'ckeditor',
+    'formtools',
 ]
 
 MIDDLEWARE = [

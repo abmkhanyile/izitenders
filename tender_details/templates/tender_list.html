@@ -8,8 +8,9 @@
         {% endif %}
 
         <th width="70%">DESCRIPTION</th>
-        <th width="15%">CLOSING DATE</th>
         <th width="15%">BRIEFING SESSION DATE</th>
+        <th width="15%">CLOSING DATE</th>
+
     </tr>
     </thead>
     <tbody>
@@ -27,12 +28,13 @@
 
 
         {% if user.is_authenticated %}
-        <td><a href={% url 'tender' tender_pk=tender.id %}>{{ tender.summary|upper }}</a></td>
+        <td><span class="text-secondary">Tender Ref: {{ tender.refNum }}</span><br><a href={% url 'tender' tender_pk=tender.id %}>{{ tender.summary|upper }}</a></td>
         {% else %}
-        <td><a class="subscribeDialogCall" href="javascript:void(0)">{{ tender.summary|upper }}</a></td>
+        <td><span class="text-secondary">Tender Ref: {{ tender.refNum }}</span><br><a class="subscribeDialogCall" href="javascript:void(0)" data-toggle="modal" data-target="#subscribeCallModal">{{ tender.summary|upper }}</a></td>
         {% endif %}
-        <td>{{ tender.closingDate|localtime }}</td>
         <td>{{ tender.siteInspectionDate|localtime }}</td>
+        <td><span class="text-danger">{{ tender.closingDate|localtime }}</span></td>
+
 
     </tr>
     {% endfor %}
