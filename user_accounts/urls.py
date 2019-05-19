@@ -12,7 +12,7 @@ from .views import (login,
                     UpdateCompanyProfile,
                     password_change_view,
                     autocomplete_search_view,
-                    # Invoice_view,
+                    Invoice_view,
                     registration_success_view
                     )
 from tender_details.views import tenders_list_view, send_email_view
@@ -32,7 +32,7 @@ urlpatterns = [
     url(r'^article/(?P<article_pk>\d+)/$', article_view, name='article'),
     url(r'^profile/$', profile_view, name='user_profile'),
     url(r'^contact_us/$', contact_us_view, name='dashboard_contact_us'),
-    # url(r'^invoice/$', Invoice_view, name='invoice'),
+    url(r'^invoice/(?P<user_id>\d+)/(?P<comp_prof_id>\d+)/$', Invoice_view, name='invoice'),
     url(r'^registration_success/$', registration_success_view, name='registration_success'),
     url(r'^companyProfileEdit/(?P<pk>\d+)/$', UpdateCompanyProfile, name='company_profile_edit'),
     url(r'^password_change/$', password_change_view, name='password_change'),

@@ -1,0 +1,231 @@
+{% extends "base.html" %}
+{% load staticfiles %}
+{% block title %}Invoice{% endblock %}
+
+
+{% block content %}
+
+<div class="container_div p-3">
+
+    <div align="center">
+        <form action="post">
+            <input class="btn btn-warning btn-lg" type="submit" value="Pay Now"/>
+        </form>
+    </div>
+
+    <div class="invoice_outer_container p-4" align="center" style="margin: 20px auto; border: 1px solid black;">
+        <div align="center"><h1>Invoice</h1></div>
+
+        <div style="width: 50%; float: left; font-family: Arial, Helvetica, sans-serif; font-size: 0.75em;">
+            <table>
+                <tr>
+                    <td colspan="2" style="font-size: 1.5em;"><strong>{{ ourDetails.compName }}</strong></td>
+                </tr>
+                <tr>
+                    <td>Reg No.</td>
+                    <td>{{ ourDetails.compRegNum }}</td>
+                </tr>
+                <tr>
+                    <td>VAT</td>
+                    <td>{{ ourDetails.VAT_num }}</td>
+                </tr>
+                <tr>
+                    <td>Email:</td>
+                    <td>{{ ourDetails.emailAddress }}</td>
+                </tr>
+                <tr>
+                    <td>Website:</td>
+                    <td>https://www.tenderwiz.co.za</td>
+                </tr>
+            </table>
+
+
+        </div>
+        <div class="clear"></div>
+
+        <div style="width: 50%; float: right; font-family: Arial, Helvetica, sans-serif; font-size: 0.75em;">
+            <table>
+                <tr>
+                    <td>Date:</td>
+                    <td>{% now "jS F Y" %}</td>
+                </tr>
+                <tr>
+                    <td>Invoice#:</td>
+                    <td>Invoice num</td>
+                </tr>
+            </table>
+
+        </div>
+
+        <div class="clear"></div>
+
+        <br>
+        <div style="background: black; height: 2px;"></div>
+        <br>
+
+        <div align="left">
+            <table>
+                <thead>
+                <th scope="col" width="50%"></th>
+                <th scope="col" width="50%"></th>
+                </thead>
+                <tr>
+                    <td colspan="2" style="font-size: 1.2em;"><strong>BILL TO:</strong></td>
+                </tr>
+                <tr>
+                    <td>Name:</td>
+                    <td><strong>{{ comp_prof.companyName }}</strong></td>
+                </tr>
+                <tr>
+                    <td>Address:</td>
+                    <td>{{ comp_prof.address }} {{ comp_prof.areaCode }}</td>
+                </tr>
+                <tr>
+                    <td>Contact Person:</td>
+                    <td>{{ user.get_full_name }}</td>
+                </tr>
+                <tr>
+                    <td>Email:</td>
+                    <td>{{ user.email }}</td>
+                </tr>
+                <tr>
+                    <td>Contact number:</td>
+                    <td>{{ comp_prof.contactNumber}}</td>
+                </tr>
+            </table>
+        </div>
+
+        <br>
+
+        <div style="height: 300px; border: 1px dashed black;">
+
+            <table class="table table-borderless">
+                <thead style="background: black; color: white;">
+                <tr>
+                    <th scope="col" width="55%">
+                        DESCRIPTION
+                    </th>
+                    <th scope="col" width="5%">
+                        QTY
+                    </th>
+                    <th scope="col" width="20%">
+                        UNIT PRICE
+                    </th>
+                    <th scope="col" width="20%">
+                        LINE TOTAL
+                    </th>
+                </tr>
+                </thead>
+
+
+                <tr>
+                    <td>
+                        {% if comp_prof.contractDuration == 6 %}
+                        <strong>{{ comp_prof.package }}</strong> <span>package @ x6 Months</span>
+                        {% else %}
+                        <strong>{{ comp_prof.package }}</strong> <span>package @ x12 Months</span>
+                        {% endif %}
+                    </td>
+                    <td>1</td>
+                    <td>
+                        {% if comp_prof.contractDuration == 6 %}
+                        {{ comp_prof.package.sixMonthPrice
+                        {% else %}
+                        {{ comp_prof.package.annualPrice }}
+                        {% endif %}
+                    </td>
+                    <td>
+                        {% if comp_prof.contractDuration == 6 %}
+                        {{ comp_prof.package.sixMonthPrice
+                        {% else %}
+                        {{ comp_prof.package.annualPrice }}
+                        {% endif %}
+                    </td>
+                </tr>
+                <tr>
+                    <td colspan="2"></td>
+                    <td><strong>SUBTOTAL</strong></td>
+                    <td>
+                        {% if comp_prof.contractDuration == 6 %}
+                        {{ comp_prof.package.sixMonthPrice
+                        {% else %}
+                        {{ comp_prof.package.annualPrice }}
+                        {% endif %}
+                    </td>
+                </tr>
+                <tr>
+                    <td colspan="2"></td>
+                    <td><strong>VAT @ 15%</strong></td>
+                    <td>
+                        N/A
+                    </td>
+                </tr>
+                <tr>
+                    <td colspan="2"></td>
+                    <td><strong>TOTAL</strong></td>
+                    <td>
+                        {% if comp_prof.contractDuration == 6 %}
+                        {{ comp_prof.package.sixMonthPrice
+                        {% else %}
+                        {{ comp_prof.package.annualPrice }}
+                        {% endif %}
+                    </td>
+                </tr>
+
+
+            </table>
+
+        </div>
+
+        <br>
+
+        <div id="banking_details" align="left" style="font-size: .8em;">
+            <h6 align="left"><strong>TenderWiz banking details</strong></h6>
+            <table>
+                <tr>
+                    <td>Account holder:</td>
+                    <td>Ayatech (PTY) LTD</td>
+                </tr>
+                <tr>
+                    <td>Bank:</td>
+                    <td>FNB</td>
+                </tr>
+                <tr>
+                    <td>Account number:</td>
+                    <td>62723331245</td>
+                </tr>
+                <tr>
+                    <td>Branch:</td>
+                    <td>MY BRANCH</td>
+                </tr>
+                <tr>
+                    <td>Branch Code:</td>
+                    <td>255355</td>
+                </tr>
+            </table>
+        </div>
+
+
+        <div style="width: 40%; float: right;">
+            <h6 align="left"><strong><i>Notes:</i></strong></h6>
+            <div class="p-2" align="left" style="border: 1px solid black; height: 100px;">
+                <p><i>The payment is due within 7 days of this invoice.</i></p>
+            </div>
+        </div>
+
+        <div class="clear"></div>
+
+        <br>
+
+        <div style="background: grey; color: white;"><h3><i>THANK YOU FOR YOUR BUSINESS</i></h3></div>
+
+    </div>
+
+    <div align="center">
+        <form action="post">
+            <input class="btn btn-warning btn-lg" type="submit" value="Pay Now"/>
+        </form>
+    </div>
+</div>
+
+{% endblock %}

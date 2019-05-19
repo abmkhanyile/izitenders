@@ -66,7 +66,8 @@
 
             <li>
                 {{ userRegForm.password1.errors }}
-                <label for="{{ userRegForm.password1.id_for_label }}">Enter Password <span class="required">*</span></label>
+                <label for="{{ userRegForm.password1.id_for_label }}">Enter Password <span
+                        class="required">*</span></label>
                 {{ userRegForm.password1 }}
 
                 {{ userRegForm.password2.errors }}
@@ -90,38 +91,43 @@
 
             <li>
                 {{ companyProfileForm.contactNumber.errors }}
-                <label for="{{ companyProfileForm.contactNumber.id_for_label }}">Contact Number <span class="required">*</span></label>
+                <label for="{{ companyProfileForm.contactNumber.id_for_label }}">Contact Number <span
+                        class="required">*</span></label>
                 {{ companyProfileForm.contactNumber }}
             </li>
 
             <li>
                 {{ companyProfileForm.companyName.errors }}
-                <label for="{{ companyProfileForm.companyName.id_for_label }}">Company Name <span class="required">*</span></label>
+                <label for="{{ companyProfileForm.companyName.id_for_label }}">Company Name <span
+                        class="required">*</span></label>
                 {{ companyProfileForm.companyName }}
             </li>
 
             <li>
                 {{ companyProfileForm.companyRegNum.errors }}
-                <label for="{{ companyProfileForm.companyRegNum.id_for_label }}">Company Registration Number <span class="required">*</span></label>
+                <label for="{{ companyProfileForm.companyRegNum.id_for_label }}">Company Registration Number <span
+                        class="required">*</span></label>
                 {{ companyProfileForm.companyRegNum }}
             </li>
 
             <li>
                 {{ companyProfileForm.address.errors }}
-                <label for="{{ companyProfileForm.address.id_for_label }}">Physical Address <span class="required">*</span></label>
+                <label for="{{ companyProfileForm.address.id_for_label }}">Physical Address <span
+                        class="required">*</span></label>
                 {{ companyProfileForm.address }}
             </li>
 
             <li>
                 {{ companyProfileForm.areaCode.errors }}
-                <label for="{{ companyProfileForm.areaCode.id_for_label }}">Area Code <span class="required">*</span></label>
+                <label for="{{ companyProfileForm.areaCode.id_for_label }}">Area Code <span
+                        class="required">*</span></label>
                 {{ companyProfileForm.areaCode }}
             </li>
 
             <li>
                 {{ companyProfileForm.deliveryEmails.errors }}
                 <label for="{{ companyProfileForm.deliveryEmails.id_for_label }}">Delivery Email Address(es)(i.e. for
-                    sending dialy tender notications to you.) <span class="required">*</span></label>
+                    sending daily tender notifications to you.) <span class="required">*</span></label>
                 {{ companyProfileForm.deliveryEmails }}
             </li>
 
@@ -134,208 +140,216 @@
                 {{ companyProfileForm.tenderCategory.errors }}
                 {{ companyProfileForm.tenderCategory }}
             </li>
-        </ul>
 
+            <li>
+                <div id="order_summary">
+                    <h5>ORDER SUMMARY</h5>
+                    <table class="table">
+                        <tr>
+                            <td>Package</td>
+                            {{ package.package.error }}
+                            <td>{{ package.package }}</td>
+                        </tr>
+                        <tr>
+                            {{ package.price.error }}
+                            {% if billing_cycle == '0' %}
+                            <td>X6 Months</td>
+                            <td>{{ package.sixMonthPrice }}</td>
+                            {% else %}
+                            <td>X12 Months</td>
+                            <td>{{ package.annualPrice }}</td>
+                            {% endif %}
+
+                        </tr>
+                        <tr class="bg-light">
+                            <td>
+                                <h6>TOTAL</h6>
+                            </td>
+                            <td>
+                                {{ package.price.error }}
+                                {% if billing_cycle == '0' %}
+                                {{ package.sixMonthPrice }}
+                                {% else %}
+                                {{ package.annualPrice }}
+                                {% endif %}
+                            </td>
+                        </tr>
+                    </table>
+
+                </div>
+            </li>
+
+            <li>
+                <!--Beginning of Terms and Conditions checkbox. Must be checked otherwise the registration process cannot be completed-->
+                <div class="form-group">
+                    {{ companyProfileForm.termsAndConditions.errors }}
+                    <label for="{{ companyProfileForm.termsAndConditions.id_for_label }}">
+                        {{ companyProfileForm.termsAndConditions }}<span>I agree to the <a
+                            href="{% url 'termsAndConditions' %}">terms and conditions</a> </span>
+                    </label>
+                </div>
+                <!--End of the Terms and Conditions checkbox-->
+            </li>
+
+            <!--<li>-->
+                <!--<div align="center">-->
+                    <!--<div class="g-recaptcha" data-sitekey="6LenQmgUAAAAADtVrIjClBy4WUBCisI2uK1Hl6xn"></div>-->
+                <!--</div>-->
+            <!--</li>-->
+
+            <li align="center">
+                <input type="submit" value="Submit"/>
+            </li>
+        </ul>
 
 
         <!--&lt;!&ndash; Begining of Keyword selection Field &ndash;&gt;-->
         <!--<div class="row keywords_div">-->
 
-            <!--<div class="col-md-5">-->
-                <!--<div class="searchContainer">-->
-                    <!--<div class="searchHeader">-->
-                        <!--<div class="input-group searchFieldDiv">-->
-                            <!--<input type="text" name="search_text" class="form-control keywordInput"-->
-                                   <!--placeholder="Search for your keywords here..."/>-->
-                            <!--<span class="input-group-addon"><button class="btn btn-info" type="button"><span-->
-                                    <!--class="fa fa-search"></span></button></span>-->
-                        <!--</div>-->
-                    <!--</div>-->
+        <!--<div class="col-md-5">-->
+        <!--<div class="searchContainer">-->
+        <!--<div class="searchHeader">-->
+        <!--<div class="input-group searchFieldDiv">-->
+        <!--<input type="text" name="search_text" class="form-control keywordInput"-->
+        <!--placeholder="Search for your keywords here..."/>-->
+        <!--<span class="input-group-addon"><button class="btn btn-info" type="button"><span-->
+        <!--class="fa fa-search"></span></button></span>-->
+        <!--</div>-->
+        <!--</div>-->
 
-                    <!--<div class="foundKeywordsContainer">-->
-                        <!--<div class="keywordsDiv" align="left">-->
-                            <!--<ul class="keywordsList">-->
+        <!--<div class="foundKeywordsContainer">-->
+        <!--<div class="keywordsDiv" align="left">-->
+        <!--<ul class="keywordsList">-->
 
-                            <!--</ul>-->
-                        <!--</div>-->
-                    <!--</div>-->
+        <!--</ul>-->
+        <!--</div>-->
+        <!--</div>-->
 
-                <!--</div>-->
-            <!--</div>-->
+        <!--</div>-->
+        <!--</div>-->
 
-            <!--<div class="col-md-2" align="center" style="min-height:100px;">-->
-                <!--<div class="btnContainer"-->
-                     <!--style="position: absolute; top: 50%; left: 50%; -ms-transform: translate(-50%, -50%); transform: translate(-50%, -50%);">-->
-                    <!--<div class="addingBtn container" style="min-height: 40px;">-->
-                        <!--<button class="btn btn-info btn-sm" type="button">-->
-                            <!--Add <b>&rarr;</b></button>-->
-                    <!--</div>-->
+        <!--<div class="col-md-2" align="center" style="min-height:100px;">-->
+        <!--<div class="btnContainer"-->
+        <!--style="position: absolute; top: 50%; left: 50%; -ms-transform: translate(-50%, -50%); transform: translate(-50%, -50%);">-->
+        <!--<div class="addingBtn container" style="min-height: 40px;">-->
+        <!--<button class="btn btn-info btn-sm" type="button">-->
+        <!--Add <b>&rarr;</b></button>-->
+        <!--</div>-->
 
-                    <!--<div class="removeBtn container" style="min-height: 40px;">-->
-                        <!--<button class="btn btn-info btn-sm" type="button">-->
-                            <!--<b>&larr;</b>remove-->
-                        <!--</button>-->
-                    <!--</div>-->
-                <!--</div>-->
+        <!--<div class="removeBtn container" style="min-height: 40px;">-->
+        <!--<button class="btn btn-info btn-sm" type="button">-->
+        <!--<b>&larr;</b>remove-->
+        <!--</button>-->
+        <!--</div>-->
+        <!--</div>-->
 
-            <!--</div>-->
+        <!--</div>-->
 
-            <!--<div class="col-md-5">-->
-                <!--<div class="addedKeywordsContainer">-->
-                    <!--<input type="checkbox" class="selectAllChosen_kw"-->
-                           <!--style="float: left; margin-left: 8px; margin-top: 10px;">-->
-                    <!--<div class="p-1 mb-2 text-white chosenKeywordsHeader" align="center" style="background: #042a68;-->
-                        <!-- -webkit-box-shadow: -1px -1px 39px -3px rgba(0,0,0,0.75);-->
-                        <!-- -moz-box-shadow:    -1px -1px 39px -3px rgba(0,0,0,0.75);-->
-                        <!--box-shadow: -1px    -1px 39px -3px rgba(0,0,0,0.75);"><h6>Your chosen keywords</h6></div>-->
-                    <!--<div class="kwContainer">-->
-                        <!--<ul class="addedKeywordsList">-->
+        <!--<div class="col-md-5">-->
+        <!--<div class="addedKeywordsContainer">-->
+        <!--<input type="checkbox" class="selectAllChosen_kw"-->
+        <!--style="float: left; margin-left: 8px; margin-top: 10px;">-->
+        <!--<div class="p-1 mb-2 text-white chosenKeywordsHeader" align="center" style="background: #042a68;-->
+        <!-- -webkit-box-shadow: -1px -1px 39px -3px rgba(0,0,0,0.75);-->
+        <!-- -moz-box-shadow:    -1px -1px 39px -3px rgba(0,0,0,0.75);-->
+        <!--box-shadow: -1px    -1px 39px -3px rgba(0,0,0,0.75);"><h6>Your chosen keywords</h6></div>-->
+        <!--<div class="kwContainer">-->
+        <!--<ul class="addedKeywordsList">-->
 
-                        <!--</ul>-->
-                    <!--</div>-->
-                <!--</div>-->
-            <!--</div>-->
-            <!--{{ companyProfileForm.keywordListItem.errors }}-->
-            <!--{{ companyProfileForm.keywordListItem }}-->
+        <!--</ul>-->
+        <!--</div>-->
+        <!--</div>-->
+        <!--</div>-->
+        <!--{{ companyProfileForm.keywordListItem.errors }}-->
+        <!--{{ companyProfileForm.keywordListItem }}-->
         <!--</div>-->
 
         <!--<br/>-->
 
         <!--&lt;!&ndash;beginning of the chosen package div&ndash;&gt;-->
         <!--<div class="row">-->
-            <!--<div class="col-md-8">-->
-                <!--<div id="paymentOptions">-->
-                    <!--&lt;!&ndash;<button type="button" id="credit-btn" class="btn btn-outline-success mb-3">Credit-->
-                        <!--Card-->
-                    <!--</button>&ndash;&gt;-->
-                    <!--<button type="button" id="debit-btn" class="btn btn-outline-primary mb-3">Debit-->
-                        <!--Order-->
-                    <!--</button>-->
-                    <!--<button type="button" id="directdeposit-btn" class="btn btn-outline-warning mb-3">-->
-                        <!--Direct Deposit-->
-                    <!--</button>-->
-                <!--</div>-->
+        <!--<div class="col-md-8">-->
+        <!--<div id="paymentOptions">-->
+        <!--&lt;!&ndash;<button type="button" id="credit-btn" class="btn btn-outline-success mb-3">Credit-->
+        <!--Card-->
+        <!--</button>&ndash;&gt;-->
+        <!--<button type="button" id="debit-btn" class="btn btn-outline-primary mb-3">Debit-->
+        <!--Order-->
+        <!--</button>-->
+        <!--<button type="button" id="directdeposit-btn" class="btn btn-outline-warning mb-3">-->
+        <!--Direct Deposit-->
+        <!--</button>-->
+        <!--</div>-->
 
-                <!--<br>-->
+        <!--<br>-->
 
-                <!--&lt;!&ndash;<div id="credit-div">-->
-                    <!--<div style="margin: 0 auto;">-->
-                        <!--<input class="form-control m-1" type="text" placeholder="Card Number">-->
-                        <!--<input class="form-control m-1" type="text" placeholder="Card Holder">-->
-                        <!--<input class="form-control m-1" type="text" placeholder="Expiry Date">-->
-                        <!--<input class="form-control m-1" type="text" placeholder="CVV">-->
-                    <!--</div>-->
-                <!--</div>&ndash;&gt;-->
+        <!--&lt;!&ndash;<div id="credit-div">-->
+        <!--<div style="margin: 0 auto;">-->
+        <!--<input class="form-control m-1" type="text" placeholder="Card Number">-->
+        <!--<input class="form-control m-1" type="text" placeholder="Card Holder">-->
+        <!--<input class="form-control m-1" type="text" placeholder="Expiry Date">-->
+        <!--<input class="form-control m-1" type="text" placeholder="CVV">-->
+        <!--</div>-->
+        <!--</div>&ndash;&gt;-->
 
-                <!--<div id="debit-div">-->
-                    <!--<div id="debit_order_container">-->
-                        <!--{{ bankingDetailsForm.accHolder }}-->
-                        <!--{{ bankingDetailsForm.bankName }}-->
-                        <!--{{ bankingDetailsForm.accNum }}-->
-                        <!--{{ bankingDetailsForm.accType }}-->
-                        <!--{{ bankingDetailsForm.branchName }}-->
-                        <!--{{ bankingDetailsForm.branchCode }}-->
-                    <!--</div>-->
-                <!--</div>-->
+        <!--<div id="debit-div">-->
+        <!--<div id="debit_order_container">-->
+        <!--{{ bankingDetailsForm.accHolder }}-->
+        <!--{{ bankingDetailsForm.bankName }}-->
+        <!--{{ bankingDetailsForm.accNum }}-->
+        <!--{{ bankingDetailsForm.accType }}-->
+        <!--{{ bankingDetailsForm.branchName }}-->
+        <!--{{ bankingDetailsForm.branchCode }}-->
+        <!--</div>-->
+        <!--</div>-->
 
 
-                <!--<div id="d_deposit-div">-->
-                    <!--<div style="margin: 0 auto;">-->
-                        <!--<h5><i>Banking Details for a Direct Deposit payment option</i></h5>-->
-                        <!--<table class="table table-responsive table-sm">-->
-                            <!--<tr>-->
-                                <!--<td>Account Holder:</td>-->
-                                <!--<td>{{ compDetails.compName }}</td>-->
-                            <!--</tr>-->
-                            <!--<tr>-->
-                                <!--<td>Bank Name:</td>-->
-                                <!--<td>{{ compDetails.bankName }}</td>-->
-                            <!--</tr>-->
-                            <!--<tr>-->
-                                <!--<td>Account Number:</td>-->
-                                <!--<td>{{ compDetails.bankAccNum }}</td>-->
-                            <!--</tr>-->
-                            <!--<tr>-->
-                                <!--<td>Branch Name:</td>-->
-                                <!--<td>{{ compDetails.branchName }}</td>-->
-                            <!--</tr>-->
-                            <!--<tr>-->
-                                <!--<td>Branch:</td>-->
-                                <!--<td>{{ compDetails.branchCode }}</td>-->
-                            <!--</tr>-->
-                            <!--<tr>-->
-                                <!--<td>Ref:</td>-->
-                                <!--<td>[<i>Use your cellphone number</i>]</td>-->
-                            <!--</tr>-->
-                        <!--</table>-->
-                    <!--</div>-->
-                <!--</div>-->
-                <!--<br>-->
-            <!--</div>-->
+        <!--<div id="d_deposit-div">-->
+        <!--<div style="margin: 0 auto;">-->
+        <!--<h5><i>Banking Details for a Direct Deposit payment option</i></h5>-->
+        <!--<table class="table table-responsive table-sm">-->
+        <!--<tr>-->
+        <!--<td>Account Holder:</td>-->
+        <!--<td>{{ compDetails.compName }}</td>-->
+        <!--</tr>-->
+        <!--<tr>-->
+        <!--<td>Bank Name:</td>-->
+        <!--<td>{{ compDetails.bankName }}</td>-->
+        <!--</tr>-->
+        <!--<tr>-->
+        <!--<td>Account Number:</td>-->
+        <!--<td>{{ compDetails.bankAccNum }}</td>-->
+        <!--</tr>-->
+        <!--<tr>-->
+        <!--<td>Branch Name:</td>-->
+        <!--<td>{{ compDetails.branchName }}</td>-->
+        <!--</tr>-->
+        <!--<tr>-->
+        <!--<td>Branch:</td>-->
+        <!--<td>{{ compDetails.branchCode }}</td>-->
+        <!--</tr>-->
+        <!--<tr>-->
+        <!--<td>Ref:</td>-->
+        <!--<td>[<i>Use your cellphone number</i>]</td>-->
+        <!--</tr>-->
+        <!--</table>-->
+        <!--</div>-->
+        <!--</div>-->
+        <!--<br>-->
+        <!--</div>-->
 
-            <!--{{ companyProfileForm.package }}-->
+        <!--{{ companyProfileForm.package }}-->
 
-            <!--<div class="col-md-4">-->
-                <!--<div id="order_summary">-->
-                    <!--<h5>ORDER SUMMARY</h5>-->
-                    <!--<table class="table">-->
-                        <!--<tr>-->
-                            <!--<td>Package</td>-->
-                            <!--{{ package.package.error }}-->
-                            <!--<td>{{ package.package }}</td>-->
-                        <!--</tr>-->
-                        <!--<tr>-->
-                            <!--{{ package.price.error }}-->
-                            <!--{% if billing_cycle == '0' %}-->
-                            <!--<td>Montly Rate</td>-->
-                            <!--<td>{{ package.price }}</td>-->
-                            <!--{% else %}-->
-                            <!--<td>Annual Rate</td>-->
-                            <!--<td>{{ package.annualPrice }}</td>-->
-                            <!--{% endif %}-->
+        <!--<div class="col-md-4">-->
 
-                        <!--</tr>-->
-                    <!--</table>-->
-                    <!--<div id="total_div">-->
-                        <!--<table class="table">-->
-                            <!--<tr>-->
-                                <!--<td>-->
-                                    <!--<h6 class="pull-left">TOTAL</h6>-->
-                                <!--</td>-->
-                                <!--<td>-->
-                                    <!--{{ package.price.error }}-->
-                                    <!--{% if billing_cycle == '0' %}-->
-                                    <!--<h6 align="center">{{ package.price }}</h6>-->
-                                    <!--{% else %}-->
-                                    <!--<h6 align="center">{{ package.annualPrice }}</h6>-->
-                                    <!--{% endif %}-->
-                                <!--</td>-->
-                            <!--</tr>-->
-                        <!--</table>-->
-                    <!--</div>-->
-                <!--</div>-->
-            <!--</div>-->
+        <!--</div>-->
 
-            <!--&lt;!&ndash;Beginning of Terms and Conditions checkbox. Must be checked otherwise the registration process cannot be completed&ndash;&gt;-->
-            <!--<div class="form-group">-->
-                <!--{{ companyProfileForm.termsAndConditions.errors }}-->
-                <!--<label for="{{ companyProfileForm.termsAndConditions.id_for_label }}">-->
-                    <!--{{ companyProfileForm.termsAndConditions }}<span>I agree to the <a-->
-                        <!--href="{% url 'termsAndConditions' %}">terms and conditions</a> </span>-->
-                <!--</label>-->
-            <!--</div>-->
-            <!--&lt;!&ndash;End of the Terms and Conditions checkbox&ndash;&gt;-->
 
         <!--</div>-->
 
         <!--{{ companyProfileForm.pymntMethod }}-->
         <!--&lt;!&ndash;this django field gets the user's input for the selected payment type&ndash;&gt;-->
 
-        <!--<div align="center">-->
-            <!--<div class="g-recaptcha" data-sitekey="6LenQmgUAAAAADtVrIjClBy4WUBCisI2uK1Hl6xn"></div>-->
-            <!--<br/>-->
-            <!--<button class="action-button submit" type="submit">Submit</button>-->
-        <!--</div>-->
 
     </form>
 

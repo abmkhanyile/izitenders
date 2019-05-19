@@ -91,6 +91,7 @@ class OurDetails(models.Model):
     contactNumber = models.CharField(max_length=30, blank=True)
     faxNumber = models.CharField(max_length=30, blank=True)
     emailAddress = models.CharField(max_length=150, blank=False)
+    website = models.CharField(max_length=150, blank=True)
     physicalAddress = RichTextField(blank=True)
     postalAddress = RichTextField(blank=True)
     bankName = models.CharField(max_length=100, blank=False)

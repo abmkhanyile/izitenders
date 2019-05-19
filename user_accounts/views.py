@@ -10,15 +10,17 @@ from .forms import (CustomUserForm,
                     )
 from django.contrib.auth import update_session_auth_hash
 from .models import CompanyProfile, OurDetails
+from django.contrib.auth.models import User
 from django.contrib.auth.forms import PasswordChangeForm, PasswordResetForm
 from tender_details.models import Category, Keywords, Province
 from django.core import serializers
 from django.http import HttpResponse
 from django.contrib import messages
+from django.urls import reverse
 import json
 import urllib
 from django.conf import settings
-# from .pdf_render import PDF_Render
+
 
 def login(request):
     msgStorage = messages.get_messages(request)
@@ -50,7 +52,7 @@ def auth_view(request):
 
 
 def register_view(request, billing_cycle, pk):
-    packageOption = Packages.objects.get(id=pk)
+    packageOption = Packages.objects.get(package_id=pk)
     if billing_cycle == '1' or billing_cycle == '0':
         b_cycle = billing_cycle
     else:
@@ -63,37 +65,41 @@ def register_view(request, billing_cycle, pk):
         if userRegForm.is_valid() and companyForm.is_valid(): #checks to see if both forms have valid inputs.
 
             # Begin reCAPTCHA validation
-            recaptcha_response = request.POST.get('g-recaptcha-response')
-            url = 'https://www.google.com/recaptcha/api/siteverify'
-            values = {
-                'secret': settings.GOOGLE_RECAPTCHA_SECRET_KEY,
-                'response': recaptcha_response
-            }
-            data = urllib.parse.urlencode(values).encode()
-            req = urllib.request.Request(url, data=data)
-            response = urllib.request.urlopen(req)
-            result = json.loads(response.read().decode())
+            # recaptcha_response = request.POST.get('g-recaptcha-response')
+            # url = 'https://www.google.com/recaptcha/api/siteverify'
+            # values = {
+            #     'secret': settings.GOOGLE_RECAPTCHA_SECRET_KEY,
+            #     'response': recaptcha_response
+            # }
+            # data = urllib.parse.urlencode(values).encode()
+            # req = urllib.request.Request(url, data=data)
+            # response = urllib.request.urlopen(req)
+            # result = json.loads(response.read().decode())
             # End reCAPTCHA validation
 
-            if result['success']:
-                user = userRegForm.save()  # if the userRegForm is valid then it gets saved to the db.
-            else:
-                messages.error(request, 'Invalid reCAPTCHA. Please try again.')
-                return render(request, 'register.html',
-                              {'userRegForm': userRegForm, 'package': packageOption, 'billing_cycle': b_cycle,
-                               'companyProfileForm': companyForm})
+            # if result['success']:
+            #     user = userRegForm.save()  # if the userRegForm is valid then it gets saved to the db.
+            # else:
+            #     messages.error(request, 'Invalid reCAPTCHA. Please try again.')
+            #     return render(request, 'register.html',
+            #                   {'userRegForm': userRegForm, 'package': packageOption, 'billing_cycle': b_cycle,
+            #                    'companyProfileForm': companyForm})
+
+            user = userRegForm.save()  # if the userRegForm is valid then it gets saved to the db.
 
 
             compProfile = companyForm.save(commit=False)    #if the Company Profile form is valid, we put a hold on saving the form just yet until we can assign a user to it.
             if compProfile.user_id is None:     #if the user is None, then assign it below.
                 compProfile.user_id = user.id
-                compProfile.accountNumber = 'LH'+str(user.id)
-                compProfile.package_id = int(pk)    #assign the package while we are at it.
+                compProfile.accountNumber = 'TW'+str(user.id)
+                compProfile.package_id = packageOption.id    #assign the package while we are at it.
+                if b_cycle == '0':
+                    compProfile.contractDuration = 6
             compProfile.save()          #save the companyProfile form to the db.
 
             selected_provinces = companyForm.cleaned_data['provinces'] #extract the selected provinces from the ModelMultiChoiceField.
             selected_cats = companyForm.cleaned_data['tenderCategory']  #extract the selected categories from the ModelMultiChoiceField.
-            pymnt_type = companyForm.cleaned_data['pymntMethod']        #get the selected payment type.
+            # pymnt_type = companyForm.cleaned_data['pymntMethod']        #get the selected payment type.
 
             for province_item in selected_provinces:           #Loop through the selected provinces and create a relationship below.
                 compProfile.provinces.add(province_item)        #Link the Provinces to their company profile using a ManyToManyField
@@ -101,22 +107,7 @@ def register_view(request, billing_cycle, pk):
             for cat_item in selected_cats:
                 compProfile.tenderCategory.add(cat_item)
 
-            keyword_ids_str = companyForm.cleaned_data['keywordListItem']
-            if keyword_ids_str is not '' or keyword_ids_str is not None:
-                keyword_ids = keyword_ids_str.split(',')[:-1]
-                for keyword_id in keyword_ids:
-                    keywordObj = Keywords.objects.get(id=int(keyword_id.strip()))
-                    compProfile.keywords.add(keywordObj)
-
-            if int(pymnt_type) == 2:
-                bankingDetails = BankingDetailsForm(request.POST)
-                if bankingDetails.is_valid():
-                    bankingDetailsObj = bankingDetails.save(commit=False)
-                    if bankingDetailsObj.user_CompanyProfile_id is None:
-                        bankingDetailsObj.user_CompanyProfile_id = compProfile.user_id
-                    bankingDetailsObj.save()
-
-            return HttpResponseRedirect('/user_accounts/registration_success')
+            return HttpResponseRedirect(reverse('invoice', kwargs={'user_id': user.id, 'comp_prof_id': compProfile.pk}))
         else:
             bDetailsForm = BankingDetailsForm()
             return render(request, 'register.html', {'userRegForm': userRegForm, 'package': packageOption, 'billing_cycle': b_cycle, 'companyProfileForm': companyForm, 'bankingDetailsForm': bDetailsForm})
@@ -225,15 +216,18 @@ def UpdateCompanyProfile(request, pk):
         raise Http404("Company does not exist")
 
 
-# this handles the pdf render.
-# def Invoice_view(request):
-#     params = {}
-#     # return render(request, 'user_account/invoice.html', params)
-#     return PDF_Render.pdfRender('user_account/invoice.html', params)
-
 # this view displays the success page after the user finishes the registration process.
 def registration_success_view(request):
-    return render(request, 'user_account/registration_success.html')
+    return render(request, 'registration_success.html')
+
+
+# this handles the pdf render.
+def Invoice_view(request, user_id, comp_prof_id):
+    userObj = User.objects.get(id=user_id)
+    compProfile = CompanyProfile.objects.get(pk=comp_prof_id)
+    ourDetails = OurDetails.objects.get(compName='TenderWiz')
+    print(ourDetails.compName)
+    return render(request, 'invoice.html', {'user': userObj, 'comp_prof': compProfile, 'ourDetails': ourDetails})
 
 
 

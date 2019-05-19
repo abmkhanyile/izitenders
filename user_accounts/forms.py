@@ -41,8 +41,7 @@ class CustomUserForm(UserCreationForm):
         'required': 'required',
         'data-rule-required': 'true',
         'data-msg-required': 'Please enter password 1',
-        'placeholder': 'Password',
-        'type': 'password'
+        'placeholder': 'Password'
     }))
     password2 = forms.CharField(widget=forms.PasswordInput(attrs={
         'class': 'field-divided',
@@ -91,9 +90,9 @@ class CompanyProfileForm(ModelForm):
         'id': 'catSelect'
     }))
 
-    keywordListItem = forms.CharField(widget=forms.HiddenInput(attrs={
-        'class': 'keywordListItem'
-    }))
+    # keywordListItem = forms.CharField(widget=forms.HiddenInput(attrs={
+    #     'class': 'keywordListItem'
+    # }))
 
     class Meta:
         model = CompanyProfile
@@ -167,6 +166,7 @@ class CompanyProfileForm(ModelForm):
                 'data-rule-required': 'true',
                 'data-msg-required': 'Please enter the email address(s)'
             }),
+
 
             'package': forms.HiddenInput(),
             'pymntMethod': forms.HiddenInput(attrs={

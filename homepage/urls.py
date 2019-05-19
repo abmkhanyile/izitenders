@@ -5,4 +5,5 @@ from .views import homeView
 
 urlpatterns = [
     url(r'^$', homeView, name='homepage'),
+
 ]
