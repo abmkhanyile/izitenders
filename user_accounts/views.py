@@ -49,8 +49,6 @@ def auth_view(request):
 
 
 
-
-
 def register_view(request, billing_cycle, pk):
     packageOption = Packages.objects.get(package_id=pk)
     if billing_cycle == '1' or billing_cycle == '0':
@@ -220,14 +218,23 @@ def UpdateCompanyProfile(request, pk):
 def registration_success_view(request):
     return render(request, 'registration_success.html')
 
+def Payment_Success_View(request):
+    return render(request, 'payment_success.html')
+
+# def Notify_url_view(request):
+#     return
+
 
 # this handles the pdf render.
 def Invoice_view(request, user_id, comp_prof_id):
     userObj = User.objects.get(id=user_id)
     compProfile = CompanyProfile.objects.get(pk=comp_prof_id)
     ourDetails = OurDetails.objects.get(compName='TenderWiz')
-    print(ourDetails.compName)
     return render(request, 'invoice.html', {'user': userObj, 'comp_prof': compProfile, 'ourDetails': ourDetails})
+
+
+
+
 
 
 

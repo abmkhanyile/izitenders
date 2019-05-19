@@ -8,12 +8,12 @@
 <div class="container_div p-3">
 
     <div align="center">
-        <form action="post">
+        <form action="https://sandbox.payfast.co.za/eng/process" method="post">
             <input class="btn btn-warning btn-lg" type="submit" value="Pay Now"/>
         </form>
     </div>
 
-    <div class="invoice_outer_container p-4" align="center" style="margin: 20px auto; border: 1px solid black;">
+    <div class="invoice_outer_container p-4" align="center" style="margin: 20px auto; border: 2px solid black;">
         <div align="center"><h1>Invoice</h1></div>
 
         <div style="width: 50%; float: left; font-family: Arial, Helvetica, sans-serif; font-size: 0.75em;">
@@ -26,7 +26,7 @@
                     <td>{{ ourDetails.compRegNum }}</td>
                 </tr>
                 <tr>
-                    <td>VAT</td>
+                    <td>VAT:</td>
                     <td>{{ ourDetails.VAT_num }}</td>
                 </tr>
                 <tr>
@@ -222,7 +222,38 @@
     </div>
 
     <div align="center">
-        <form action="post">
+        <form action="https://sandbox.payfast.co.za/eng/process" method="post">
+            <input type="hidden" name="merchant_id" value="10451577">
+            <input type="hidden" name="merchant_key" value="crl71scmwo1mq">
+            <input type="hidden" name="return_url" value="{% url 'payment_success' %}">
+            <input type="hidden" name="cancel_url" value="{% url 'invoice' user_id=user.id comp_prof_id=comp_prof.pk %}">
+            <!--<input type="hidden" name="notify_url" value="https://www.yoursite.com/notify">-->
+
+            <input type="hidden" name="name_first" value="{{ user.first_name }}">
+            <input type="hidden" name="name_last" value="{{ user.last_name }}">
+            <input type="hidden" name="email_address" value="{{ user.email }}">
+            <input type="hidden" name="cell_number" value="{{ comp_prof.contactNumber }}">
+
+            <input type="hidden" name="m_payment_id" value="01AB">
+            <input type="hidden" name="amount" value="{% if comp_prof.contractDuration == 6 %}
+                        {{ comp_prof.package.sixMonthPrice }}
+                        {% else %}
+                        {{ comp_prof.package.annualPrice }}
+                        {% endif %}">
+            <input type="hidden" name="item_name" value="{{ comp_prof.package }}">
+            <input type="hidden" name="item_description" value="{% if comp_prof.contractDuration == 6 %}
+                        {{ comp_prof.package }} package @ x6 Months
+                        {% else %}
+                        {{ comp_prof.package }} package @ x12 Months
+                        {% endif %}" >
+            <!--<input type="hidden" name="custom_int1" value="2">-->
+            <!--<input type="hidden" name="custom_str1" value="Extra order information">-->
+
+            <input type="hidden" name="email_confirmation" value="1">
+            <input type="hidden" name="confirmation_address" value="abm.khanyile@gmail.com">
+
+            <input type="hidden" name="signature" value="f103e22c0418655fb03991538c51bfd5">
+
             <input class="btn btn-warning btn-lg" type="submit" value="Pay Now"/>
         </form>
     </div>

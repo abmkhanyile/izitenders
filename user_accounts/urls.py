@@ -13,7 +13,8 @@ from .views import (login,
                     password_change_view,
                     autocomplete_search_view,
                     Invoice_view,
-                    registration_success_view
+                    registration_success_view,
+                    Payment_Success_View,
                     )
 from tender_details.views import tenders_list_view, send_email_view
 from contact_us.views import contact_us_view, email_success_view
@@ -43,4 +44,5 @@ urlpatterns = [
     url(r'^reset/done/$', PasswordResetCompleteView.as_view(template_name='user_account/password_reset_complete.html'), name='password_reset_complete'),
     url(r'^auto_complete_search/$', autocomplete_search_view, name='autocomplete_search'),
     url(r'^send_email/$', send_email_view, name='sendEmail'),
+    url(r'^payment_success/$', Payment_Success_View, name='payment_success'),
     ]
