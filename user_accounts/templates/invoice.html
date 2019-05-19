@@ -66,8 +66,8 @@
         <div align="left">
             <table>
                 <thead>
-                <th scope="col" width="50%"></th>
-                <th scope="col" width="50%"></th>
+                <th scope="col" width="35%"></th>
+                <th scope="col" width="65%"></th>
                 </thead>
                 <tr>
                     <td colspan="2" style="font-size: 1.2em;"><strong>BILL TO:</strong></td>
@@ -129,14 +129,14 @@
                     <td>1</td>
                     <td>
                         {% if comp_prof.contractDuration == 6 %}
-                        {{ comp_prof.package.sixMonthPrice
+                        {{ comp_prof.package.sixMonthPrice }}
                         {% else %}
                         {{ comp_prof.package.annualPrice }}
                         {% endif %}
                     </td>
                     <td>
                         {% if comp_prof.contractDuration == 6 %}
-                        {{ comp_prof.package.sixMonthPrice
+                        {{ comp_prof.package.sixMonthPrice }}
                         {% else %}
                         {{ comp_prof.package.annualPrice }}
                         {% endif %}
@@ -147,7 +147,7 @@
                     <td><strong>SUBTOTAL</strong></td>
                     <td>
                         {% if comp_prof.contractDuration == 6 %}
-                        {{ comp_prof.package.sixMonthPrice
+                        {{ comp_prof.package.sixMonthPrice }}
                         {% else %}
                         {{ comp_prof.package.annualPrice }}
                         {% endif %}
