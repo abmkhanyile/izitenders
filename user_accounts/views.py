@@ -7,6 +7,7 @@ from .forms import (CustomUserForm,
                     CompanyProfileForm,
                     CompanyProfileEditForm,
                     BankingDetailsForm,
+                    PayFast_Form,
                     )
 from django.contrib.auth import update_session_auth_hash
 from .models import CompanyProfile, OurDetails
@@ -17,6 +18,7 @@ from django.core import serializers
 from django.http import HttpResponse
 from django.contrib import messages
 from django.urls import reverse
+import urllib.parse
 import json
 import urllib
 from django.conf import settings
@@ -230,7 +232,37 @@ def Invoice_view(request, user_id, comp_prof_id):
     userObj = User.objects.get(id=user_id)
     compProfile = CompanyProfile.objects.get(pk=comp_prof_id)
     ourDetails = OurDetails.objects.get(compName='TenderWiz')
-    return render(request, 'invoice.html', {'user': userObj, 'comp_prof': compProfile, 'ourDetails': ourDetails})
+
+    amount = None
+
+    if compProfile.contractDuration == 6:
+        amount = compProfile.package.sixMonthPrice
+    else:
+        amount = compProfile.package.annualPrice
+
+    payfast_data = {
+        'merchant_id': '10012886',
+        'merchant_key': 'sb5koxsz8qp59',
+        'return_url': urllib.parse.quote('https://tenderwiz.herokuapp.com/user_accounts/payment_success/'),
+        'name_first': userObj.first_name,
+        'name_last': userObj.last_name,
+        'email_address': userObj.email,
+        'cell_number': compProfile.contactNumber,
+        'm_payment_id': '01AB',
+        'amount': amount,
+        'item_name': compProfile.package.package,
+        'email_confirmation': '1',
+        'confirmation_address': ourDetails.emailAddress
+
+    }
+
+    payfastForm = PayFast_Form(payfast_data)
+
+    # encodedUrl
+    #
+    # payfastForm['signature'] = encodedUrl
+
+    return render(request, 'invoice.html', {'user': userObj, 'comp_prof': compProfile, 'ourDetails': ourDetails, 'payfast_form': payfastForm})
 
 
 

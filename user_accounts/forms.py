@@ -291,3 +291,63 @@ class BankingDetailsForm(ModelForm):
         }
 
 
+class PayFast_Form(forms.Form):
+    merchant_id = forms.CharField(widget=forms.HiddenInput(attrs={
+        'name': 'merchant_id'
+    }))
+
+    merchant_key = forms.CharField(widget=forms.HiddenInput(attrs={
+        'name': 'merchant_key'
+    }))
+
+    return_url = forms.CharField(widget=forms.HiddenInput(attrs={
+        'name': 'return_url'
+    }))
+
+    cancel_url = forms.CharField(widget=forms.HiddenInput(attrs={
+        'name': 'cancel_url'
+    }))
+
+    notify_url = forms.CharField(widget=forms.HiddenInput(attrs={
+        'name': 'notify_url'
+    }))
+
+    name_first = forms.CharField(widget=forms.HiddenInput(attrs={
+        'name': 'name_first'
+    }))
+
+    name_last = forms.CharField(widget=forms.HiddenInput(attrs={
+        'name': 'name_last'
+    }))
+
+    email_address = forms.CharField(widget=forms.HiddenInput(attrs={
+        'name': 'email_address'
+    }))
+
+    cell_number = forms.CharField(widget=forms.HiddenInput(attrs={
+        'name': 'cell_number'
+    }))
+
+    m_payment_id = forms.CharField(widget=forms.HiddenInput(attrs={
+        'name': 'm_payment_id'
+    }))
+
+    amount = forms.CharField(widget=forms.HiddenInput(attrs={
+        'name': 'amount'
+    }))
+
+    item_name = forms.CharField(widget=forms.HiddenInput(attrs={
+        'name': 'item_name'
+    }))
+
+    email_confirmation = forms.CharField(widget=forms.HiddenInput(attrs={
+        'name': 'email_confirmation'
+    }))
+
+    confirmation_address = forms.CharField(widget=forms.HiddenInput(attrs={
+        'name': 'confirmation_address'
+    }))
+
+    signature = forms.CharField(widget=forms.HiddenInput(attrs={
+        'name': 'signature'
+    }))
