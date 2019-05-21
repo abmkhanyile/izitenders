@@ -15,6 +15,7 @@ from .views import (login,
                     Invoice_view,
                     registration_success_view,
                     Payment_Success_View,
+                    Payment_Cancelled_View,
                     )
 from tender_details.views import tenders_list_view, send_email_view
 from contact_us.views import contact_us_view, email_success_view
@@ -45,4 +46,5 @@ urlpatterns = [
     url(r'^auto_complete_search/$', autocomplete_search_view, name='autocomplete_search'),
     url(r'^send_email/$', send_email_view, name='sendEmail'),
     url(r'^payment_success/$', Payment_Success_View, name='payment_success'),
+    url(r'^payment_cancelled/$', Payment_Cancelled_View, name='payment_cancelled'),
     ]

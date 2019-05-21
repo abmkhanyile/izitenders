@@ -19,6 +19,7 @@ from django.http import HttpResponse
 from django.contrib import messages
 from django.urls import reverse
 import urllib.parse
+import hashlib
 import json
 import urllib
 from django.conf import settings
@@ -223,8 +224,8 @@ def registration_success_view(request):
 def Payment_Success_View(request):
     return render(request, 'payment_success.html')
 
-# def Notify_url_view(request):
-#     return
+def Payment_Cancelled_View(request):
+    return render(request, 'payment_cancelled.html')
 
 
 # this handles the pdf render.
@@ -244,6 +245,7 @@ def Invoice_view(request, user_id, comp_prof_id):
         'merchant_id': '10012886',
         'merchant_key': 'sb5koxsz8qp59',
         'return_url': urllib.parse.quote('https://tenderwiz.herokuapp.com/user_accounts/payment_success/'),
+        'cancel_url': urllib.parse.quote('https://tenderwiz.herokuapp.com/user_accounts/payment_cancelled/'),
         'name_first': userObj.first_name,
         'name_last': userObj.last_name,
         'email_address': userObj.email,
@@ -253,8 +255,13 @@ def Invoice_view(request, user_id, comp_prof_id):
         'item_name': compProfile.package.package,
         'email_confirmation': '1',
         'confirmation_address': ourDetails.emailAddress
-
     }
+
+    signature = ''
+    for key, value in payfast_data.items():
+        signature += '{}={}&'.format(str(key), str(value))
+
+    signature = hashlib.md5(signature[:-1].encode()).hexdigest()
 
     payfastForm = PayFast_Form(payfast_data)
 
@@ -262,7 +269,11 @@ def Invoice_view(request, user_id, comp_prof_id):
     #
     # payfastForm['signature'] = encodedUrl
 
-    return render(request, 'invoice.html', {'user': userObj, 'comp_prof': compProfile, 'ourDetails': ourDetails, 'payfast_form': payfastForm})
+    return render(request, 'invoice.html', {'user': userObj,
+                                            'comp_prof': compProfile,
+                                            'ourDetails': ourDetails,
+                                            'payfast_form': payfastForm,
+                                            'signature': signature.strip()})
 
 
 

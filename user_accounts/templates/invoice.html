@@ -228,6 +228,7 @@
             {{ payfast_form.merchant_id }}
             {{ payfast_form.merchant_key }}
             {{ payfast_form.return_url }}
+            {{ payfast_form.cancel_url }}
             {{ payfast_form.name_first }}
             {{ payfast_form.name_last }}
             {{ payfast_form.email_address }}
@@ -237,6 +238,8 @@
             {{ payfast_form.item_name }}
             {{ payfast_form.email_confirmation }}
             {{ payfast_form.confirmation_address }}
+
+            <input type="hidden" name="signature" value="{{ signature }}">
 
             <input class="btn btn-warning btn-lg" type="submit" value="Pay Now"/>
         </form>
