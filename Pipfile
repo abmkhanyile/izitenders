@@ -14,7 +14,6 @@ heroku = "*"
 django-storages = "*"
 "boto3" = "*"
 smart-open = "*"
-hashlib = "*"
 
 [requires]
 python_version = "3.6"
