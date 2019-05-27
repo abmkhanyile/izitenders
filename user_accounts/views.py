@@ -20,8 +20,6 @@ from django.contrib import messages
 from django.urls import reverse
 import urllib.parse
 import hashlib
-import json
-import urllib
 from django.conf import settings
 
 
@@ -29,14 +27,14 @@ def login(request):
     msgStorage = messages.get_messages(request)
     c = {'messages': msgStorage}
     c.update(csrf(request))
-    return render(request, 'user_account/login.html', c)
+    return render(request, 'login.html', c)
 
 def logout_success_view(request):
-    return render(request, 'user_account/logout_success.html')
+    return render(request, 'user_accounts/logout_success.html')
 
 def logout_view(request):
     auth.logout(request)
-    return HttpResponseRedirect('/user_account/login')
+    return HttpResponseRedirect('/user_accounts/login')
 
 def auth_view(request):
     username = request.POST.get('username', '')
@@ -45,10 +43,10 @@ def auth_view(request):
 
     if user is not None:
         auth.login(request, user)
-        return HttpResponseRedirect('/user_account/dashboard')
+        return HttpResponseRedirect('/user_accounts/dashboard')
     else:
         messages.warning(request, "Sorry, that's not a valid username and password")
-        return HttpResponseRedirect('/user_account/login')
+        return HttpResponseRedirect('/user_accounts/login')
 
 
 
@@ -64,29 +62,26 @@ def register_view(request, billing_cycle, pk):
         companyForm = CompanyProfileForm(request.POST)  #initilizes the company profile form
 
         if userRegForm.is_valid() and companyForm.is_valid(): #checks to see if both forms have valid inputs.
-
             # Begin reCAPTCHA validation
-            # recaptcha_response = request.POST.get('g-recaptcha-response')
-            # url = 'https://www.google.com/recaptcha/api/siteverify'
-            # values = {
-            #     'secret': settings.GOOGLE_RECAPTCHA_SECRET_KEY,
-            #     'response': recaptcha_response
-            # }
-            # data = urllib.parse.urlencode(values).encode()
-            # req = urllib.request.Request(url, data=data)
-            # response = urllib.request.urlopen(req)
-            # result = json.loads(response.read().decode())
+            recaptcha_response = request.POST.get('g-recaptcha-response')
+            url = 'https://www.google.com/recaptcha/api/siteverify'
+            values = {
+                'secret': settings.GOOGLE_RECAPTCHA_SECRET_KEY,
+                'response': recaptcha_response
+            }
+            data = urllib.parse.urlencode(values).encode()
+            req = urllib.request.Request(url, data=data)
+            response = urllib.request.urlopen(req)
+            result = json.loads(response.read().decode())
             # End reCAPTCHA validation
 
-            # if result['success']:
-            #     user = userRegForm.save()  # if the userRegForm is valid then it gets saved to the db.
-            # else:
-            #     messages.error(request, 'Invalid reCAPTCHA. Please try again.')
-            #     return render(request, 'register.html',
-            #                   {'userRegForm': userRegForm, 'package': packageOption, 'billing_cycle': b_cycle,
-            #                    'companyProfileForm': companyForm})
-
-            user = userRegForm.save()  # if the userRegForm is valid then it gets saved to the db.
+            if result['success']:
+                user = userRegForm.save()  # if the userRegForm is valid then it gets saved to the db.
+            else:
+                messages.error(request, 'Invalid reCAPTCHA. Please try again.')
+                return render(request, 'register.html',
+                              {'userRegForm': userRegForm, 'package': packageOption, 'billing_cycle': b_cycle,
+                               'companyProfileForm': companyForm})
 
 
             compProfile = companyForm.save(commit=False)    #if the Company Profile form is valid, we put a hold on saving the form just yet until we can assign a user to it.
@@ -133,7 +128,7 @@ def register_view(request, billing_cycle, pk):
 def profile_view(request):
     companyProfile = CompanyProfile.objects.get(pk=request.user.id)
     args = {'CompanyProfile': companyProfile}
-    return render(request, 'user_account/profile.html', args)
+    return render(request, 'profile.html', args)
 
 
 def password_change_view(request):
@@ -143,13 +138,13 @@ def password_change_view(request):
         if form.is_valid():
             form.save()
             update_session_auth_hash(request, form.user)
-            return redirect('/user_account/profile')
+            return redirect('/user_accounts/profile')
         else:
-            return redirect('/user_account/password_change')
+            return redirect('/user_accounts/password_change')
     else:
         form = PasswordChangeForm(user=request.user)
         args = {'pwd_change_form': form}
-        return render(request, 'user_account/password_change.html', args)
+        return render(request, 'user_accounts/password_change.html', args)
 
 
 #Password reset view
@@ -160,13 +155,13 @@ def password_reset_view(request):
         if form.is_valid():
             form.save()
             update_session_auth_hash(request, form.user)
-            return redirect('/user_account/profile')
+            return redirect('/user_accounts/profile')
         else:
-            return redirect('/user_account/password_change')
+            return redirect('/user_accounts/password_change')
     else:
         form = PasswordResetForm(user=request.user)
         args = {'pwd_change_form': form}
-        return render(request, 'user_account/password_change.html', args)
+        return render(request, 'user_accounts/password_change.html', args)
 
 #This is the function that handle the auto complete search functionality.
 def autocomplete_search_view(request):
@@ -209,10 +204,10 @@ def UpdateCompanyProfile(request, pk):
             else:
                 print('evaluated false...')
 
-            return HttpResponseRedirect('/user_account/profile')
+            return HttpResponseRedirect('/user_accounts/profile')
         else:
             companyProfileEditFormObj = CompanyProfileEditForm(instance=compObj)
-            return render(request, 'user_account/companyProfileEdit.html', {'compForm': companyProfileEditFormObj, 'compProf': compObj})
+            return render(request, 'user_accounts/companyProfileEdit.html', {'compForm': companyProfileEditFormObj, 'compProf': compObj})
     else:
         raise Http404("Company does not exist")
 

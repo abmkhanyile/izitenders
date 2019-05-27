@@ -1,0 +1,48 @@
+{% extends "base.html" %}
+{% load staticfiles %}
+{% block title %}Profile{% endblock %}
+{% block content %}
+
+<div class="container_div p-3" style="background: white;">
+        <div id="companyInfoContainer">
+            <table class="table table-responsive">
+                <tr>
+                    <td>Company Name</td>
+                    <td>{{ CompanyProfile.companyName }}</td>
+                </tr>
+                <tr>
+                    <td>Company Reg Number</td>
+                    <td>{{ CompanyProfile.companyRegNum }}</td>
+                </tr>
+                <tr>
+                    <td>Contact Number</td>
+                    <td>{{ CompanyProfile.contactNumber }}</td>
+                </tr>
+                <tr>
+                    <td>Address</td>
+                    <td>{{ CompanyProfile.address }}</td>
+                </tr>
+                <tr>
+                    <td>Area Code</td>
+                    <td>{{ CompanyProfile.areaCode }}</td>
+                </tr>
+            </table>
+        </div>
+
+        <div class="mb-3" id="clientChosenKeywords">
+            <ul id="chosenKeywords" style="font-size: 12px;">
+            {% for kw in CompanyProfile.keywords.all %}
+                <li>{{ kw }}</li>
+            {% endfor %}
+            </ul>
+        </div>
+
+        <div id="editBtnContainer" align="center">
+            <a class="btn btn-outline-success btn-lg" role="button" href="{% url 'company_profile_edit' CompanyProfile.user_id %}"
+               style="font-family: 'slabo'">Edit</a>
+        </div>
+</div>
+
+
+
+{% endblock %}

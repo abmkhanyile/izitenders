@@ -1,0 +1,38 @@
+{% extends "base.html" %}
+{% load staticfiles %}
+{% block title %}Login{% endblock %}
+{% block content %}
+
+        <div class="container mb-5 bg-white shadowedContainer pb-4 pt-4" style="min-height: 100%;" >
+            <div class="container mb-2 mt-2 loginContainerDiv w-50">
+
+                {% if messages %}
+                <div class="col-xs-12">
+                    {% for message in messages %}
+                        <center style="color: red">{{ message }}</center>
+                    {% endfor %}
+                </div>
+                {% endif %}
+
+                <form class="p-3" action="{% url 'auth' %}" method="post">{% csrf_token %}
+                    {% if form.errors %}
+                    <p class="error">Sorry, that's not a valid username and password</p>
+                {% endif %}
+                    <div class="row form-group">
+                        <label for="username">Username:</label>
+                        <input class="form-control" type="text" name="username" value="" id="username">
+                    </div>
+                    <div class="row form-group">
+                        <label for="password">Password:</label>
+                        <input class="form-control" type="password" name="password" value="" id="password">
+                    </div>
+                    <input class="form-control btn btn-success btn-sm w-25 pull-right" type="submit" value="login" />
+                    <a href="{% url 'password_reset'%}">Forgot Password</a>
+                </form>
+            </div>
+
+    </div>
+
+
+
+{% endblock %}

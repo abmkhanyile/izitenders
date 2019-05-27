@@ -1,0 +1,80 @@
+{% extends "base.html" %}
+{% load staticfiles %}
+{% block title %}Tenderwiz Dashboard{% endblock %}
+{% block content %}
+
+<div class="container_div p-3">
+    <div class="row">
+        <div class="col-md-3">
+            <div class="card profile_card mb-2 text-center shadowedContainer" style="position: relative; background: white">
+                <div class="card-block" style="background: #E8E8E8;">
+                    <a href="{% url 'user_profile' %}"><img class="mt-4 mb-3 centre-block" src="{% static 'Media/images/profile_photo.png' %}" width="80px" height="80px" style="border-radius: 100px;
+                    border: 2px solid #99ddff; margin-left: auto; margin-right: auto; display: block; position: relative;
+				    -moz-box-shadow: 1px 2px 4px rgba(0, 0, 0,0.5);
+				    -webkit-box-shadow: 1px 2px 4px rgba(0, 0, 0, .5);
+				    box-shadow: 1px 2px 4px rgba(0, 0, 0, .5);
+				    padding: 0px;
+				    background: white" /></a>
+                    <a href="{% url 'user_profile' %}"><h6 class="card-title mb-0" style="font-family: Allerta; font-weight: bold; font-size: 14pt; color: black;">{{ user.first_name|capfirst }} {{ user.last_name|capfirst  }}</h6></a>
+                    <p style="font-family: Allerta, font-size: 11pt; color: grey">{{ user.get_username }}</p>
+                    <hr>
+                    <span class="mb-0" style="font-size:24pt; font-family: Allerta; color: #99ddff;">{{ totNumOfTenders }}</span><br>
+                    <p style="font-family: Allerta, font-size: 11pt; color: grey">Tenders to date</p>
+
+                </div>
+
+            </div>
+
+        </div>
+        <div class="col-md-9 main_div">
+            <div class="col-sm-12 mb-2 shadowedContainer" style="background: white;">
+                <div class="container pb-4">
+                    <div class="row">
+                        <div class="col-md-8">
+                            <h2 class="text-center pt-3">Matched Tenders</h2>
+                            <table class="table tenders_table" id="tenders_summary">
+                                <tr>
+                                    <th>Date</th>
+                                    <th>Tenders</th>
+                                </tr>
+                                {% for tenderEnquiries in tenderSet %}
+                                <tr>
+                                    <td>{{ tenderEnquiries.d_assigned|date:"d-m-Y" }}</td>
+                                    <td><a href={% url 'tender_list' date=tenderEnquiries.d_assigned|date:"d-m-Y" %}>{{ tenderEnquiries.c }} tenders</a></td>
+                                </tr>
+                                {% endfor %}
+                            </table>
+                        </div>
+                    <div class="col-md-4">
+                        <div class="mt-3 mb-3 pt-2" style="height: 300px; background: white; border: 1px solid #ddd;">
+                            <!--<div class="container">-->
+                                <h5 class="mb-0" align="center">Stats</h5>
+                                <!--<hr>-->
+                                <table class="table text-info" style="font-family: PT Sans Narrow">
+                                    <tr>
+                                        <td>Today:</td>
+                                        <td>{{ todayStats }} matched</td>
+                                    </tr>
+                                    <tr>
+                                        <td>Last 7 days:</td>
+                                        <td>{{ weeklyStats }} matched</td>
+                                    </tr>
+                                    <tr>
+                                        <td>Last 30 days:</td>
+                                        <td>{{ monthlyStats }} matched</td>
+                                    </tr>
+                                </table>
+                            <!--</div>-->
+
+                        </div>
+
+                    </div>
+                </div>
+                </div>
+            </div>
+
+        </div>
+    </div>
+</div>
+
+{% endblock %}

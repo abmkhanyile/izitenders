@@ -226,3 +226,15 @@ select{
 	padding: 20px 12px 10px 20px;
 	font: 13px "Lucida Sans Unicode", "Lucida Grande", sans-serif;
 }
+
+
+/*Styles the client chosen keywords div on the dashboard*/
+#clientChosenKeywords{
+    padding: 5px;
+    border-radius: 5px;
+    height: 350px;
+    width: 35%;
+    overflow: auto;
+    background-color: #f7faff;
+    border: 1px solid #7B1FA2;
+}

@@ -27,7 +27,7 @@ class LoginRequiredMiddleware:
             logout(request)
 
         if request.user.is_authenticated and url_is_exempt:
-            if path == 'user_account/auto_complete_search/':
+            if path == 'user_accounts/auto_complete_search/':
                 return None
             else:
                 return redirect(settings.LOGIN_REDIRECT_URL)

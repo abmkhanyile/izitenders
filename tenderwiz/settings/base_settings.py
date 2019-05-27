@@ -62,6 +62,7 @@ MIDDLEWARE = [
     'django.contrib.auth.middleware.AuthenticationMiddleware',
     'django.contrib.messages.middleware.MessageMiddleware',
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
+    'tenderwiz.middleware.LoginRequiredMiddleware',
 ]
 
 ROOT_URLCONF = 'tenderwiz.urls'
@@ -124,6 +125,29 @@ AUTH_PASSWORD_VALIDATORS = [
 ]
 
 
+LOGIN_EXEMPT_URLS = (
+    r'^$',
+    r'^tenders/',
+    r'^pricing/',
+    r'^articles/',
+    r'^contact_us/',
+    r'^user_accounts/logout_success/$',
+    r'^user_accounts/register/$',
+    r'^user_accounts/auth/$',
+    r'^user_accounts/password_reset/$',
+    r'^user_accounts/reset/(?P<uidb64>[0-9A-Za-z_\-]+)/(?P<token>[0-9A-Za-z]{1,13}-[0-9A-Za-z]{1,20})/$',
+    r'^user_accounts/register/(?P<billing_cycle>\d)/(?P<pk>\d+)/$',
+    r'^user_accounts/password_reset/done/$',
+    r'^user_accounts/reset/done/$',
+    r'^user_accounts/auto_complete_search/$',
+    r'^user_accounts/registration_success/$',
+    r'^user_accounts/invoice/(?P<user_id>\d+)/(?P<comp_prof_id>\d+)/$',
+    r'^privacy_policy/$',
+    r'^termsAndConditions/$',
+    r'^about_us/$',
+)
+
+
 # Internationalization
 # https://docs.djangoproject.com/en/2.1/topics/i18n/
 
@@ -148,6 +172,9 @@ STATICFILES_DIRS = (os.path.join(BASE_DIR, '../static'),)
 
 MEDIA_URL = '/media/'
 MEDIA_ROOT = os.path.join(BASE_DIR, 'static/Media')
+
+LOGIN_REDIRECT_URL = '/user_accounts/dashboard/'
+LOGIN_URL = '/user_accounts/login/'
 
 
 GOOGLE_RECAPTCHA_SECRET_KEY = os.environ.get('RECAPTCHA_SECRET_KEY')
