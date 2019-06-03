@@ -238,3 +238,19 @@ select{
     background-color: #f7faff;
     border: 1px solid #7B1FA2;
 }
+
+.loginContainerDiv{
+    width: 40%;
+}
+
+@media only screen and (max-width: 600px) {
+  .loginContainerDiv {
+    width: 100%;
+  }
+}
+
+@media only screen and (max-width: 750px) {
+  .loginContainerDiv {
+    width: 80%;
+  }
+}

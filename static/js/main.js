@@ -22,4 +22,20 @@ $(document).ready(function () {
             nonSelectedText: 'Please Select Your Industry',
             maxHeight: 300
         });
+
+        //styles the search form dropdwon list in the Tenders.html page.
+        $('#searchRegion').multiselect({
+            buttonWidth: '100%',
+            nonSelectedText: 'Select Province(s)',
+            includeSelectAllOption: true,
+            maxHeight: 300
+        });
+
+        //styles the search form drop down list for tender categories.
+        $('#searchCategory').multiselect({
+            buttonWidth: '100%',
+            nonSelectedText: 'Select Category(s)',
+            includeSelectAllOption: true,
+            maxHeight: 300
+        });
 });

@@ -24,26 +24,7 @@
     <div class="tab-content py-3 px-3 px-sm-0" id="nav-tabContent" style="background-color: white;">
         <div class="tab-pane fade show active" id="nav-home" role="tabpanel" aria-labelledby="nav-home-tab">
 
-            <div class="container">
-
-                <div class="input-group mb-3">
-                    <div class="input-group-prepend">
-                        <select class="form-control">
-                            <option value="All Provinces">All Provinces</option>
-                            {% for province in provinces %}
-                                <option value={{ province.province_name }}>{{ province.province_name }}</option>
-                            {% endfor %}
-                        </select>
-                    </div>
-                    <input type="text" class="form-control" aria-label="Text input with dropdown button">
-
-                    <div class="input-group-append">
-                        <button class="btn btn-primary" type="button"><i class="fa fa-search" aria-hidden="true"></i>
-                        </button>
-                    </div>
-                </div>
-
-            </div>
+            {% include 'search_form.html' %}
 
             <div class="row">
                 <div class="col-md-3 col-sm-12 col-xs-12">
@@ -51,28 +32,6 @@
                 </div>
 
                 <div class="col-md-9 col-sm-12 col-xs-12">
-
-                    <!--<div class="row" id="tenderSearchDiv">-->
-                    <!--<form class="form-inline w-100" method="post">-->
-                    <!--{% csrf_token %}-->
-                    <!--<div class="col-md-4">-->
-                    <!--{{ search_form.searchField }}-->
-                    <!--</div>-->
-                    <!--<div class="col-md-3 provSelection mr-0 ml-0">-->
-                    <!--{{ search_form.categorySelectionField }}-->
-                    <!--</div>-->
-                    <!--<div class="col-md-3 provSelection">-->
-                    <!--{{ search_form.provinceSelectionField }}-->
-                    <!--</div>-->
-                    <!--<div class="col-md-2">-->
-                    <!--{% if user.is_authenticated %}-->
-                    <!--<input type="submit" class="btn btn-primary" value="Search">-->
-                    <!--{% else %}-->
-                    <!--<a class="btn btn-primary subscribeDialogCall" role="button" href="javascript:void(0)">Search</a>-->
-                    <!--{% endif %}-->
-                    <!--</div>-->
-                    <!--</form>-->
-                    <!--</div>-->
 
                     <div class="m-1">
                         {% include 'tender_list.html' %}
