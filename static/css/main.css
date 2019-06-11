@@ -9,7 +9,7 @@ html, body{
     min-height: 100px;
 }
 
-.data_wrapper{
+.data_wrapper, .contact_form_container{
     margin-left: 50px;
     margin-right: 50px;
     margin-top: 0px;
@@ -17,6 +17,19 @@ html, body{
 
     padding: 5px;
 }
+
+@media only screen and (max-width: 750px) {
+    .data_wrapper, .contact_form_container{
+        margin-left: 0px;
+        margin-right: 0px;
+        margin-top: 0px;
+        margin-bottom: 0px;
+
+        padding: 5px;
+    }
+}
+
+
 
 #wrapper{
     min-height: 100%;
@@ -30,7 +43,13 @@ html, body{
 }
 
 .container_div{
-    background-color: white;
+    background: white;
+}
+
+@media only screen and (max-width: 750px) {
+    .container_div{
+        width: 100%;
+    }
 }
 
 .clear{ clear:both; }
@@ -239,9 +258,16 @@ select{
     border: 1px solid #7B1FA2;
 }
 
+@media only screen and (max-width: 750px) {
+    #clientChosenKeywords{
+        width: 100%;
+    }
+}
+
 .loginContainerDiv{
     width: 40%;
 }
+
 
 @media only screen and (max-width: 600px) {
   .loginContainerDiv {

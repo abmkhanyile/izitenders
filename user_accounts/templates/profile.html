@@ -27,9 +27,8 @@
                     <td>{{ CompanyProfile.areaCode }}</td>
                 </tr>
             </table>
-        </div>
 
-        <div class="mb-3" id="clientChosenKeywords">
+            <div class="mb-3" id="clientChosenKeywords">
             <ul id="chosenKeywords" style="font-size: 12px;">
             {% for kw in CompanyProfile.keywords.all %}
                 <li>{{ kw }}</li>
@@ -37,10 +36,13 @@
             </ul>
         </div>
 
-        <div id="editBtnContainer" align="center">
+        <div id="editBtnContainer">
             <a class="btn btn-outline-success btn-lg" role="button" href="{% url 'company_profile_edit' CompanyProfile.user_id %}"
                style="font-family: 'slabo'">Edit</a>
         </div>
+        </div>
+
+
 </div>
 
 

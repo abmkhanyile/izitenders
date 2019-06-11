@@ -18,8 +18,6 @@ def pricing_view(request):
         elif package.package_id == 3:
             corporate = package
 
-
-    print(bronze)
     return render(request, 'pricing.html', {'bronze': bronze,
                                             'silver': silver,
                                             'gold': gold,
