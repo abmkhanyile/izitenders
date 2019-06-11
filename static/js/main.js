@@ -38,4 +38,110 @@ $(document).ready(function () {
             includeSelectAllOption: true,
             maxHeight: 300
         });
+
+
+        //auto complete ajax code.
+    keywordArr = [];
+
+        $('.keywordInput').autocomplete({
+            source: function(request, response ){
+                if(request.term.length >= 3){
+                    $.ajax({
+                        url: "/user_accounts/auto_complete_search/",
+                        type: 'POST',
+                        data: {
+                            'search_text': request.term,
+                            'csrfmiddlewaretoken': $("input[name=csrfmiddlewaretoken]").val()
+                        },
+                        success: function(data){
+                            $('.keywordsList').empty();
+                            if(data != ""){
+                                $('.keywordsList').append('<li><label class="keywordLabel" style="font-size: 12px; font-family: Helvetica;"><input id="selectAll" type="checkbox"><span><i><b>SELECT ALL</b></i></span></label></li>');
+                                var dataArr = [];
+                                var tempHolder = '';
+
+                                $.each(data, function(i, jsonObj){
+                                            keyword_pk = jsonObj.pk;
+                                            keyword = jsonObj.fields.keyword;
+                                            $('.keywordsList').append('<li><label class="keywordLabel" style="font-size: 12px; font-family: Helvetica; color: red;"><input type="checkbox" class="keywordCheckbox" data-keyword_pk="'+keyword_pk+'" data-keyword="'+keyword+'" />'+keyword+'</label></li>');
+                                        });
+
+                                response([]);
+                            }
+                            else{
+                                response([]);
+                            }
+                        },
+                        dataType: 'json'
+                    });
+                }
+                else{
+                    $('.keywordsList').empty();
+                    response([]);
+                }
+            }
+        });
+
+
+                $('.keywordsList').on('click', '#selectAll', function(event){
+            if(this.checked == true){
+                $('.keywordCheckbox').each(function(){ this.checked = true; });
+            }
+            else{
+                $('.keywordCheckbox').each(function(){ this.checked = false; });
+            }
+        });
+
+
+        //on click event handler for the Add button between the two container divs.
+        $('.addingBtn').on('click', function(){
+            $('.keywordCheckbox').each(function(event){
+                if(this.checked == true){
+                    var keyword_pk_obj = $(this).attr('data-keyword_pk');
+                    var keyword_obj = $(this).attr('data-keyword');
+                    $(this).closest("li").remove();
+                    $('.addedKeywordsList').append('<li><label class="keywordLabel" style="font-size: 12px; font-family: Helvetica; color: green;"><input type="checkbox" name="addedKeywords" class="keywordsAdded" value="'+keyword_pk_obj+'" data-keyword_pk="'+keyword_pk_obj+'" data-keyword="'+keyword_obj+'">'+keyword_obj+'</label></li>');
+                }
+
+            });
+        });
+
+        //func below handles the remove btn event for the keywords.
+        $('.removeBtn').on('click', function(){
+            $('.keywordsAdded').each(function(event){
+                if(this.checked == true){
+                    var data_pk = $(this).attr('data-keyword_pk');
+                    var data_keyword = $(this).attr('data-keyword');
+                    $('.keywordsList').append('<li><label class="keywordLabel" style="font-size: 12px; font-family: Helvetica; color: red;"><input type="checkbox" class="keywordCheckbox" data-keyword_pk="'+data_pk+'" data-keyword="'+data_keyword+'" />'+data_keyword+'</label></li>')
+                    $(this).closest("li").remove();
+                }
+            });
+        });
+
+        $('.submit, .saveProfBtn').on('click', function(){
+            $('#deliveryEmailId').tokenfield('disable');
+
+            keywordsStr = '';
+            if($('.addedKeywordsList li').length > 0){
+                $('.keywordsAdded').each(function(event){
+                    keywordsStr += $(this).attr('data-keyword_pk')+',';
+                });
+                $('.keywordListItem').val(keywordsStr);
+            }
+            else{
+                $('.keywordListItem').val(keywordsStr);
+            }
+
+        });
+
+
+        // selects all the chosen keywords for removal.
+        $('.selectAllChosen_kw').on('click', function(event){
+            if(this.checked == true){
+                $('.keywordsAdded').each(function(){ this.checked = true; });
+            }
+            else{
+                $('.keywordsAdded').each(function(){ this.checked = false; });
+            }
+        });
 });

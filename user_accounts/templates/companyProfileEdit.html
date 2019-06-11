@@ -1,0 +1,102 @@
+{% extends "base.html" %}
+{% load staticfiles %}
+{% block title %}Company profile edit{% endblock %}
+{% block content %}
+
+<div class="container mb-4">
+    <div class="container pt-4 pb-4" style="background: white;">
+        <form method="post">
+            {% csrf_token %}
+
+            <div style="width: 50%">
+                {{ compForm.contactNumber.errors }}
+                <label for="{{ compForm.contactNumber.id_for_label }}">Contact Number</label>
+                {{ compForm.contactNumber }}
+            </div>
+
+            <div style="width: 50%">
+            {{ compForm.address.errors }}
+                <label for="{{ userRegForm.address.id_for_label }}">Address</label>
+                {{ compForm.address }}
+            </div>
+
+            <div style="width: 50%">
+            {{ compForm.areaCode.errors }}
+                <label for="{{ userRegForm.areaCode.id_for_label }}">Area Code</label>
+                {{ compForm.areaCode }}
+            </div>
+
+            <div style="width: 50%">
+            {{ compForm.deliveryEmails.errors }}
+                <label for="{{ userRegForm.deliveryEmails.id_for_label }}">Delivery Emails Address</label>
+                {{ compForm.deliveryEmails }}
+            </div>
+
+
+            <div class="row mt-3 mb-3" class="keywords_div">
+                <div class="col-md-5">
+                    <div class="searchContainer">
+                        <div class="searchHeader">
+                            <div class="input-group searchFieldDiv">
+                                <input type="text" name="search_text" class="form-control keywordInput"
+                                           placeholder="Search for your keywords here..."/>
+                                <span class="input-group-addon"><button class="btn btn-info" type="button"><span class="fa fa-search"></span></button></span>
+                            </div>
+                        </div>
+
+                        <div class="foundKeywordsContainer">
+                            <div class="keywordsDiv" align="left">
+                                <ul class="keywordsList tenderFontSize">
+
+                                </ul>
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
+
+                <div class="col-md-2" align="center" style="min-height:100px;">
+                    <div class="btnContainer" style="position: absolute; top: 50%; left: 50%; -ms-transform: translate(-50%, -50%); transform: translate(-50%, -50%);">
+                        <div class="addingBtn container" style="min-height: 40px;">
+                            <button class="btn btn-info btn-sm" type="button">
+                                Add <b>&rarr;</b></button>
+                        </div>
+
+                        <div class="removeBtn container" style="min-height: 40px;">
+                            <button class="btn btn-info btn-sm" type="button">
+                                 <b>&larr;</b>remove</button>
+                        </div>
+                    </div>
+
+                </div>
+
+                <div class="col-md-5">
+                    <div class="addedKeywordsContainer">
+                        <div class="p-1 mb-2 text-white chosenKeywordsHeader" align="center" style="background: #042a68;
+                        -webkit-box-shadow: -1px -1px 39px -3px rgba(0,0,0,0.75);
+                        -moz-box-shadow:    -1px -1px 39px -3px rgba(0,0,0,0.75);
+                        box-shadow: -1px    -1px 39px -3px rgba(0,0,0,0.75);">
+                            <input type="checkbox" class="selectAllChosen_kw" style="float: left; margin-left: 8px; margin-top: 10px;">
+                            <h6>Your chosen keywords</h6>
+                        </div>
+                        <div class="kwContainer">
+                            <ul class="addedKeywordsList tenderFontSize">
+                                {% for keyword in compProf.keywords.all %}
+                                    <li><label><input type="checkbox" class="keywordsAdded" data-keyword_pk="{{ keyword.id }}" data-keyword="{{ keyword }}" />{{ keyword }}</label></li>
+                                {% endfor %}
+                            </ul>
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+            {{ compForm.keywordListItem.errors }}
+            {{ compForm.keywordListItem }}
+
+            <input class="btn btn-primary saveProfBtn" type="submit" value="Save"/>
+        </form>
+    </div>
+</div>
+
+
+{% endblock %}

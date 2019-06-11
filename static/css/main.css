@@ -280,3 +280,57 @@ select{
     width: 80%;
   }
 }
+
+
+/******keyword select divs css ****************/
+#selAllDiv{
+    background-color: white;
+    border-radius: 5px;
+}
+
+/*removing the bullets from the detected keywords list.*/
+.keywordsList{
+    list-style-type: none;
+}
+
+/*styling the search field div*/
+.searchHeader{
+    -webkit-box-shadow: -1px -1px 39px -3px rgba(0,0,0,0.75);
+    -moz-box-shadow: -1px -1px 39px -3px rgba(0,0,0,0.75);
+    box-shadow: -1px -1px 39px -3px rgba(0,0,0,0.75);
+    border-radius: 5px;
+}
+
+/*code below is for styling the container Div for the "keyword "search field*/
+.searchContainer{
+    overflow: hidden;
+    padding: 5px;
+    border-radius: 5px;
+    height: 350px;
+    background-color: #f7faff;
+    border: 1px solid #7B1FA2;
+}
+
+/*styling for the added keywords container div.*/
+.addedKeywordsContainer{
+    padding: 5px;
+    border-radius: 5px;
+    height: 350px;
+    background-color: #f7faff;
+    border: 1px solid #7B1FA2;
+}
+
+.kwContainer{
+    height: 300px;
+    overflow: auto;
+}
+
+/*styling keyword labels*/
+.keywordLabel{
+    padding-top: 0px;
+    padding-bottom: 0px;
+    margin-bottom: 0px;
+    display: inline-block;
+    text-align: left !important;
+    justify-content: left;
+}

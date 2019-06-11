@@ -210,7 +210,7 @@ def UpdateCompanyProfile(request, pk):
             return HttpResponseRedirect('/user_accounts/profile')
         else:
             companyProfileEditFormObj = CompanyProfileEditForm(instance=compObj)
-            return render(request, 'user_accounts/companyProfileEdit.html', {'compForm': companyProfileEditFormObj, 'compProf': compObj})
+            return render(request, 'companyProfileEdit.html', {'compForm': companyProfileEditFormObj, 'compProf': compObj})
     else:
         raise Http404("Company does not exist")
 
