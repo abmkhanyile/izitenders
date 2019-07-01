@@ -5,6 +5,7 @@
 {% load tz %}
 
 <div class="container_div p-3 mb-4">
+    {% if tender.pdfType == False %}
     <table class="table table-responsive width_adjuster">
         <tbody style="font-size: 14px; font-family: Helvetica;">
 
@@ -19,6 +20,11 @@
 
         </tbody>
     </table>
+    {% else %}
+    <div class="embed-responsive embed-responsive-16by9">
+    <embed class="embed-responsive-item" src="https://drive.google.com/viewerng/viewer?embedded=true&url={{ tender.pdfLink }}" >
+    </div>
+    {% endif %}
 
 </div>
 

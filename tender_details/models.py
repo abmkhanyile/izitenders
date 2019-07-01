@@ -59,6 +59,8 @@ class Tender(models.Model):
     date_assigned = models.DateField(blank=True, null=True)
     kw_assigned = models.BooleanField(default=False, blank=True)
     tDocLinks = RichTextField(blank=True)
+    pdfType = models.BooleanField(default=False, blank=False)
+    pdfLink = models.TextField(blank=True)
 
     def check_if_expired(self):
         if self.closingDate != None:
