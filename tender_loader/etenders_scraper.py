@@ -72,7 +72,7 @@ def main():
             print(tot_page_num)
 
             t_counter = 0
-            while t_counter <= int(tot_page_num):
+            while t_counter <= 20: #int(tot_page_num):
                 website_data.update(get_tender_page('https://etenders.treasury.gov.za/content/advertised-tenders?field_tender_category_tid=All&field_region_tid={}&field_sector_tid=All&field_testing_dept_tid=All&field_tender_type_tid=All&page={}'.format(provinces_dict[province], t_counter)))
                 t_counter += 1
 
@@ -116,9 +116,11 @@ def get_tender_page(url):
         print(url)
         sauce_1 = urllib.request.urlopen(url)
         soup_1 = BeautifulSoup(sauce_1, 'html.parser')
-        table_body = soup_1.find('div', {'class': 'view-content'}).tbody
+        table_body = soup_1.find('div', {'class': 'view-content'})
+
         page_tenders = []
         if table_body != None:
+            table_body = table_body.tbody
             tr_tags = table_body.findAll('tr')
             for tr_tag in tr_tags:
                 data_rec = []
@@ -132,6 +134,8 @@ def get_tender_page(url):
                 data_rec.append(td_data[0].text.strip())
 
                 page_tenders.append(';'.join(data_rec).strip()+'\n')
+        else:
+            print("tender_body is a NoneType for {}".format(url))
         return page_tenders
     except urllib.error.URLError as e:
         print(e)
