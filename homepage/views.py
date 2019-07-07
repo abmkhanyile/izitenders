@@ -4,13 +4,27 @@ from .forms import TenderSearchForm
 from contact_us.forms import ContactForm
 from packages.models import Packages
 from tender_details.models import Tender, Province, Category
+from django.http import HttpResponse
+from django.core import serializers
 
 # Create your views here.
 def homeView(request):
+    tenders = Tender.objects.all()
+    if request.GET.get('province_id') is not None:
+        p_id = request.GET.get('province_id')
+        prov = Province.objects.get(pk=p_id)
+        tenders = prov.tender_set.all()
+
+    if request.GET.get('cat_id') is not None:
+        c_id = request.GET.get('cat_id')
+        cat = Category.objects.get(pk=c_id)
+        tenders = cat.tender_set.all()
+
+
+
     search_form = TenderSearchForm()
     contact_form = ContactForm()
     packages = Packages.objects.all()
-    tenders = Tender.objects.all()
     provinces = Province.objects.all()
     categories = Category.objects.all()
 
@@ -38,3 +52,11 @@ def homeView(request):
                                           'tenders': tenders,
                                           'provinces': provinces,
                                           'categories': categories})
+
+#this view displays the number of tenders per province.
+def province_view(request, province_pk):
+    print(request.path)
+    province = Province.objects.get(pk=province_pk)
+    tenders = province.tender_set.all()
+    data = serializers.serialize('json', tenders, fields=('refNum, summary, siteInspectionDate, closingDate'))
+    return HttpResponse(data, content_type='application/json')

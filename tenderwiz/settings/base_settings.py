@@ -142,6 +142,7 @@ LOGIN_EXEMPT_URLS = (
     r'^user_accounts/auto_complete_search/$',
     r'^user_accounts/registration_success/$',
     r'^user_accounts/invoice/(?P<user_id>\d+)/(?P<comp_prof_id>\d+)/$',
+    r'^province/(?P<province_pk>\d+)/$',
     r'^privacy_policy/$',
     r'^termsAndConditions/$',
     r'^about_us/$',

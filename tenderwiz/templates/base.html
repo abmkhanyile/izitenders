@@ -180,7 +180,11 @@
         </div>
 
         <div style="font-size: .7em;" align="center">
+            {% if user.is_authenticated %}
+                <a href="{% url 'dash_ts_and_cs' %}">Terms of conditions</a> | <a href="{% url 'dash_privacy_policy' %}">Privacy policy</a>
+            {% else %}
             <a href="{% url 'termsAndConditions' %}">Terms of conditions</a> | <a href="{% url 'privacy_policy' %}">Privacy policy</a>
+            {% endif %}
         </div>
     </div>
 </footer>

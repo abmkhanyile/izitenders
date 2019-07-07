@@ -72,7 +72,7 @@ def main():
             print(tot_page_num)
 
             t_counter = 0
-            while t_counter <= 20: #int(tot_page_num):
+            while t_counter <= int(tot_page_num):
                 website_data.update(get_tender_page('https://etenders.treasury.gov.za/content/advertised-tenders?field_tender_category_tid=All&field_region_tid={}&field_sector_tid=All&field_testing_dept_tid=All&field_tender_type_tid=All&page={}'.format(provinces_dict[province], t_counter)))
                 t_counter += 1
 

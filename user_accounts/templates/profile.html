@@ -26,20 +26,24 @@
                     <td>Area Code</td>
                     <td>{{ CompanyProfile.areaCode }}</td>
                 </tr>
+                <tr>
+                    <td>Delivery Email Addresses</td>
+                    <td>{{ CompanyProfile.deliveryEmails }}</td>
+                </tr>
             </table>
 
             <div class="mb-3" id="clientChosenKeywords">
-            <ul id="chosenKeywords" style="font-size: 12px;">
-            {% for kw in CompanyProfile.keywords.all %}
-                <li>{{ kw }}</li>
-            {% endfor %}
-            </ul>
-        </div>
+                <ul id="chosenKeywords" style="font-size: 12px;">
+                {% for kw in CompanyProfile.keywords.all %}
+                    <li>{{ kw }}</li>
+                {% endfor %}
+                </ul>
+            </div>
 
-        <div id="editBtnContainer">
-            <a class="btn btn-outline-success btn-lg" role="button" href="{% url 'company_profile_edit' CompanyProfile.user_id %}"
-               style="font-family: 'slabo'">Edit</a>
-        </div>
+            <div id="editBtnContainer">
+                <a class="btn btn-outline-success btn-lg" role="button" href="{% url 'company_profile_edit' CompanyProfile.user_id %}"
+                   style="font-family: 'slabo'">Edit</a>
+            </div>
         </div>
 
 

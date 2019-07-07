@@ -198,7 +198,7 @@ def UpdateCompanyProfile(request, pk):
 
                 keyword_ids_str = companyProfileEditFormObj.cleaned_data['keywordListItem']
                 if keyword_ids_str is not '' or keyword_ids_str is not None:
-                    keyword_ids = keyword_ids_str.split(',')[:-1]
+                    keyword_ids = keyword_ids_str.split(',')
                     editedCompObj.keywords.clear()
                     for keyword_id in keyword_ids:
                         keywordObj = Keywords.objects.get(id=int(keyword_id.strip()))
@@ -272,6 +272,7 @@ def Invoice_view(request, user_id, comp_prof_id):
                                             'ourDetails': ourDetails,
                                             'payfast_form': payfastForm,
                                             'signature': signature.strip()})
+
 
 
 

@@ -90,9 +90,9 @@ class CompanyProfileForm(ModelForm):
         'id': 'catSelect'
     }))
 
-    # keywordListItem = forms.CharField(widget=forms.HiddenInput(attrs={
-    #     'class': 'keywordListItem'
-    # }))
+    keywordListItem = forms.CharField(widget=forms.HiddenInput(attrs={
+        'class': 'keywordListItem'
+    }))
 
     class Meta:
         model = CompanyProfile
@@ -192,13 +192,13 @@ class CompanyProfileEditForm(ModelForm):
             'keywords',
             'commencementDate',
             'package',
-            'deliveryEmails',
             'contractDuration',
         )
         fields = (
             'contactNumber',
             'address',
             'areaCode',
+            'deliveryEmails',
             'keywordListItem',
         )
 

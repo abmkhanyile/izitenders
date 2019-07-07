@@ -92,6 +92,16 @@ $(document).ready(function () {
             }
         });
 
+        function get_keywords(){
+            var kw_container = []
+            $('.keywordsAdded').each(function(event){
+                kw_container.push($(this).attr('data-keyword_pk'))
+            });
+
+            kw_str = kw_container.toString()
+            $('.keywordListItem').val(kw_str);
+        }
+
 
         //on click event handler for the Add button between the two container divs.
         $('.addingBtn').on('click', function(){
@@ -104,6 +114,8 @@ $(document).ready(function () {
                 }
 
             });
+
+            get_keywords()
         });
 
         //func below handles the remove btn event for the keywords.
@@ -116,22 +128,8 @@ $(document).ready(function () {
                     $(this).closest("li").remove();
                 }
             });
-        });
 
-        $('.submit, .saveProfBtn').on('click', function(){
-            $('#deliveryEmailId').tokenfield('disable');
-
-            keywordsStr = '';
-            if($('.addedKeywordsList li').length > 0){
-                $('.keywordsAdded').each(function(event){
-                    keywordsStr += $(this).attr('data-keyword_pk')+',';
-                });
-                $('.keywordListItem').val(keywordsStr);
-            }
-            else{
-                $('.keywordListItem').val(keywordsStr);
-            }
-
+            get_keywords()
         });
 
 
@@ -144,4 +142,6 @@ $(document).ready(function () {
                 $('.keywordsAdded').each(function(){ this.checked = false; });
             }
         });
+
+
 });

@@ -20,6 +20,7 @@ from .views import (login,
 from tender_details.views import tenders_list_view, send_email_view
 from contact_us.views import contact_us_view, email_success_view
 from articleApp.views import article_view, article_list_view
+from tenderwiz.views import privacy_policy_view, termsAndConditions_view
 
 
 urlpatterns = [
@@ -47,4 +48,6 @@ urlpatterns = [
     url(r'^send_email/$', send_email_view, name='sendEmail'),
     url(r'^payment_success/$', Payment_Success_View, name='payment_success'),
     url(r'^payment_cancelled/$', Payment_Cancelled_View, name='payment_cancelled'),
+    url(r'^termsAndConditions/$', termsAndConditions_view, name='dash_ts_and_cs'),
+    url(r'^privacy_policy/$', privacy_policy_view, name='dash_privacy_policy'),
     ]

@@ -289,9 +289,10 @@ select{
 }
 
 /*removing the bullets from the detected keywords list.*/
-.keywordsList{
+.keywordsList, .addedKeywordsList, #chosenKeywords{
     list-style-type: none;
 }
+
 
 /*styling the search field div*/
 .searchHeader{
