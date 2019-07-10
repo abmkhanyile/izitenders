@@ -1,57 +1,75 @@
 from django.shortcuts import render
 from django.urls import reverse, reverse_lazy
-from .forms import TenderSearchForm
+from .forms import TenderSearchForm, TestimonialsForm
 from contact_us.forms import ContactForm
 from packages.models import Packages
 from tender_details.models import Tender, Province, Category
 from django.http import HttpResponse
 from django.core import serializers
+from django.core.mail import EmailMessage
+from django.core import mail
+from django.conf import settings
 
 # Create your views here.
 def homeView(request):
-    tenders = Tender.objects.all()
-    if request.GET.get('province_id') is not None:
-        p_id = request.GET.get('province_id')
-        prov = Province.objects.get(pk=p_id)
-        tenders = prov.tender_set.all()
+    if request.method == "post":
+        tForm = TestimonialsForm(request.POST)
 
-    if request.GET.get('cat_id') is not None:
-        c_id = request.GET.get('cat_id')
-        cat = Category.objects.get(pk=c_id)
-        tenders = cat.tender_set.all()
+        if tForm.is_valid():
+            tForm.save()
 
+            msg = EmailMessage(
+                'Testimonial',
+                tForm.cleaned_data['message'],
+                settings.EMAIL_HOST_USER,
+                connection=mail.get_connection(),
+            )
+            msg.send(fail_silently=True)
 
+    else:
+        tenders = Tender.objects.all()
+        if request.GET.get('province_id') is not None:
+            p_id = request.GET.get('province_id')
+            prov = Province.objects.get(pk=p_id)
+            tenders = prov.tender_set.all()
 
-    search_form = TenderSearchForm()
-    contact_form = ContactForm()
-    packages = Packages.objects.all()
-    provinces = Province.objects.all()
-    categories = Category.objects.all()
+        if request.GET.get('cat_id') is not None:
+            c_id = request.GET.get('cat_id')
+            cat = Category.objects.get(pk=c_id)
+            tenders = cat.tender_set.all()
 
-    bronze = None
-    silver = None
-    gold = None
-    corporate = None
+        search_form = TenderSearchForm()
+        contact_form = ContactForm()
+        t_form = TestimonialsForm()
+        packages = Packages.objects.all()
+        provinces = Province.objects.all()
+        categories = Category.objects.all()
 
-    for package in packages:
-        if package.package_id == 0:
-            bronze = package
-        elif package.package_id == 1:
-            silver = package
-        elif package.package_id == 2:
-            gold = package
-        elif package.package_id == 3:
-            corporate = package
+        bronze = None
+        silver = None
+        gold = None
+        corporate = None
 
-    return render(request, 'index.html', {'search_form': search_form,
-                                          'contact_form': contact_form,
-                                          'bronze': bronze,
-                                          'silver': silver,
-                                          'gold': gold,
-                                          'corporate': corporate,
-                                          'tenders': tenders,
-                                          'provinces': provinces,
-                                          'categories': categories})
+        for package in packages:
+            if package.package_id == 0:
+                bronze = package
+            elif package.package_id == 1:
+                silver = package
+            elif package.package_id == 2:
+                gold = package
+            elif package.package_id == 3:
+                corporate = package
+
+        return render(request, 'index.html', {'search_form': search_form,
+                                              'contact_form': contact_form,
+                                              't_form': t_form,
+                                              'bronze': bronze,
+                                              'silver': silver,
+                                              'gold': gold,
+                                              'corporate': corporate,
+                                              'tenders': tenders,
+                                              'provinces': provinces,
+                                              'categories': categories})
 
 #this view displays the number of tenders per province.
 def province_view(request, province_pk):

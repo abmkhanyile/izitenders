@@ -63,29 +63,7 @@ def register_view(request, billing_cycle, pk):
         companyForm = CompanyProfileForm(request.POST)  #initilizes the company profile form
 
         if userRegForm.is_valid() and companyForm.is_valid(): #checks to see if both forms have valid inputs.
-            # # Begin reCAPTCHA validation
-            # recaptcha_response = request.POST.get('g-recaptcha-response')
-            # url = 'https://www.google.com/recaptcha/api/siteverify'
-            # values = {
-            #     'secret': settings.GOOGLE_RECAPTCHA_SECRET_KEY,
-            #     'response': recaptcha_response
-            # }
-            # data = urllib.parse.urlencode(values).encode()
-            # req = urllib.request.Request(url, data=data)
-            # response = urllib.request.urlopen(req)
-            # result = json.loads(response.read().decode())
-            # # End reCAPTCHA validation
-            #
-            # if result['success']:
-            #     user = userRegForm.save()  # if the userRegForm is valid then it gets saved to the db.
-            # else:
-            #     messages.error(request, 'Invalid reCAPTCHA. Please try again.')
-            #     return render(request, 'register.html',
-            #                   {'userRegForm': userRegForm, 'package': packageOption, 'billing_cycle': b_cycle,
-            #                    'companyProfileForm': companyForm})
-
             user = userRegForm.save()
-
 
             compProfile = companyForm.save(commit=False)    #if the Company Profile form is valid, we put a hold on saving the form just yet until we can assign a user to it.
             if compProfile.user_id is None:     #if the user is None, then assign it below.

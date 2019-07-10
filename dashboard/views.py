@@ -44,7 +44,7 @@ def tenderList_view(request, date):
     date = datetime.strptime(date, '%d-%m-%Y')
     tendersPerDate = user_Tenders.filter(date_assigned=date)
 
-    args = {'tSet': tendersPerDate}
+    args = {'tenders': tendersPerDate}
     return render(request, 'matched_tenders_list.html', args)
 
 def tender_view(request, tender_pk):

@@ -170,7 +170,7 @@ def save_tender_to_db(data_rec_str, t_location):
                 tender_obj.siteInspectionDate = extract_date(url_data_ls[4].strip(), 2)
 
             tender_obj.description = str(container_tag[0])
-            tender_obj.kw_assigned = True
+            # tender_obj.kw_assigned = True
 
             if len(container_tag) > 1:
                 tender_obj.tDocLinks = str(container_tag[1])

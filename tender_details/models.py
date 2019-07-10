@@ -71,6 +71,12 @@ class Tender(models.Model):
         else:
             return False
 
+    def check_docs(self):
+        if self.tDocLinks != None:
+            return True
+        else:
+            return False
+
     class Meta:
         ordering = ['-closingDate']
 

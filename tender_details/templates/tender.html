@@ -6,20 +6,19 @@
 
 <div class="container_div p-3 mb-4">
     {% if tender.pdfType == False %}
-    <table class="table table-responsive width_adjuster">
-        <tbody style="font-size: 14px; font-family: Helvetica;">
-
-            <tr>
-                <td class="bg-light" style="font-weight: bold; width: 150px;">Tender Details:</td>
-                <td>{{ tender.description|safe }}</td>
-            </tr>
-            <tr>
-                <td class="bg-light" style="font-weight: bold; width: 150px;">Tender Documents:</td>
-                <td>{{ tender.tDocLinks|safe }}</td>
-            </tr>
-
-        </tbody>
-    </table>
+    <div class="mt-3 tenderFontSize" style="font-size: .85em">
+        <div>
+            {{ tender.description|safe }}
+        </div>
+        <div class="bg-light mt-2">
+            <div class="bg-secondary text-white p-1 mb-1"><span>Tender Documents</span></div>
+            {% if tender.check_docs == False %}
+            <div>None</div>
+            {% else %}
+            {{ tender.tDocLinks|safe }}
+            {% endif %}
+        </div>
+    </div>
     {% else %}
     <div class="embed-responsive embed-responsive-16by9">
     <embed class="embed-responsive-item" src="https://drive.google.com/viewerng/viewer?embedded=true&url={{ tender.pdfLink }}" >

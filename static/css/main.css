@@ -321,7 +321,17 @@ select{
     border: 1px solid #7B1FA2;
 }
 
-.kwContainer{
+.foundKeywordsContainer{
+    overflow: auto;
+}
+
+/*styles the fonts for tenders displayed in data tables*/
+.tenderFontSize{
+    font-size: 12px;
+    font-family: Helvetica;
+}
+
+.kwContainer, .keywordsDiv{
     height: 300px;
     overflow: auto;
 }
