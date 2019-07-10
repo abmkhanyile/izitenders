@@ -292,62 +292,32 @@ class BankingDetailsForm(ModelForm):
 
 
 class PayFast_Form(forms.Form):
-    merchant_id = forms.CharField(widget=forms.HiddenInput(attrs={
-        'name': 'merchant_id'
-    }))
+    merchant_id = forms.CharField(widget=forms.HiddenInput())
 
-    merchant_key = forms.CharField(widget=forms.HiddenInput(attrs={
-        'name': 'merchant_key'
-    }))
+    merchant_key = forms.CharField(widget=forms.HiddenInput())
 
-    return_url = forms.CharField(widget=forms.HiddenInput(attrs={
-        'name': 'return_url'
-    }))
+    return_url = forms.CharField(widget=forms.HiddenInput())
 
-    cancel_url = forms.CharField(widget=forms.HiddenInput(attrs={
-        'name': 'cancel_url'
-    }))
+    cancel_url = forms.CharField(widget=forms.HiddenInput())
 
-    # notify_url = forms.CharField(widget=forms.HiddenInput(attrs={
-    #     'name': 'notify_url'
-    # }))
+    # notify_url = forms.CharField(widget=forms.HiddenInput())
 
-    name_first = forms.CharField(widget=forms.HiddenInput(attrs={
-        'name': 'name_first'
-    }))
+    name_first = forms.CharField(widget=forms.HiddenInput())
 
-    name_last = forms.CharField(widget=forms.HiddenInput(attrs={
-        'name': 'name_last'
-    }))
+    name_last = forms.CharField(widget=forms.HiddenInput())
 
-    email_address = forms.CharField(widget=forms.HiddenInput(attrs={
-        'name': 'email_address'
-    }))
+    email_address = forms.CharField(widget=forms.HiddenInput())
 
-    cell_number = forms.CharField(widget=forms.HiddenInput(attrs={
-        'name': 'cell_number'
-    }))
+    cell_number = forms.CharField(widget=forms.HiddenInput())
 
-    m_payment_id = forms.CharField(widget=forms.HiddenInput(attrs={
-        'name': 'm_payment_id'
-    }))
+    m_payment_id = forms.CharField(widget=forms.HiddenInput())
 
-    amount = forms.CharField(widget=forms.HiddenInput(attrs={
-        'name': 'amount'
-    }))
+    amount = forms.CharField(widget=forms.HiddenInput())
 
-    item_name = forms.CharField(widget=forms.HiddenInput(attrs={
-        'name': 'item_name'
-    }))
+    item_name = forms.CharField(widget=forms.HiddenInput())
 
-    email_confirmation = forms.CharField(widget=forms.HiddenInput(attrs={
-        'name': 'email_confirmation'
-    }))
+    email_confirmation = forms.CharField(widget=forms.HiddenInput())
 
-    confirmation_address = forms.CharField(widget=forms.HiddenInput(attrs={
-        'name': 'confirmation_address'
-    }))
+    confirmation_address = forms.CharField(widget=forms.HiddenInput())
 
-    signature = forms.CharField(widget=forms.HiddenInput(attrs={
-        'name': 'signature'
-    }))
+    signature = forms.CharField(widget=forms.HiddenInput())

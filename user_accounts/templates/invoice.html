@@ -9,7 +9,7 @@
 
     <div align="center">
         <form action="https://sandbox.payfast.co.za/eng/process" method="post">
-            <!--{% csrf_token %}-->
+            {% csrf_token %}
 
             {{ payfast_form.merchant_id }}
             {{ payfast_form.merchant_key }}

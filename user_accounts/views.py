@@ -220,8 +220,8 @@ def Invoice_view(request, user_id, comp_prof_id):
     payfast_data = {
         'merchant_id': '10012886',
         'merchant_key': 'sb5koxsz8qp59',
-        'return_url': 'https://tenderwiz.herokuapp.com/user_accounts/payment_success/',
-        'cancel_url': 'https://tenderwiz.herokuapp.com/user_accounts/payment_cancelled/',
+        'return_url': urllib.parse.quote('https://tenderwiz.herokuapp.com/user_accounts/payment_success/'),
+        'cancel_url': urllib.parse.quote('https://tenderwiz.herokuapp.com/user_accounts/payment_cancelled/'),
         'name_first': userObj.first_name,
         'name_last': userObj.last_name,
         'email_address': userObj.email,
@@ -242,10 +242,7 @@ def Invoice_view(request, user_id, comp_prof_id):
     payfast_data.update({'signature': signature})
 
     payfastForm = PayFast_Form(payfast_data)
-
-    # encodedUrl
-    #
-    # payfastForm['signature'] = encodedUrl
+    print(payfastForm)
 
     return render(request, 'invoice.html', {'user': userObj,
                                             'comp_prof': compProfile,
