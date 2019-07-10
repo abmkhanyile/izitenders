@@ -233,13 +233,13 @@ def Invoice_view(request, user_id, comp_prof_id):
         'confirmation_address': ourDetails.emailAddress
     }
 
-    signature = None
+    signature = ''
     for key, value in payfast_data.items():
         signature += '{}={}&'.format(str(key), str(value))
 
     signature = hashlib.md5(signature[:-1].encode()).hexdigest()
 
-    payfast_data['signature'] = signature
+    payfast_data.update({'signature': signature})
 
     payfastForm = PayFast_Form(payfast_data)
 
