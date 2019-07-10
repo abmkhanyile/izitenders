@@ -221,7 +221,7 @@ def Invoice_view(request, user_id, comp_prof_id):
         'merchant_id': '10012886',
         'merchant_key': 'sb5koxsz8qp59',
         'return_url': 'https://tenderwiz.herokuapp.com/user_accounts/payment_success/',
-        'cancel_url': urllib.parse.quote('https://tenderwiz.herokuapp.com/user_accounts/payment_cancelled/'),
+        'cancel_url': 'https://tenderwiz.herokuapp.com/user_accounts/payment_cancelled/',
         'name_first': userObj.first_name,
         'name_last': userObj.last_name,
         'email_address': userObj.email,
