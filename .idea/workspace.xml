@@ -65,7 +65,7 @@
           <entry key="css" value="1913" />
           <entry key="html" value="13631" />
           <entry key="js" value="1053" />
-          <entry key="py" value="11291" />
+          <entry key="py" value="11403" />
           <entry key="txt" value="1" />
         </counts>
       </usages-collector>
@@ -75,7 +75,7 @@
           <entry key="HTML" value="13631" />
           <entry key="JavaScript" value="1053" />
           <entry key="PLAIN_TEXT" value="22" />
-          <entry key="Python" value="11291" />
+          <entry key="Python" value="11403" />
         </counts>
       </usages-collector>
     </session>
@@ -171,8 +171,8 @@
       <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/user_accounts/views.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="442">
-              <caret line="247" column="4" selection-start-line="247" selection-start-column="4" selection-end-line="247" selection-end-column="4" />
+            <state relative-caret-position="174">
+              <caret line="239" column="60" selection-start-line="239" selection-start-column="60" selection-end-line="239" selection-end-column="60" />
               <folding>
                 <element signature="e#0#84#0" expanded="true" />
               </folding>
@@ -261,7 +261,7 @@
       </list>
     </option>
   </component>
-  <component name="ProjectFrameBounds" extendedState="7">
+  <component name="ProjectFrameBounds" extendedState="6">
     <option name="x" value="-45" />
     <option name="y" value="107" />
     <option name="width" value="1346" />
@@ -750,8 +750,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/user_accounts/views.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="442">
-          <caret line="247" column="4" selection-start-line="247" selection-start-column="4" selection-end-line="247" selection-end-column="4" />
+        <state relative-caret-position="174">
+          <caret line="239" column="60" selection-start-line="239" selection-start-column="60" selection-end-line="239" selection-end-column="60" />
           <folding>
             <element signature="e#0#84#0" expanded="true" />
           </folding>

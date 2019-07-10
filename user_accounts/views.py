@@ -19,7 +19,7 @@ from django.http import HttpResponse
 from django.contrib import messages
 from django.urls import reverse
 import json
-import urllib.parse
+from urllib.parse import urlencode, quote_plus
 import hashlib
 from django.conf import settings
 
@@ -234,18 +234,21 @@ def Invoice_view(request, user_id, comp_prof_id):
     }
 
     signature = ''
-    for key, value in payfast_data.items():
-        if key in ['return_url', 'cancel_url']:
-            signature += '{}={}&'.format(str(key), str(urllib.parse.quote(value)))
-        else:
-            signature += '{}={}&'.format(str(key), str(value))
+    # for key, value in payfast_data.items():
+    #     signature += '{}={}&'.format(str(key), str(urllib.parse.urlencode(value)))
 
-    signature = hashlib.md5(signature[:-1].encode()).hexdigest()
+    signature = urlencode(payfast_data, quote_via=quote_plus)
 
+
+    print(signature)
+
+    signature = hashlib.md5(signature.encode()).hexdigest()
+
+    print(signature)
     payfast_data.update({'signature': signature})
 
     payfastForm = PayFast_Form(payfast_data)
-    
+
     return render(request, 'invoice.html', {'user': userObj,
                                             'comp_prof': compProfile,
                                             'ourDetails': ourDetails,
