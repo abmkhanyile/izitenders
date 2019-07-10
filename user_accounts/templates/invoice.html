@@ -9,7 +9,26 @@
 
     <div align="center">
         <form action="https://sandbox.payfast.co.za/eng/process" method="post">
-            <input type="image" src="https://www.payfast.co.za/images/buttons/dark-large-paynow.png" width="174" height="59" alt="Pay Now" title="Pay Now with PayFast">
+            {% csrf_token %}
+
+            {{ payfast_form.merchant_id }}
+            {{ payfast_form.merchant_key }}
+            {{ payfast_form.return_url }}
+            {{ payfast_form.cancel_url }}
+            {{ payfast_form.name_first }}
+            {{ payfast_form.name_last }}
+            {{ payfast_form.email_address }}
+            {{ payfast_form.cell_number }}
+            {{ payfast_form.m_payment_id }}
+            {{ payfast_form.amount }}
+            {{ payfast_form.item_name }}
+            {{ payfast_form.email_confirmation }}
+            {{ payfast_form.confirmation_address }}
+            {{ payfast_form.signature }}
+
+            <input type="image" src="https://sandbox.payfast.co.za/images/buttons/dark-large-paynow.png" width="174" height="59" alt="Pay Now" title="Pay Now with PayFast">
+
+            <!--<input class="btn btn-warning btn-lg" type="submit" value="Pay Now"/>-->
         </form>
     </div>
 
@@ -221,31 +240,7 @@
 
     </div>
 
-    <div align="center">
-        <form action="https://sandbox.payfast.co.za/eng/process" method="post">
-            {% csrf_token %}
 
-            {{ payfast_form.merchant_id }}
-            {{ payfast_form.merchant_key }}
-            {{ payfast_form.return_url }}
-            {{ payfast_form.cancel_url }}
-            {{ payfast_form.name_first }}
-            {{ payfast_form.name_last }}
-            {{ payfast_form.email_address }}
-            {{ payfast_form.cell_number }}
-            {{ payfast_form.m_payment_id }}
-            {{ payfast_form.amount }}
-            {{ payfast_form.item_name }}
-            {{ payfast_form.email_confirmation }}
-            {{ payfast_form.confirmation_address }}
-
-            <input type="hidden" name="signature" value="{{ signature }}">
-
-            <input type="image" src="https://sandbox.payfast.co.za/images/buttons/dark-large-paynow.png" width="174" height="59" alt="Pay Now" title="Pay Now with PayFast">
-
-            <!--<input class="btn btn-warning btn-lg" type="submit" value="Pay Now"/>-->
-        </form>
-    </div>
 </div>
 
 {% endblock %}
