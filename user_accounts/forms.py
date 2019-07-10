@@ -308,9 +308,9 @@ class PayFast_Form(forms.Form):
         'name': 'cancel_url'
     }))
 
-    notify_url = forms.CharField(widget=forms.HiddenInput(attrs={
-        'name': 'notify_url'
-    }))
+    # notify_url = forms.CharField(widget=forms.HiddenInput(attrs={
+    #     'name': 'notify_url'
+    # }))
 
     name_first = forms.CharField(widget=forms.HiddenInput(attrs={
         'name': 'name_first'
