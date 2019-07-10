@@ -3,16 +3,13 @@
   <component name="ChangeListManager">
     <list default="true" id="07c182ca-c241-4e6f-a718-b15fafb6d7d3" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/dashboard/views.py" beforeDir="false" afterPath="$PROJECT_DIR$/dashboard/views.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/homepage/forms.py" beforeDir="false" afterPath="$PROJECT_DIR$/homepage/forms.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/homepage/models.py" beforeDir="false" afterPath="$PROJECT_DIR$/homepage/models.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/homepage/templates/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/homepage/templates/index.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/homepage/templates/testimonials.html" beforeDir="false" afterPath="$PROJECT_DIR$/homepage/templates/testimonials.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/homepage/urls.py" beforeDir="false" afterPath="$PROJECT_DIR$/homepage/urls.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/homepage/views.py" beforeDir="false" afterPath="$PROJECT_DIR$/homepage/views.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/static/css/main.css" beforeDir="false" afterPath="$PROJECT_DIR$/static/css/main.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/tender_details/models.py" beforeDir="false" afterPath="$PROJECT_DIR$/tender_details/models.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/tender_details/templates/tender.html" beforeDir="false" afterPath="$PROJECT_DIR$/tender_details/templates/tender.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/tender_loader/etenders_scraper.py" beforeDir="false" afterPath="$PROJECT_DIR$/tender_loader/etenders_scraper.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/tenderwiz/templates/base.html" beforeDir="false" afterPath="$PROJECT_DIR$/tenderwiz/templates/base.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/tenderwiz/settings/base_settings.py" beforeDir="false" afterPath="$PROJECT_DIR$/tenderwiz/settings/base_settings.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/user_accounts/forms.py" beforeDir="false" afterPath="$PROJECT_DIR$/user_accounts/forms.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/user_accounts/urls.py" beforeDir="false" afterPath="$PROJECT_DIR$/user_accounts/urls.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/user_accounts/views.py" beforeDir="false" afterPath="$PROJECT_DIR$/user_accounts/views.py" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -37,36 +34,36 @@
           <entry key="project.open.time.4" value="1" />
           <entry key="project.open.time.45" value="1" />
           <entry key="project.open.time.46" value="1" />
-          <entry key="project.open.time.59" value="1" />
+          <entry key="project.open.time.59" value="2" />
           <entry key="project.open.time.62" value="1" />
           <entry key="project.open.time.70" value="1" />
-          <entry key="project.opened" value="15" />
+          <entry key="project.opened" value="16" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.extensions.open">
         <counts>
           <entry key="Pipfile" value="8" />
           <entry key="Procfile" value="8" />
-          <entry key="css" value="20" />
+          <entry key="css" value="21" />
           <entry key="csv" value="2" />
-          <entry key="html" value="126" />
+          <entry key="html" value="136" />
           <entry key="jpg" value="1" />
           <entry key="js" value="12" />
           <entry key="lock" value="3" />
           <entry key="png" value="1" />
-          <entry key="py" value="308" />
+          <entry key="py" value="320" />
           <entry key="txt" value="8" />
           <entry key="windows" value="3" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.types.open">
         <counts>
-          <entry key="CSS" value="20" />
-          <entry key="HTML" value="126" />
+          <entry key="CSS" value="21" />
+          <entry key="HTML" value="136" />
           <entry key="Image" value="2" />
           <entry key="JavaScript" value="12" />
           <entry key="PLAIN_TEXT" value="32" />
-          <entry key="Python" value="308" />
+          <entry key="Python" value="320" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.extensions.edit">
@@ -74,52 +71,42 @@
           <entry key="Pipfile" value="3" />
           <entry key="Procfile" value="18" />
           <entry key="css" value="1913" />
-          <entry key="html" value="13291" />
+          <entry key="html" value="13477" />
           <entry key="js" value="1053" />
-          <entry key="py" value="10707" />
+          <entry key="py" value="11108" />
           <entry key="txt" value="1" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.types.edit">
         <counts>
           <entry key="CSS" value="1913" />
-          <entry key="HTML" value="13291" />
+          <entry key="HTML" value="13477" />
           <entry key="JavaScript" value="1053" />
           <entry key="PLAIN_TEXT" value="22" />
-          <entry key="Python" value="10707" />
+          <entry key="Python" value="11108" />
         </counts>
       </usages-collector>
     </session>
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file pinned="false" current-in-tab="true">
+      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/homepage/templates/testimonials.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state>
-              <caret column="36" lean-forward="true" selection-start-column="36" selection-end-column="36" />
+            <state relative-caret-position="60">
+              <caret line="10" selection-start-line="10" selection-end-line="10" />
             </state>
           </provider>
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/homepage/templates/index.html">
+        <entry file="file://$PROJECT_DIR$/user_accounts/urls.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="87">
-              <caret line="49" column="41" selection-start-line="49" selection-start-column="41" selection-end-line="49" selection-end-column="41" />
+            <state relative-caret-position="459">
+              <caret line="49" column="13" lean-forward="true" selection-start-line="49" selection-start-column="13" selection-end-line="49" selection-end-column="13" />
               <folding>
-                <element signature="n#style#0;n#div#0;n#div#0;n#!!top" expanded="true" />
-                <element signature="n#style#0;n#div#1;n#!!top" expanded="true" />
+                <element signature="e#0#41#0" expanded="true" />
               </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/contact_us/templates/contact_us_form.html">
-          <provider selected="true" editor-type-id="text-editor">
-            <state>
-              <caret selection-end-line="1" selection-end-column="30" />
             </state>
           </provider>
         </entry>
@@ -127,8 +114,8 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/homepage/forms.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="661">
-              <caret line="51" column="22" selection-start-line="51" selection-start-column="22" selection-end-line="51" selection-end-column="22" />
+            <state relative-caret-position="419">
+              <caret line="45" column="43" selection-start-line="45" selection-start-column="43" selection-end-line="45" selection-end-column="43" />
               <folding>
                 <element signature="e#0#24#0" expanded="true" />
               </folding>
@@ -137,22 +124,62 @@
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/homepage/views.py">
+        <entry file="file://$PROJECT_DIR$/user_accounts/templates/register.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="65">
-              <caret line="42" column="35" selection-start-line="42" selection-start-column="35" selection-end-line="42" selection-end-column="35" />
+            <state relative-caret-position="-1329">
+              <caret line="59" column="32" selection-start-line="59" selection-start-column="32" selection-end-line="59" selection-end-column="32" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/user_accounts/templates/invoice.html">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="-3686" />
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/user_accounts/views.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="246">
+              <caret line="222" column="60" selection-start-line="222" selection-start-column="22" selection-end-line="222" selection-end-column="86" />
               <folding>
-                <element signature="e#0#35#0" expanded="true" />
+                <element signature="e#0#84#0" expanded="true" />
               </folding>
             </state>
           </provider>
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/tender_details/views.py">
+        <entry file="file://$PROJECT_DIR$/tenderwiz/middleware.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-1109">
-              <caret line="8" lean-forward="true" selection-start-line="8" selection-end-line="8" selection-end-column="28" />
+            <state relative-caret-position="430">
+              <caret line="34" column="23" lean-forward="true" selection-start-line="34" selection-start-column="23" selection-end-line="34" selection-end-column="23" />
+              <folding>
+                <element signature="e#0#32#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/tenderwiz/settings/base_settings.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="353">
+              <caret line="144" column="33" selection-start-line="144" selection-start-column="33" selection-end-line="144" selection-end-column="33" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/user_accounts/forms.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="-2071">
+              <caret line="169" lean-forward="true" selection-start-line="169" selection-end-line="169" />
+              <folding>
+                <element signature="e#0#34#0" expanded="true" />
+              </folding>
             </state>
           </provider>
         </entry>
@@ -172,7 +199,6 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/user_accounts/templates/payment_success.html" />
         <option value="$PROJECT_DIR$/user_accounts/templates/payment_cancelled.html" />
         <option value="$PROJECT_DIR$/Pipfile" />
         <option value="$PROJECT_DIR$/tenderwiz/utils.py" />
@@ -191,11 +217,9 @@
         <option value="$PROJECT_DIR$/contact_us/templates/contact_us_form.html" />
         <option value="$PROJECT_DIR$/tender_matching_engine/management/commands/scrap_ethekwini_municipality.py" />
         <option value="$PROJECT_DIR$/tender_loader/ethekwini_municipality_scraper.py" />
-        <option value="$PROJECT_DIR$/homepage/urls.py" />
         <option value="$PROJECT_DIR$/tenderwiz/urls.py" />
         <option value="$PROJECT_DIR$/tender_details/templates/tender_filter.html" />
         <option value="$PROJECT_DIR$/user_accounts/templates/profile.html" />
-        <option value="$PROJECT_DIR$/user_accounts/forms.py" />
         <option value="$PROJECT_DIR$/user_accounts/templates/companyProfileEdit.html" />
         <option value="$PROJECT_DIR$/tender_matching_engine/tender_matching.py" />
         <option value="$PROJECT_DIR$/tender_matching_engine/send_mass_emails.py" />
@@ -205,24 +229,27 @@
         <option value="$PROJECT_DIR$/tender_matching_engine/templates/email_template.html" />
         <option value="$PROJECT_DIR$/tender_matching_engine/management/commands/get_db_data.py" />
         <option value="$PROJECT_DIR$/static/js/main.js" />
-        <option value="$PROJECT_DIR$/user_accounts/urls.py" />
-        <option value="$PROJECT_DIR$/tenderwiz/middleware.py" />
-        <option value="$PROJECT_DIR$/tenderwiz/settings/base_settings.py" />
         <option value="$PROJECT_DIR$/static/css/main.css" />
         <option value="$PROJECT_DIR$/dashboard/templates/matched_tenders_list.html" />
         <option value="$PROJECT_DIR$/dashboard/views.py" />
         <option value="$PROJECT_DIR$/tender_details/templates/tender_list.html" />
         <option value="$PROJECT_DIR$/tenderwiz/templates/base.html" />
-        <option value="$PROJECT_DIR$/user_accounts/views.py" />
         <option value="$PROJECT_DIR$/tender_details/templates/tender.html" />
         <option value="$PROJECT_DIR$/tender_details/models.py" />
         <option value="$PROJECT_DIR$/tender_loader/etenders_scraper.py" />
         <option value="$PROJECT_DIR$/contact_us/forms.py" />
         <option value="$PROJECT_DIR$/homepage/models.py" />
-        <option value="$PROJECT_DIR$/homepage/forms.py" />
         <option value="$PROJECT_DIR$/homepage/templates/index.html" />
-        <option value="$PROJECT_DIR$/homepage/views.py" />
         <option value="$PROJECT_DIR$/homepage/templates/testimonials.html" />
+        <option value="$PROJECT_DIR$/user_accounts/urls.py" />
+        <option value="$PROJECT_DIR$/homepage/templates/testimonial_done.html" />
+        <option value="$PROJECT_DIR$/homepage/urls.py" />
+        <option value="$PROJECT_DIR$/homepage/views.py" />
+        <option value="$PROJECT_DIR$/homepage/forms.py" />
+        <option value="$PROJECT_DIR$/user_accounts/forms.py" />
+        <option value="$PROJECT_DIR$/tenderwiz/middleware.py" />
+        <option value="$PROJECT_DIR$/tenderwiz/settings/base_settings.py" />
+        <option value="$PROJECT_DIR$/user_accounts/views.py" />
       </list>
     </option>
   </component>
@@ -250,13 +277,7 @@
             <path>
               <item name="tenderwiz" type="b2602c69:ProjectViewProjectNode" />
               <item name="tenderwiz" type="462c0819:PsiDirectoryNode" />
-              <item name="homepage" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="tenderwiz" type="b2602c69:ProjectViewProjectNode" />
-              <item name="tenderwiz" type="462c0819:PsiDirectoryNode" />
-              <item name="homepage" type="462c0819:PsiDirectoryNode" />
-              <item name="templates" type="462c0819:PsiDirectoryNode" />
+              <item name="user_accounts" type="462c0819:PsiDirectoryNode" />
             </path>
           </expand>
           <select />
@@ -274,11 +295,11 @@
       <recent name="C:\PROJECTS\tenderwiz\static\Media\images\about_us_imgs" />
     </key>
     <key name="CopyFile.RECENT_KEYS">
+      <recent name="C:\PROJECTS\tenderwiz\user_accounts\templates" />
       <recent name="C:\PROJECTS\tenderwiz\dashboard\templates" />
       <recent name="C:\PROJECTS\tenderwiz\miscellaneous" />
       <recent name="C:\PROJECTS\tenderwiz\tender_matching_engine\management\commands" />
       <recent name="C:\PROJECTS\tenderwiz\tender_matching_engine\Utilities" />
-      <recent name="C:\PROJECTS\tenderwiz\static\Media\images\icons" />
     </key>
   </component>
   <component name="RunDashboard">
@@ -371,76 +392,10 @@
     </breakpoint-manager>
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/homepage/urls.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="102">
-          <caret line="6" column="42" selection-start-line="6" selection-start-column="42" selection-end-line="6" selection-end-column="42" />
-          <folding>
-            <element signature="e#0#28#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/tender_details/templates/tender_filter.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="388">
-          <caret line="24" column="42" selection-start-line="24" selection-start-column="42" selection-end-line="24" selection-end-column="42" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/user_accounts/templates/profile.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="273">
-          <caret line="37" column="37" lean-forward="true" selection-start-line="37" selection-start-column="37" selection-end-line="37" selection-end-column="37" />
-          <folding>
-            <element signature="n#style#0;n#ul#0;n#div#0;n#div#0;n#div#0;n#!!top" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/tenderwiz/settings/production.py">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/dashboard/templates/dashboard.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="85">
-          <caret line="5" column="29" selection-start-line="5" selection-start-column="29" selection-end-line="5" selection-end-column="29" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/tenderwiz/urls.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="390">
-          <caret line="28" column="74" lean-forward="true" selection-start-line="28" selection-start-column="74" selection-end-line="28" selection-end-column="74" />
-          <folding>
-            <element signature="e#634#666#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/tenderwiz/settings/development.py">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/tender_matching_engine/Utilities/email_data/civil_data.csv">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/tender_matching_engine/send_mass_emails.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="261">
-          <caret line="19" column="74" selection-start-line="19" selection-start-column="74" selection-end-line="19" selection-end-column="74" />
-          <folding>
-            <element signature="e#0#41#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/tender_matching_engine/delete_expired_tenders.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="119">
           <caret line="7" column="27" selection-start-line="7" selection-start-column="27" selection-end-line="7" selection-end-column="27" />
-          <folding>
-            <element signature="e#0#40#0" expanded="true" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -448,9 +403,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="204">
           <caret line="12" column="47" selection-start-line="12" selection-start-column="47" selection-end-line="12" selection-end-column="47" />
-          <folding>
-            <element signature="e#0#60#0" expanded="true" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -475,70 +427,29 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="526">
           <caret line="114" lean-forward="true" selection-start-line="114" selection-end-line="114" />
-          <folding>
-            <element signature="n#style#0;n#body#0;n#html#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#table#0;n#div#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
-            <element signature="e#1921#1928#1" expanded="true" />
-            <element signature="n#style#0;n#tbody#0;n#table#0;n#div#1;n#div#0;n#div#0;n#div#0;n#tr#0;n#tbody#1;n#table#0;n#div#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#td#0;n#tr#0;n#tbody#0;n#table#0;n#div#1;n#div#0;n#div#0;n#div#0;n#tr#0;n#tbody#1;n#table#0;n#div#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#td#0;n#tr#1;n#tbody#0;n#table#0;n#div#1;n#div#0;n#div#0;n#div#0;n#tr#0;n#tbody#1;n#table#0;n#div#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#td#0;n#tr#2;n#tbody#0;n#table#0;n#div#1;n#div#0;n#div#0;n#div#0;n#tr#0;n#tbody#1;n#table#0;n#div#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#td#0;n#tr#3;n#tbody#0;n#table#0;n#div#1;n#div#0;n#div#0;n#div#0;n#tr#0;n#tbody#1;n#table#0;n#div#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#td#0;n#tr#4;n#tbody#0;n#table#0;n#div#1;n#div#0;n#div#0;n#div#0;n#tr#0;n#tbody#1;n#table#0;n#div#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#td#1;n#tr#4;n#tbody#0;n#table#0;n#div#1;n#div#0;n#div#0;n#div#0;n#tr#0;n#tbody#1;n#table#0;n#div#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#td#0;n#tr#5;n#tbody#0;n#table#0;n#div#1;n#div#0;n#div#0;n#div#0;n#tr#0;n#tbody#1;n#table#0;n#div#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#td#0;n#tr#6;n#tbody#0;n#table#0;n#div#1;n#div#0;n#div#0;n#div#0;n#tr#0;n#tbody#1;n#table#0;n#div#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#td#0;n#tr#7;n#tbody#0;n#table#0;n#div#1;n#div#0;n#div#0;n#div#0;n#tr#0;n#tbody#1;n#table#0;n#div#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#td#0;n#tr#8;n#tbody#0;n#table#0;n#div#1;n#div#0;n#div#0;n#div#0;n#tr#0;n#tbody#1;n#table#0;n#div#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
-          </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/tender_matching_engine/management/commands/delete_exp_tenders.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state>
-          <folding>
-            <element signature="e#0#65#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
+      <provider selected="true" editor-type-id="text-editor" />
     </entry>
     <entry file="file://$PROJECT_DIR$/tender_matching_engine/management/commands/get_db_data.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="119">
           <caret line="7" column="25" lean-forward="true" selection-start-line="7" selection-start-column="25" selection-end-line="7" selection-end-column="25" />
-          <folding>
-            <element signature="e#0#65#0" expanded="true" />
-          </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/tender_matching_engine/management/commands/match_tenders.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state>
-          <folding>
-            <element signature="e#0#65#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
+      <provider selected="true" editor-type-id="text-editor" />
     </entry>
     <entry file="file://$PROJECT_DIR$/tender_matching_engine/management/commands/send_emails.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state>
-          <folding>
-            <element signature="e#0#65#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
+      <provider selected="true" editor-type-id="text-editor" />
     </entry>
     <entry file="file://$PROJECT_DIR$/tender_matching_engine/management/commands/send_marketing_mass_email.py">
       <provider selected="true" editor-type-id="text-editor">
         <state>
           <caret lean-forward="true" />
-          <folding>
-            <element signature="e#0#65#0" expanded="true" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -546,9 +457,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="51">
           <caret line="3" column="27" selection-start-line="3" selection-start-column="27" selection-end-line="3" selection-end-column="27" />
-          <folding>
-            <element signature="e#0#65#0" expanded="true" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -556,26 +464,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="169">
           <caret line="21" column="66" selection-start-line="21" selection-start-column="66" selection-end-line="21" selection-end-column="66" />
-          <folding>
-            <element signature="e#435#449#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/tenderwiz/middleware.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="345">
-          <caret line="29" column="61" lean-forward="true" selection-start-line="29" selection-start-column="61" selection-end-line="29" selection-end-column="61" />
-          <folding>
-            <element signature="e#0#32#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/tenderwiz/settings/base_settings.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="342">
-          <caret line="141" column="45" selection-start-line="141" selection-start-column="45" selection-end-line="141" selection-end-column="45" />
         </state>
       </provider>
     </entry>
@@ -590,19 +478,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="264">
           <caret line="50" column="37" selection-start-line="50" selection-start-column="37" selection-end-line="50" selection-end-column="37" />
-          <folding>
-            <element signature="n#style#0;n#div#0;n#div#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#div#0;n#form#0;n#div#0;n#div#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#div#1;n#form#0;n#div#0;n#div#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#div#2;n#form#0;n#div#0;n#div#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#div#3;n#form#0;n#div#0;n#div#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#div#1;n#div#4;n#form#0;n#div#0;n#div#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#div#0;n#div#1;n#div#4;n#form#0;n#div#0;n#div#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#div#0;n#div#0;n#div#1;n#div#4;n#form#0;n#div#0;n#div#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#div#1;n#div#0;n#div#1;n#div#4;n#form#0;n#div#0;n#div#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#div#0;n#div#0;n#div#2;n#div#4;n#form#0;n#div#0;n#div#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#input#0;n#div#0;n#div#0;n#div#2;n#div#4;n#form#0;n#div#0;n#div#0;n#!!top" expanded="true" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -617,13 +492,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="204">
           <caret line="12" column="6" lean-forward="true" selection-start-line="12" selection-start-column="6" selection-end-line="12" selection-end-column="6" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/static/css/main.css">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="345">
-          <caret line="328" column="16" selection-start-line="328" selection-start-column="16" selection-end-line="328" selection-end-column="16" />
         </state>
       </provider>
     </entry>
@@ -650,20 +518,10 @@
     <entry file="file://$PROJECT_DIR$/about_us/views.py">
       <provider selected="true" editor-type-id="text-editor" />
     </entry>
-    <entry file="file://$PROJECT_DIR$/user_accounts/urls.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="289">
-          <caret line="17" column="43" selection-start-line="17" selection-start-column="43" selection-end-line="17" selection-end-column="43" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/tender_details/templates/tender.html">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="238">
           <caret line="14" column="44" selection-start-line="14" selection-start-column="44" selection-end-line="14" selection-end-column="44" />
-          <folding>
-            <element signature="n#style#0;n#div#0;n#div#0;n#!!top" expanded="true" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -671,9 +529,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="409">
           <caret line="173" selection-start-line="173" selection-end-line="173" />
-          <folding>
-            <element signature="e#0#29#0" expanded="true" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -681,9 +536,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="708">
           <caret line="75" column="23" selection-start-line="75" selection-start-column="23" selection-end-line="75" selection-end-column="23" />
-          <folding>
-            <element signature="e#0#41#0" expanded="true" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -691,16 +543,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="225">
           <caret line="49" column="29" selection-start-line="49" selection-start-column="29" selection-end-line="49" selection-end-column="29" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/user_accounts/views.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-319">
-          <caret line="37" column="55" selection-start-line="37" selection-start-column="55" selection-end-line="37" selection-end-column="55" />
-          <folding>
-            <element signature="e#0#84#0" expanded="true" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -728,16 +570,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/user_accounts/forms.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="882">
-          <caret line="94" column="7" lean-forward="true" selection-start-line="94" selection-start-column="7" selection-end-line="94" selection-end-column="7" />
-          <folding>
-            <element signature="e#0#34#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/dashboard/views.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="680">
@@ -752,16 +584,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/homepage/forms.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="661">
-          <caret line="51" column="22" selection-start-line="51" selection-start-column="22" selection-end-line="51" selection-end-column="22" />
-          <folding>
-            <element signature="e#0#24#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/contact_us/templates/contact_us_form.html">
       <provider selected="true" editor-type-id="text-editor">
         <state>
@@ -769,12 +591,53 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/static/css/main.css">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="3023">
+          <caret line="328" column="16" selection-start-line="328" selection-start-column="16" selection-end-line="328" selection-end-column="16" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/tenderwiz/urls.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="390">
+          <caret line="28" column="74" selection-start-line="28" selection-start-column="74" selection-end-line="28" selection-end-column="74" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/user_accounts/templates/login.html">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/homepage/urls.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="119">
+          <caret line="7" column="11" selection-start-line="7" selection-start-column="11" selection-end-line="7" selection-end-column="11" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/user_accounts/templates/password_reset.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state>
+          <caret selection-end-line="3" selection-end-column="19" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/user_accounts/templates/password_change.html">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/homepage/templates/testimonial_done.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="34">
+          <caret line="2" column="38" selection-start-line="2" selection-start-column="38" selection-end-line="2" selection-end-column="38" />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/homepage/views.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="65">
-          <caret line="42" column="35" selection-start-line="42" selection-start-column="35" selection-end-line="42" selection-end-column="35" />
+        <state relative-caret-position="459">
+          <caret line="27" column="28" selection-start-line="27" selection-start-column="28" selection-end-line="27" selection-end-column="28" />
           <folding>
-            <element signature="e#0#35#0" expanded="true" />
+            <element signature="e#0#45#0" expanded="true" />
           </folding>
         </state>
       </provider>
@@ -792,8 +655,80 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/homepage/templates/testimonials.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state>
-          <caret column="36" lean-forward="true" selection-start-column="36" selection-end-column="36" />
+        <state relative-caret-position="60">
+          <caret line="10" selection-start-line="10" selection-end-line="10" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/homepage/forms.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="419">
+          <caret line="45" column="43" selection-start-line="45" selection-start-column="43" selection-end-line="45" selection-end-column="43" />
+          <folding>
+            <element signature="e#0#24#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/user_accounts/templates/invoice.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-3686" />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/user_accounts/forms.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-2071">
+          <caret line="169" lean-forward="true" selection-start-line="169" selection-end-line="169" />
+          <folding>
+            <element signature="e#0#34#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/user_accounts/urls.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="459">
+          <caret line="49" column="13" lean-forward="true" selection-start-line="49" selection-start-column="13" selection-end-line="49" selection-end-column="13" />
+          <folding>
+            <element signature="e#0#41#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/user_accounts/templates/payment_success.html">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/tenderwiz/middleware.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="430">
+          <caret line="34" column="23" lean-forward="true" selection-start-line="34" selection-start-column="23" selection-end-line="34" selection-end-column="23" />
+          <folding>
+            <element signature="e#0#32#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/tenderwiz/settings/base_settings.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="353">
+          <caret line="144" column="33" selection-start-line="144" selection-start-column="33" selection-end-line="144" selection-end-column="33" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/user_accounts/templates/register.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-1329">
+          <caret line="59" column="32" selection-start-line="59" selection-start-column="32" selection-end-line="59" selection-end-column="32" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/user_accounts/views.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="246">
+          <caret line="222" column="60" selection-start-line="222" selection-start-column="22" selection-end-line="222" selection-end-column="86" />
+          <folding>
+            <element signature="e#0#84#0" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>

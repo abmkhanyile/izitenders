@@ -21,25 +21,30 @@ class TenderSearchForm(forms.Form):
 #handles the testimonials on the homepage
 class TestimonialsForm(forms.ModelForm):
     first_name = forms.CharField(max_length=100, widget=forms.TextInput(attrs={
-        'class': 'form-control',
+        'class': 'textInput field-long',
+        'name': 'fname field1',
         'placeholder': 'First name'
     }))
     last_name = forms.CharField(max_length=100, widget=forms.TextInput(attrs={
-        'class': 'form-control',
+        'class': 'textInput field-long',
+        'name': 'lname field1',
         'placeholder': 'Last name'
     }))
 
     designation = forms.CharField(max_length=100, widget=forms.TextInput(attrs={
-        'class': 'form-control',
+        'class': 'textInput field-long',
+        'name': 'designation field1',
         'placeholder': 'Designation'
     }))
     company_name = forms.CharField(max_length=100, widget=forms.TextInput(attrs={
-        'class': 'form-control',
+        'class': 'textInput field-long',
+        'name': 'comp_name field1',
         'placeholder': 'Company name'
     }))
 
     message = forms.CharField(widget=forms.Textarea(attrs={
-        'class': 'form-control'
+        'class': 'field-textarea field-long',
+        'name': 'message'
     }))
 
     class Meta:

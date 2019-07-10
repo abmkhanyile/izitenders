@@ -1,4 +1,4 @@
-from django.shortcuts import render
+from django.shortcuts import render, redirect
 from django.urls import reverse, reverse_lazy
 from .forms import TenderSearchForm, TestimonialsForm
 from contact_us.forms import ContactForm
@@ -25,6 +25,9 @@ def homeView(request):
                 connection=mail.get_connection(),
             )
             msg.send(fail_silently=True)
+            return redirect('/testimonial_done/')
+        else:
+            return redirect('/')
 
     else:
         tenders = Tender.objects.all()
@@ -78,3 +81,7 @@ def province_view(request, province_pk):
     tenders = province.tender_set.all()
     data = serializers.serialize('json', tenders, fields=('refNum, summary, siteInspectionDate, closingDate'))
     return HttpResponse(data, content_type='application/json')
+
+
+def Testimonial_done_view(request):
+    return render(request, 'Testimonial_done.html')

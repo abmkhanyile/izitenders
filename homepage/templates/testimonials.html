@@ -1,26 +1,44 @@
 <div class="contact_form_container">
-    <h4>Please give a testimonial below.</h4>
     <br>
+    <div align="center">
+        <h4>Please give a testimonial below.</h4>
+    </div>
+
+
     <div>
         <form method="post">
             {% csrf_token %}
-            {{t_form.first_name.errors}}
-            <label for="{{ t_form.first_name.id_for_label }}">Name</label>
-            {{ t_form.first_name }}
-            {{t_form.last_name.errors}}
-            <label for="{{ t_form.last_name.id_for_label }}">Last name</label>
-            {{ t_form.last_name }}
-            {{t_form.designation.errors}}
-            <label for="{{ t_form.designation.id_for_label }}">Name</label>
-            {{ t_form.designation }}
-            {{t_form.company_name.errors}}
-            <label for="{{ t_form.company_name.id_for_label }}">Company name</label>
-            {{ t_form.company_name }}
-            {{t_form.message.errors}}
-            <label for="{{ t_form.message.id_for_label }}">Message</label>
-            {{ t_form.message }}
-            <br>
-            <input type="submit" class="btn btn-primary">
+            <ul class="form-style-1">
+                <li>
+                    {{t_form.first_name.errors}}
+                    <label for="{{ t_form.first_name.id_for_label }}">Name</label>
+                    {{ t_form.first_name }}
+                </li>
+                <li>
+                    {{t_form.last_name.errors}}
+                    <label for="{{ t_form.last_name.id_for_label }}">Last name</label>
+                    {{ t_form.last_name }}
+                </li>
+                <li>
+                    {{t_form.designation.errors}}
+                    <label for="{{ t_form.designation.id_for_label }}">Name</label>
+                    {{ t_form.designation }}
+                </li>
+                <li>
+                    {{t_form.company_name.errors}}
+                    <label for="{{ t_form.company_name.id_for_label }}">Company name</label>
+                    {{ t_form.company_name }}
+                </li>
+                <li>
+                    {{t_form.message.errors}}
+                    <label for="{{ t_form.message.id_for_label }}">Message</label>
+                    {{ t_form.message }}
+                </li>
+
+                <li>
+                    <input type="submit" class="btn btn-primary">
+                </li>
+            </ul>
         </form>
     </div>
 </div>
