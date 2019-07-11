@@ -4,6 +4,32 @@
 {% block content %}
 
 <div class="container_div p-3">
+
+    <form>
+        <input type="hidden" value="{{ company_profile.check_for_kw }}" id="modal_checker">
+    </form>
+
+    <!-- Modal -->
+    <div class="modal fade" id="choose_kw" tabindex="-1" role="dialog"
+         aria-labelledby="choose_kw_ModalTitle" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered modal-sm" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <!--<h5 class="modal-title" id="choose_kw_ModalLongTitle">Please Register</h5>-->
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                <div class="modal-body">
+                    <span class="text-warning"><h5>Please choose your business keywords!</h5></span>
+                </div>
+                <div class="modal-footer">
+                    <a role="button" href="{% url 'company_profile_edit' user.id %}" class="btn btn-danger btn-lg" style="margin: auto;">Choose keywords</a>
+                </div>
+            </div>
+        </div>
+    </div>
+
     <div class="row">
         <div class="col-md-3">
             <div class="card profile_card mb-2 text-center shadowedContainer" style="position: relative; background: white">
@@ -76,5 +102,6 @@
         </div>
     </div>
 </div>
+
 
 {% endblock %}

@@ -34,12 +34,19 @@ class CompanyProfile(models.Model):
     termsAndConditions = models.BooleanField(blank=False,
                                              default=1)  # this is the T&C's field that must be agreed to by the client.
     commencementDate = models.DateTimeField(default=timezone.now, blank=True)
+    kw_chosen = models.BooleanField(default=False, blank=False)
 
     def __str__(self):
         return self.companyName
 
     def get_absolute_url(self):
         return reverse('user_profile', kwargs={'pk': self.pk})
+
+    def check_for_kw(self):
+        if len(self.keywords.all()) > 0:
+            return 1
+        else:
+            return 0
 
 
 def create_company_profile(sender, **kwargs):

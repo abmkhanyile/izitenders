@@ -83,7 +83,7 @@ $(document).ready(function () {
         });
 
 
-                $('.keywordsList').on('click', '#selectAll', function(event){
+         $('.keywordsList').on('click', '#selectAll', function(event){
             if(this.checked == true){
                 $('.keywordCheckbox').each(function(){ this.checked = true; });
             }
@@ -94,12 +94,18 @@ $(document).ready(function () {
 
         function get_keywords(){
             var kw_container = []
-            $('.keywordsAdded').each(function(event){
-                kw_container.push($(this).attr('data-keyword_pk'))
-            });
+            if($('.addedKeywordsList li').length > 0){
+                $('.keywordsAdded').each(function(event){
+                    kw_container.push($(this).attr('data-keyword_pk'))
+                });
 
-            kw_str = kw_container.toString()
-            $('.keywordListItem').val(kw_str);
+                kw_str = kw_container.toString()
+                $('.keywordListItem').val(kw_str);
+            }
+            else{
+                kw_str = kw_container.toString()
+                $('.keywordListItem').val(kw_str);
+            }
         }
 
 
@@ -115,7 +121,7 @@ $(document).ready(function () {
 
             });
 
-            get_keywords()
+
         });
 
         //func below handles the remove btn event for the keywords.
@@ -129,7 +135,7 @@ $(document).ready(function () {
                 }
             });
 
-            get_keywords()
+
         });
 
 
@@ -141,6 +147,10 @@ $(document).ready(function () {
             else{
                 $('.keywordsAdded').each(function(){ this.checked = false; });
             }
+        });
+
+        $('.saveProfBtn').on('click', function(){
+            get_keywords()
         });
 
 

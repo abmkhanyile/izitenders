@@ -175,7 +175,8 @@ def UpdateCompanyProfile(request, pk):
                 editedCompObj = companyProfileEditFormObj.save()
 
                 keyword_ids_str = companyProfileEditFormObj.cleaned_data['keywordListItem']
-                if keyword_ids_str is not '' or keyword_ids_str is not None:
+
+                if len(keyword_ids_str) > 0:
                     keyword_ids = keyword_ids_str.split(',')
                     editedCompObj.keywords.clear()
                     for keyword_id in keyword_ids:
