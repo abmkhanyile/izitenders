@@ -209,7 +209,7 @@ def Payment_Cancelled_View(request):
 def Invoice_view(request, user_id, comp_prof_id):
     userObj = User.objects.get(id=user_id)
     compProfile = CompanyProfile.objects.get(pk=comp_prof_id)
-    ourDetails = OurDetails.objects.get(compName='TenderWiz')
+    ourDetails = OurDetails.objects.get(compRegNum='2017/417565/07')
 
     amount = None
 
@@ -219,8 +219,8 @@ def Invoice_view(request, user_id, comp_prof_id):
         amount = compProfile.package.annualPrice
 
     payfast_data = {
-        'merchant_id': '10012886',
-        'merchant_key': 'sb5koxsz8qp59',
+        'merchant_id': '10451577',
+        'merchant_key': 'crl71scmwo1mq',
         'return_url': 'https://tenderwiz.herokuapp.com/user_accounts/payment_success/',
         'cancel_url': 'https://tenderwiz.herokuapp.com/user_accounts/payment_cancelled/',
         'name_first': userObj.first_name,
@@ -240,12 +240,8 @@ def Invoice_view(request, user_id, comp_prof_id):
 
     signature = urlencode(payfast_data, quote_via=quote_plus)
 
-
-    print(signature)
-
     signature = hashlib.md5(signature.encode()).hexdigest()
 
-    print(signature)
     payfast_data.update({'signature': signature})
 
     payfastForm = PayFast_Form(payfast_data)

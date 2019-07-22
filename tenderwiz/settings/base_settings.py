@@ -187,9 +187,9 @@ EMAIL_BACKEND = 'django.core.mail.backends.smtp.EmailBackend'
 EMAIL_HOST = os.environ.get('EMAIL_HOST')
 EMAIL_HOST_USER = os.environ.get('EMAIL_HOST_USER')
 EMAIL_HOST_PASSWORD = os.environ.get('EMAIL_PASSWORD')
-EMAIL_PORT = 465
-EMAIL_USE_SSL = True
-DEFAULT_FROM_EMAIL = 'Leads Hub <tenders@leadshub.co.za>'
+EMAIL_PORT = 587
+# EMAIL_USE_SSL = True
+DEFAULT_FROM_EMAIL = 'Leads Hub <leadshub.co@gmail.com>'
 
 
 import django_heroku
