@@ -22,7 +22,7 @@ BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 # See https://docs.djangoproject.com/en/2.1/howto/deployment/checklist/
 
 # SECURITY WARNING: keep the secret key used in production secret!
-SECRET_KEY = 'j0fyf510lvqlmj&4fhhhcl=9=(c3f6_&n3pt0h!sso6f4@h5k#'
+SECRET_KEY = os.environ.get('SECRET_KEY', 'j0fyf510lvqlmj&4fhhhcl=9=(c3f6_&n3pt0h!sso6f4@h5k#')
 
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
@@ -51,6 +51,7 @@ INSTALLED_APPS = [
     'tender_matching_engine',
     'tender_details',
     'ckeditor',
+    'easy_pdf',
 ]
 
 MIDDLEWARE = [
@@ -193,17 +194,17 @@ DEFAULT_FROM_EMAIL = 'Leads Hub <leadshub.co@gmail.com>'
 
 
 import django_heroku
-# TEST_RUNNER = 'django_heroku.HerokuDiscoverRunner'
-#
-#
-# AWS_STORAGE_BUCKET_NAME = os.environ.get('STORAGE_BUCKET_NAME', 'leadshub-staticfiles')
-# AWS_S3_REGION_NAME = 'eu-west-2'  # e.g. us-east-2
-# AWS_ACCESS_KEY_ID = os.environ.get('ACCESS_KEY_ID', 'AKIAIYBOZKG7LNFWN5FA')
-# AWS_SECRET_ACCESS_KEY = os.environ.get('SECRET_ACCESS_KEY', 'UX2iwXjKirMAQ+uDbhquu2yjZYhPFgHEpO/rKK90')
-#
-# # Tell django-storages the domain to use to refer to static files.
-# AWS_S3_CUSTOM_DOMAIN = '%s.s3.amazonaws.com' % AWS_STORAGE_BUCKET_NAME
-#
-# # Tell the staticfiles app to use S3Boto3 storage when writing the collected static files (when
-# # you run `collectstatic`).
-# STATICFILES_STORAGE = 'storages.backends.s3boto3.S3Boto3Storage'
+TEST_RUNNER = 'django_heroku.HerokuDiscoverRunner'
+
+
+AWS_STORAGE_BUCKET_NAME = os.environ.get('STORAGE_BUCKET_NAME', 'leadshub-staticfiles')
+AWS_S3_REGION_NAME = 'eu-west-2'  # e.g. us-east-2
+AWS_ACCESS_KEY_ID = os.environ.get('ACCESS_KEY_ID', 'AKIAIYBOZKG7LNFWN5FA')
+AWS_SECRET_ACCESS_KEY = os.environ.get('SECRET_ACCESS_KEY', 'UX2iwXjKirMAQ+uDbhquu2yjZYhPFgHEpO/rKK90')
+
+# Tell django-storages the domain to use to refer to static files.
+AWS_S3_CUSTOM_DOMAIN = '%s.s3.amazonaws.com' % AWS_STORAGE_BUCKET_NAME
+
+# Tell the staticfiles app to use S3Boto3 storage when writing the collected static files (when
+# you run `collectstatic`).
+STATICFILES_STORAGE = 'storages.backends.s3boto3.S3Boto3Storage'

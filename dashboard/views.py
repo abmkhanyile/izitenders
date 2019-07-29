@@ -6,7 +6,6 @@ from tender_details.models import Tender
 from django.urls import reverse
 from datetime import datetime, timedelta
 
-
 #render the dashboard template
 def dashboard_view(request):
     user = request.user
