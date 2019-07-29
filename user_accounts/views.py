@@ -23,7 +23,6 @@ import json
 from urllib.parse import urlencode, quote_plus
 import hashlib
 from django.conf import settings
-from easy_pdf.views import PDFTemplateView
 from django.template.loader import render_to_string
 
 
@@ -211,54 +210,55 @@ def Payment_Cancelled_View(request):
 
 
 # this handles the pdf render.
-class Invoice_view(PDFTemplateView):
+def Invoice_view(request, user_id, comp_prof_id):
+    userObj = User.objects.get(id=user_id)
+    compProfile = CompanyProfile.objects.get(pk=comp_prof_id)
+    ourDetails = OurDetails.objects.get(compRegNum='2017/417565/07')
 
-    def get(self, request, **kwargs):
-        userObj = User.objects.get(id=self.kwargs['user_id'])
-        compProfile = CompanyProfile.objects.get(pk=self.kwargs['comp_prof_id'])
-        ourDetails = OurDetails.objects.get(compRegNum='2017/417565/07')
-        amount = None
+    amount = None
 
-        if compProfile.contractDuration == 6:
-            amount = compProfile.package.sixMonthPrice
-        else:
-            amount = compProfile.package.annualPrice
+    if compProfile.contractDuration == 6:
+        amount = compProfile.package.sixMonthPrice
+    else:
+        amount = compProfile.package.annualPrice
 
-        payfast_data = {
-            'merchant_id': '10451577',
-            'merchant_key': 'crl71scmwo1mq',
-            'return_url': 'https://tenderwiz.herokuapp.com/user_accounts/payment_success/',
-            'cancel_url': 'https://tenderwiz.herokuapp.com/user_accounts/payment_cancelled/',
-            'name_first': userObj.first_name,
-            'name_last': userObj.last_name,
-            'email_address': userObj.email,
-            'cell_number': compProfile.contactNumber,
-            'm_payment_id': '01AB',
-            'amount': amount,
-            'item_name': compProfile.package.package,
-            'email_confirmation': '1',
-            'confirmation_address': ourDetails.emailAddress
-        }
+    payfast_data = {
+        'merchant_id': '10451577',
+        'merchant_key': 'crl71scmwo1mq',
+        'return_url': 'https://tenderwiz.herokuapp.com/user_accounts/payment_success/',
+        'cancel_url': 'https://tenderwiz.herokuapp.com/user_accounts/payment_cancelled/',
+        'name_first': userObj.first_name,
+        'name_last': userObj.last_name,
+        'email_address': userObj.email,
+        'cell_number': compProfile.contactNumber,
+        'm_payment_id': '01AB',
+        'amount': amount,
+        'item_name': compProfile.package.package,
+        'email_confirmation': '1',
+        'confirmation_address': ourDetails.emailAddress
+    }
 
-        signature = urlencode(payfast_data, quote_via=quote_plus)
+    signature = ''
+    # for key, value in payfast_data.items():
+    #     signature += '{}={}&'.format(str(key), str(urllib.parse.urlencode(value)))
 
-        signature = hashlib.md5(signature.encode()).hexdigest()
+    signature = urlencode(payfast_data, quote_via=quote_plus)
 
-        payfast_data.update({'signature': signature})
+    signature = hashlib.md5(signature.encode()).hexdigest()
 
-        payfastForm = PayFast_Form(payfast_data)
+    payfast_data.update({'signature': signature})
 
-        context = {
-            'user': userObj,
-            'comp_prof': compProfile,
-            'ourDetails': ourDetails,
-            'payfast_form': payfastForm,
-            'signature': signature.strip()
-        }
+    payfastForm = PayFast_Form(payfast_data)
 
-        html = render_to_string('invoice.html', context)
-        print(html)
-        return render(request, 'invoice.html', context)
+    context = {
+        'user': userObj,
+        'comp_prof': compProfile,
+        'ourDetails': ourDetails,
+        'payfast_form': payfastForm,
+        'signature': signature.strip()
+    }
+
+    render_to_pdf('invoice_render.html', context)
 
     # pdf = render_to_pdf('invoice_render.html', context)
     # if pdf:
@@ -270,7 +270,7 @@ class Invoice_view(PDFTemplateView):
     #         content = "attachment; filename='{}'".format(filename)
     #     response['Content-Disposition'] = content
 
-    # return render(request, 'invoice.html', context)
+    return render(request, 'invoice.html', context)
 
 
 
