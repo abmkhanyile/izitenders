@@ -3,6 +3,9 @@ from django.core.mail import send_mail, BadHeaderError
 from django.conf import settings
 from django.http import HttpResponse
 from .forms import ContactForm
+import smtplib
+from email.mime.multipart import MIMEMultipart
+from email.mime.text import MIMEText
 
 def contact_us_view(request):
     if request.method == 'POST':
@@ -13,8 +16,26 @@ def contact_us_view(request):
             email = contact_form.cleaned_data['email']
             contact_num = contact_form.cleaned_data['contact_num']
             message = contact_form.cleaned_data['message']
+
+            username = settings.EMAIL_HOST_USER
+            password = settings.EMAIL_HOST_PASSWORD
+
             try:
-                send_mail('Website Enquiry', message+'\n\n'+name+' '+surname+'\n'+contact_num+'\n'+email, settings.EMAIL_HOST_USER, ['leadshub.co@gmail.com'])
+
+                msg = MIMEMultipart()
+
+                msg['From'] = email
+                msg['To'] = 'leadshub.co@gmail.com'
+                msg['Subject'] = 'Website Enquiry'
+                msg.attach(MIMEText(message+'\n\n'+name+' '+surname+'\n'+contact_num+'\n'+email))
+
+                server = smtplib.SMTP('smtp.gmail.com:587')
+                server.ehlo()
+                server.starttls()
+                server.ehlo()
+                server.login(username, password)
+                server.sendmail(email, 'leadshub.co@gmail.com', msg.as_string())
+                server.quit()
             except BadHeaderError:
                 return HttpResponse('Invalid header found.')
             return render(request, 'email_sent_success.html')
@@ -26,3 +47,5 @@ def contact_us_view(request):
 
 def email_success_view(request):
     return render(request, 'email_sent_success.html')
+
+
