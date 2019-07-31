@@ -1,4 +1,4 @@
-from .utils import render_to_pdf
+# from .utils import render_to_pdf
 from django.shortcuts import render, render_to_response, redirect, get_object_or_404
 from django.http import HttpResponseRedirect, Http404
 from django.contrib import auth
@@ -258,7 +258,7 @@ def Invoice_view(request, user_id, comp_prof_id):
         'signature': signature.strip()
     }
 
-    render_to_pdf('invoice_render.html', context)
+    # render_to_pdf('invoice_render.html', context)
 
     # pdf = render_to_pdf('invoice_render.html', context)
     # if pdf:
