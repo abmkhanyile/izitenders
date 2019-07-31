@@ -23,8 +23,6 @@ import json
 from urllib.parse import urlencode, quote_plus
 import hashlib
 from django.conf import settings
-from django.template.loader import render_to_string
-
 
 
 def login(request):
