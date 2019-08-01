@@ -1,0 +1,50 @@
+{% extends "base.html" %}
+{% load staticfiles %}
+{% block title %}Contact Us{% endblock %}
+{% block content %}
+
+<div class="container_div p-3">
+    <table class="table table-responsive table-hover tenders_table">
+        <thead>
+            <tr>
+                <th>Invoice#</th>
+                <th>Invoice Date</th>
+                <th>Due Date</th>
+                <th>Total</th>
+                <th>Status</th>
+            </tr>
+        </thead>
+        {% for invoice in invoices %}
+
+            <tr>
+                <td>
+                    {{ invoice.invoiceNumber }}
+                </td>
+                <td>
+                    {{ invoice.invoiceDate }}
+                </td>
+                <td>
+                    {{ invoice.due_date }}
+                </td>
+                <td>
+                    {{ invoice.total }}
+                </td>
+
+                {% if invoice.pymnt_status == False %}
+                    <td>
+                        <a class="btn btn-sm btn-danger" href="{% url 'invoice' invoice.pk %}">Unpaid</a>
+                    </td>
+                {% else %}
+                    <td>
+                        <a class="btn btn-sm btn-success" href="{% url 'invoice' invoice.pk %}">Paid</a>
+                    </td>
+                {% endif %}
+
+            </tr>
+
+        {% endfor %}
+    </table>
+
+</div>
+
+{% endblock %}

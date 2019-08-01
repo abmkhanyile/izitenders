@@ -4,6 +4,7 @@ from django.db.models.signals import post_save
 from tender_details.models import Keywords, Category, Province, Tender
 from packages.models import Packages
 from django.utils import timezone
+from datetime import timedelta
 from django.urls import reverse
 from ckeditor.fields import RichTextField
 from decimal import *
@@ -130,13 +131,16 @@ class Invoices(models.Model):
     invoiceNumber = models.CharField(max_length=50, blank=False)
     invoiceDate = models.DateTimeField(default=timezone.now, blank=False)
     VAT_percentage = models.IntegerField(default=15, blank=False)
-    invoiceItems = models.ManyToManyField(Invoice_Items, blank=True)
+    package = models.ForeignKey(Packages, blank=False, on_delete=models.CASCADE, null=True)
+    pymnt_status = models.BooleanField(default=False, blank=False)
 
     def total(self):
         tot = Decimal(0.00).quantize(Decimal('0.00'))
-        for item in self.invoiceItems.all():
-            tot = Decimal(tot + item.amount).quantize(Decimal('0.00'))
+        tot = Decimal(tot + self.package.price * self.company.contractDuration).quantize(Decimal('0.00'))
         return tot
+
+    def due_date(self):
+        return self.invoiceDate + timedelta(days=7)
 
     class Meta:
         verbose_name_plural = ('Invoices')

@@ -11,7 +11,7 @@ from .forms import (CustomUserForm,
                     PayFast_Form,
                     )
 from django.contrib.auth import update_session_auth_hash
-from .models import CompanyProfile, OurDetails
+from .models import CompanyProfile, OurDetails, Invoices
 from django.contrib.auth.models import User
 from django.contrib.auth.forms import PasswordChangeForm, PasswordResetForm
 from tender_details.models import Category, Keywords, Province
@@ -22,6 +22,7 @@ from django.urls import reverse
 import json
 from urllib.parse import urlencode, quote_plus
 import hashlib
+from django.utils import timezone
 from django.conf import settings
 
 
@@ -85,7 +86,13 @@ def register_view(request, billing_cycle, pk):
             for cat_item in selected_cats:
                 compProfile.tenderCategory.add(cat_item)
 
-            return HttpResponseRedirect(reverse('invoice', kwargs={'user_id': user.id, 'comp_prof_id': compProfile.pk}))
+
+            # Generate invoice data instance on the db.
+            inv_num = Invoices.objects.latest('pk').pk + 100000
+            inv_obj = Invoices(company=compProfile, invoiceNumber=inv_num, invoiceDate=timezone.now(), VAT_percentage=15, package=packageOption)
+            inv_obj.save()
+
+            return HttpResponseRedirect(reverse('invoice', kwargs={'inv_id': inv_obj.pk}))
         else:
             bDetailsForm = BankingDetailsForm()
             return render(request, 'register.html', {'userRegForm': userRegForm, 'package': packageOption, 'billing_cycle': b_cycle, 'companyProfileForm': companyForm, 'bankingDetailsForm': bDetailsForm})
@@ -208,9 +215,11 @@ def Payment_Cancelled_View(request):
 
 
 # this handles the pdf render.
-def Invoice_view(request, user_id, comp_prof_id):
-    userObj = User.objects.get(id=user_id)
-    compProfile = CompanyProfile.objects.get(pk=comp_prof_id)
+def Invoice_view(request, inv_id):
+    invoice = Invoices.objects.get(pk=inv_id)
+    compProfile = invoice.company
+    userObj = compProfile.user
+
     ourDetails = OurDetails.objects.get(compRegNum='2017/417565/07')
 
     amount = None
@@ -229,7 +238,7 @@ def Invoice_view(request, user_id, comp_prof_id):
         'name_last': userObj.last_name,
         'email_address': userObj.email,
         'cell_number': compProfile.contactNumber,
-        'm_payment_id': '01AB',
+        'm_payment_id': invoice.invoiceNumber,
         'amount': amount,
         'item_name': compProfile.package.package,
         'email_confirmation': '1',
@@ -249,6 +258,7 @@ def Invoice_view(request, user_id, comp_prof_id):
     payfastForm = PayFast_Form(payfast_data)
 
     context = {
+        'invoice': invoice,
         'user': userObj,
         'comp_prof': compProfile,
         'ourDetails': ourDetails,
@@ -256,19 +266,15 @@ def Invoice_view(request, user_id, comp_prof_id):
         'signature': signature.strip()
     }
 
-    # render_to_pdf('invoice_render.html', context)
-
-    # pdf = render_to_pdf('invoice_render.html', context)
-    # if pdf:
-    #     response = HttpResponse(pdf, content_type='application/pdf')
-    #     filename = 'invoice.pdf'
-    #     content = "inline; filename='{}'".format(filename)
-    #     download = request.GET.get("download")
-    #     if download:
-    #         content = "attachment; filename='{}'".format(filename)
-    #     response['Content-Disposition'] = content
-
     return render(request, 'invoice.html', context)
+
+
+
+# billing view displays all the invoices
+def billing_view(request):
+    comp = CompanyProfile.objects.get(pk=request.user.id)
+    invoices = Invoices.objects.filter(company=comp)
+    return render(request, 'billing.html', {'invoices': invoices})
 
 
 

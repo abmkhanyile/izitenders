@@ -7,6 +7,8 @@
 
 <div class="container_div p-3">
 
+    {% if invoice.pymnt_status == False %}
+
     <div align="center">
         <form action="https://www.payfast.co.za/eng/process" method="post">
             {% csrf_token %}
@@ -32,6 +34,15 @@
             <!--<input class="btn btn-warning btn-lg" type="submit" value="Pay Now"/>-->
         </form>
     </div>
+
+    {% else %}
+
+    <div align="center">
+        <h1><span class="text-success">PAID</span></h1>
+    </div>
+
+    {% endif %}
+
 
     <div class="invoice_outer_container p-4" align="center" style="margin: 20px auto; border: 2px solid black;">
         <div align="center"><h1>Invoice</h1></div>
@@ -76,7 +87,7 @@
                 </tr>
                 <tr>
                     <td>Invoice#:</td>
-                    <td>Invoice num</td>
+                    <td>{{ invoice.invoiceNumber }}</td>
                 </tr>
             </table>
 
