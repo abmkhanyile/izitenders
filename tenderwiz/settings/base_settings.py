@@ -144,7 +144,7 @@ LOGIN_EXEMPT_URLS = (
     r'^user_accounts/registration_success/$',
     r'^user_accounts/payment_success/$',
     r'^user_accounts/payment_cancelled/$',
-    r'^user_accounts/invoice/(?P<user_id>\d+)/(?P<comp_prof_id>\d+)/$',
+    r'^user_accounts/invoice/(?P<inv_id>\d+)/$',
     r'^province/(?P<province_pk>\d+)/$',
     r'^privacy_policy/$',
     r'^termsAndConditions/$',

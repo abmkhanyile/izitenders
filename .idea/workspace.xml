@@ -2,6 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="07c182ca-c241-4e6f-a718-b15fafb6d7d3" name="Default Changelist" comment="">
+      <change beforePath="$PROJECT_DIR$/tenderwiz/settings/base_settings.py" beforeDir="false" afterPath="$PROJECT_DIR$/tenderwiz/settings/base_settings.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/user_accounts/views.py" beforeDir="false" afterPath="$PROJECT_DIR$/user_accounts/views.py" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -16,20 +17,20 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file pinned="false" current-in-tab="false">
+      <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/tenderwiz/settings/base_settings.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-1626">
-              <caret line="24" column="95" lean-forward="true" selection-start-line="24" selection-start-column="95" selection-end-line="24" selection-end-column="95" />
+            <state relative-caret-position="448">
+              <caret line="146" column="36" selection-start-line="146" selection-start-column="36" selection-end-line="146" selection-end-column="36" />
             </state>
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="true">
+      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/user_accounts/views.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="348">
-              <caret line="92" column="26" selection-start-line="92" selection-start-column="26" selection-end-line="92" selection-end-column="26" />
+            <state relative-caret-position="416">
+              <caret line="96" column="47" lean-forward="true" selection-start-line="96" selection-start-column="47" selection-end-line="96" selection-end-column="47" />
               <folding>
                 <element signature="e#35#119#0" expanded="true" />
               </folding>
@@ -70,7 +71,7 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/user_accounts/urls.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="272">
+            <state relative-caret-position="285">
               <caret line="39" column="34" selection-start-line="39" selection-start-column="34" selection-end-line="39" selection-end-column="34" />
               <folding>
                 <element signature="e#0#41#0" expanded="true" />
@@ -181,9 +182,9 @@
         <option value="$PROJECT_DIR$/user_accounts/templates/invoice.html" />
         <option value="$PROJECT_DIR$/tenderwiz/wsgi.py" />
         <option value="$PROJECT_DIR$/manage.py" />
-        <option value="$PROJECT_DIR$/tenderwiz/settings/base_settings.py" />
         <option value="$PROJECT_DIR$/tenderwiz/settings/production.py" />
         <option value="$PROJECT_DIR$/user_accounts/views.py" />
+        <option value="$PROJECT_DIR$/tenderwiz/settings/base_settings.py" />
       </list>
     </option>
   </component>
@@ -207,6 +208,17 @@
             <path>
               <item name="tenderwiz" type="b2602c69:ProjectViewProjectNode" />
               <item name="tenderwiz" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="tenderwiz" type="b2602c69:ProjectViewProjectNode" />
+              <item name="tenderwiz" type="462c0819:PsiDirectoryNode" />
+              <item name="tenderwiz" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="tenderwiz" type="b2602c69:ProjectViewProjectNode" />
+              <item name="tenderwiz" type="462c0819:PsiDirectoryNode" />
+              <item name="tenderwiz" type="462c0819:PsiDirectoryNode" />
+              <item name="settings" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="tenderwiz" type="b2602c69:ProjectViewProjectNode" />
@@ -655,16 +667,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/user_accounts/urls.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="272">
-          <caret line="39" column="34" selection-start-line="39" selection-start-column="34" selection-end-line="39" selection-end-column="34" />
-          <folding>
-            <element signature="e#0#41#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/user_accounts/templates/invoice.html">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="-2190">
@@ -696,13 +698,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/tenderwiz/settings/base_settings.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-1626">
-          <caret line="24" column="95" lean-forward="true" selection-start-line="24" selection-start-column="95" selection-end-line="24" selection-end-column="95" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/tenderwiz/settings/production.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="102">
@@ -712,11 +707,28 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/user_accounts/views.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="348">
-          <caret line="92" column="26" selection-start-line="92" selection-start-column="26" selection-end-line="92" selection-end-column="26" />
+        <state relative-caret-position="416">
+          <caret line="96" column="47" lean-forward="true" selection-start-line="96" selection-start-column="47" selection-end-line="96" selection-end-column="47" />
           <folding>
             <element signature="e#35#119#0" expanded="true" />
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/user_accounts/urls.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="285">
+          <caret line="39" column="34" selection-start-line="39" selection-start-column="34" selection-end-line="39" selection-end-column="34" />
+          <folding>
+            <element signature="e#0#41#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/tenderwiz/settings/base_settings.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="448">
+          <caret line="146" column="36" selection-start-line="146" selection-start-column="36" selection-end-line="146" selection-end-column="36" />
         </state>
       </provider>
     </entry>

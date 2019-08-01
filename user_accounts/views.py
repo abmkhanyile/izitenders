@@ -88,6 +88,7 @@ def register_view(request, billing_cycle, pk):
 
 
             # Generate invoice data instance on the db.
+            inv_num = int()
             last_pk = Invoices.objects.latest('pk')
             if last_pk is None:
                 inv_num = 100000
