@@ -32,11 +32,11 @@
 
                 {% if invoice.pymnt_status == False %}
                     <td>
-                        <a class="btn btn-sm btn-danger" href="{% url 'invoice' invoice.pk %}">Unpaid</a>
+                        <a class="btn btn-sm btn-danger" href={% url 'dashboard_invoice' invoice.pk %}>Unpaid</a>
                     </td>
                 {% else %}
                     <td>
-                        <a class="btn btn-sm btn-success" href="{% url 'invoice' invoice.pk %}">Paid</a>
+                        <a class="btn btn-sm btn-success" href={% url 'dashboard_invoice' invoice.pk %}>Paid</a>
                     </td>
                 {% endif %}
 
