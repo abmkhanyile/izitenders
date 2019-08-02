@@ -1,9 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="07c182ca-c241-4e6f-a718-b15fafb6d7d3" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/tenderwiz/settings/base_settings.py" beforeDir="false" afterPath="$PROJECT_DIR$/tenderwiz/settings/base_settings.py" afterDir="false" />
-    </list>
+    <list default="true" id="07c182ca-c241-4e6f-a718-b15fafb6d7d3" name="Default Changelist" comment="" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -16,10 +14,10 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file pinned="false" current-in-tab="false">
+      <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/tenderwiz/settings/base_settings.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="3196">
+            <state relative-caret-position="-1">
               <caret line="188" column="50" selection-start-line="188" selection-start-column="50" selection-end-line="188" selection-end-column="50" />
             </state>
           </provider>
@@ -37,7 +35,7 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/tenderwiz/settings/production.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="413">
+            <state relative-caret-position="3366">
               <caret line="198" column="59" lean-forward="true" selection-start-line="198" selection-start-column="59" selection-end-line="198" selection-end-column="59" />
             </state>
           </provider>
@@ -52,11 +50,11 @@
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="true">
+      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/tenderwiz/wsgi.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="187">
-              <caret line="11" column="49" lean-forward="true" selection-start-line="11" selection-start-column="49" selection-end-line="11" selection-end-column="49" />
+            <state relative-caret-position="272">
+              <caret line="16" lean-forward="true" selection-start-line="16" selection-end-line="16" />
               <folding>
                 <element signature="e#226#235#0" expanded="true" />
               </folding>
@@ -565,13 +563,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/tenderwiz/settings/base_settings.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="3196">
-          <caret line="188" column="50" selection-start-line="188" selection-start-column="50" selection-end-line="188" selection-end-column="50" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/tenderwiz/settings/development.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="68">
@@ -579,10 +570,13 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/tenderwiz/settings/production.py">
+    <entry file="file://$PROJECT_DIR$/tenderwiz/wsgi.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="413">
-          <caret line="198" column="59" lean-forward="true" selection-start-line="198" selection-start-column="59" selection-end-line="198" selection-end-column="59" />
+        <state relative-caret-position="272">
+          <caret line="16" lean-forward="true" selection-start-line="16" selection-end-line="16" />
+          <folding>
+            <element signature="e#226#235#0" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
@@ -593,13 +587,17 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/tenderwiz/wsgi.py">
+    <entry file="file://$PROJECT_DIR$/tenderwiz/settings/production.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="187">
-          <caret line="11" column="49" lean-forward="true" selection-start-line="11" selection-start-column="49" selection-end-line="11" selection-end-column="49" />
-          <folding>
-            <element signature="e#226#235#0" expanded="true" />
-          </folding>
+        <state relative-caret-position="3366">
+          <caret line="198" column="59" lean-forward="true" selection-start-line="198" selection-start-column="59" selection-end-line="198" selection-end-column="59" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/tenderwiz/settings/base_settings.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-1">
+          <caret line="188" column="50" selection-start-line="188" selection-start-column="50" selection-end-line="188" selection-end-column="50" />
         </state>
       </provider>
     </entry>
