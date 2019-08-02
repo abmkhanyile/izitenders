@@ -22,7 +22,7 @@ BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 # See https://docs.djangoproject.com/en/2.1/howto/deployment/checklist/
 
 # SECURITY WARNING: keep the secret key used in production secret!
-SECRET_KEY = os.environ.get('SECRET_KEY', 'j0fyf510lvqlmj&4fhhhcl=9=(c3f6_&n3pt0h!sso6f4@h5k#')
+SECRET_KEY = os.environ.get('SECRET_KEY')
 
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
@@ -185,9 +185,9 @@ GOOGLE_RECAPTCHA_SECRET_KEY = os.environ.get('RECAPTCHA_SECRET_KEY')
 
 
 EMAIL_BACKEND = 'django.core.mail.backends.smtp.EmailBackend'
-EMAIL_HOST = os.environ.get('EMAIL_HOST', 'smtp.gmail.com')
-EMAIL_HOST_USER = os.environ.get('EMAIL_HOST_USER', 'leadshub.co@gmail.com')
-EMAIL_HOST_PASSWORD = os.environ.get('EMAIL_PASSWORD', 'Sbu007Mnikwa')
+EMAIL_HOST = os.environ.get('EMAIL_HOST')
+EMAIL_HOST_USER = os.environ.get('EMAIL_HOST_USER')
+EMAIL_HOST_PASSWORD = os.environ.get('EMAIL_PASSWORD')
 EMAIL_PORT = 587
 EMAIL_USE_TLS = True
 DEFAULT_FROM_EMAIL = 'Leads Hub <leadshub.co@gmail.com>'
