@@ -1,5 +1,5 @@
 # from .utils import render_to_pdf
-from django.shortcuts import render, render_to_response, redirect, get_object_or_404
+from django.shortcuts import render, redirect, get_object_or_404
 from django.http import HttpResponseRedirect, Http404
 from django.contrib import auth
 from django.template.context_processors import csrf
