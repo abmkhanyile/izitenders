@@ -237,8 +237,8 @@ def Invoice_view(request, inv_id):
     payfast_data = {
         'merchant_id': '10451577',
         'merchant_key': 'crl71scmwo1mq',
-        'return_url': 'https://tenderwiz.herokuapp.com/user_accounts/payment_success/',
-        'cancel_url': 'https://tenderwiz.herokuapp.com/user_accounts/payment_cancelled/',
+        'return_url': 'https://tradeworld.herokuapp.com/user_accounts/payment_success/',
+        'cancel_url': 'https://tradeworld.herokuapp.com/user_accounts/payment_cancelled/',
         'name_first': userObj.first_name,
         'name_last': userObj.last_name,
         'email_address': userObj.email,

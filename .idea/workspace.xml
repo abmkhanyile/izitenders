@@ -2,34 +2,9 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="07c182ca-c241-4e6f-a718-b15fafb6d7d3" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/about_us/templates/about_us.html" beforeDir="false" afterPath="$PROJECT_DIR$/about_us/templates/about_us.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/contact_us/templates/contact_us.html" beforeDir="false" afterPath="$PROJECT_DIR$/contact_us/templates/contact_us.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/contact_us/templates/email_sent_success.html" beforeDir="false" afterPath="$PROJECT_DIR$/contact_us/templates/email_sent_success.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/dashboard/templates/dashboard.html" beforeDir="false" afterPath="$PROJECT_DIR$/dashboard/templates/dashboard.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/dashboard/templates/matched_tenders_list.html" beforeDir="false" afterPath="$PROJECT_DIR$/dashboard/templates/matched_tenders_list.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/homepage/templates/testimonial_done.html" beforeDir="false" afterPath="$PROJECT_DIR$/homepage/templates/testimonial_done.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pricing/templates/pricing.html" beforeDir="false" afterPath="$PROJECT_DIR$/pricing/templates/pricing.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/tender_details/templates/tender.html" beforeDir="false" afterPath="$PROJECT_DIR$/tender_details/templates/tender.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/tender_details/templates/tenders.html" beforeDir="false" afterPath="$PROJECT_DIR$/tender_details/templates/tenders.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/user_accounts/templates/billing.html" beforeDir="false" afterPath="$PROJECT_DIR$/user_accounts/templates/billing.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/user_accounts/templates/companyProfileEdit.html" beforeDir="false" afterPath="$PROJECT_DIR$/user_accounts/templates/companyProfileEdit.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/user_accounts/templates/invoice.html" beforeDir="false" afterPath="$PROJECT_DIR$/user_accounts/templates/invoice.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/user_accounts/templates/invoice_render.html" beforeDir="false" afterPath="$PROJECT_DIR$/user_accounts/templates/invoice_render.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/user_accounts/templates/login.html" beforeDir="false" afterPath="$PROJECT_DIR$/user_accounts/templates/login.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/user_accounts/templates/password_change.html" beforeDir="false" afterPath="$PROJECT_DIR$/user_accounts/templates/password_change.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/user_accounts/templates/password_reset.html" beforeDir="false" afterPath="$PROJECT_DIR$/user_accounts/templates/password_reset.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/user_accounts/templates/password_reset_complete.html" beforeDir="false" afterPath="$PROJECT_DIR$/user_accounts/templates/password_reset_complete.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/user_accounts/templates/password_reset_confirm.html" beforeDir="false" afterPath="$PROJECT_DIR$/user_accounts/templates/password_reset_confirm.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/user_accounts/templates/password_reset_done.html" beforeDir="false" afterPath="$PROJECT_DIR$/user_accounts/templates/password_reset_done.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/user_accounts/templates/password_reset_form.html" beforeDir="false" afterPath="$PROJECT_DIR$/user_accounts/templates/password_reset_form.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/user_accounts/templates/payment_cancelled.html" beforeDir="false" afterPath="$PROJECT_DIR$/user_accounts/templates/payment_cancelled.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/user_accounts/templates/payment_success.html" beforeDir="false" afterPath="$PROJECT_DIR$/user_accounts/templates/payment_success.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/user_accounts/templates/privacy_policy.html" beforeDir="false" afterPath="$PROJECT_DIR$/user_accounts/templates/privacy_policy.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/user_accounts/templates/profile.html" beforeDir="false" afterPath="$PROJECT_DIR$/user_accounts/templates/profile.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/user_accounts/templates/register.html" beforeDir="false" afterPath="$PROJECT_DIR$/user_accounts/templates/register.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/user_accounts/templates/registration_done.html" beforeDir="false" afterPath="$PROJECT_DIR$/user_accounts/templates/registration_done.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/user_accounts/templates/registration_success.html" beforeDir="false" afterPath="$PROJECT_DIR$/user_accounts/templates/registration_success.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/user_accounts/templates/termsAndConditions.html" beforeDir="false" afterPath="$PROJECT_DIR$/user_accounts/templates/termsAndConditions.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/tenderwiz/settings/base_settings.py" beforeDir="false" afterPath="$PROJECT_DIR$/tenderwiz/settings/base_settings.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/user_accounts/views.py" beforeDir="false" afterPath="$PROJECT_DIR$/user_accounts/views.py" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -43,59 +18,78 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/homepage/templates/index.html">
+      <file pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/tenderwiz/settings/base_settings.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="17">
-              <caret line="1" column="14" selection-start-line="1" selection-start-column="14" selection-end-line="1" selection-end-column="14" />
+            <state relative-caret-position="303">
+              <caret line="198" column="103" lean-forward="true" selection-start-line="198" selection-start-column="103" selection-end-line="198" selection-end-column="103" />
             </state>
           </provider>
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/homepage/templates/testimonial_done.html">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="17">
-              <caret line="1" column="14" lean-forward="true" selection-start-line="1" selection-start-column="14" selection-end-line="1" selection-end-column="14" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/contact_us/templates/contact_us_form.html">
+        <entry file="file://$PROJECT_DIR$/static/css/main.css">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="374">
-              <caret line="22" selection-start-line="22" selection-end-line="22" />
+              <caret line="22" column="25" lean-forward="true" selection-start-line="22" selection-start-column="25" selection-end-line="22" selection-end-column="25" />
             </state>
           </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/contact_us/templates/email_sent_success.html">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="17">
-              <caret line="1" column="14" selection-start-line="1" selection-start-column="14" selection-end-line="1" selection-end-column="14" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/homepage/templates/testimonials.html">
-          <provider selected="true" editor-type-id="text-editor" />
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/about_us/templates/about_us.html">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="68">
-              <caret line="4" lean-forward="true" selection-start-line="4" selection-end-line="4" />
+              <caret line="4" selection-start-line="4" selection-end-line="4" />
             </state>
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="true">
+      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/tender_matching_engine/templates/email_template.html">
           <provider selected="true" editor-type-id="text-editor" />
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/user_accounts/views.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="281">
+              <caret line="239" column="23" selection-start-line="239" selection-start-column="23" selection-end-line="239" selection-end-column="86" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/contact_us/views.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="252">
+              <caret line="21" selection-start-line="21" selection-end-line="21" />
+              <folding>
+                <element signature="e#0#45#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/tenderwiz/settings/development.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="68">
+              <caret line="4" column="28" selection-start-line="4" selection-start-column="28" selection-end-line="4" selection-end-column="28" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/user_accounts/models.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="2074">
+              <caret line="131" column="73" selection-start-line="131" selection-start-column="73" selection-end-line="131" selection-end-column="73" />
+              <folding>
+                <element signature="e#0#28#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
@@ -109,15 +103,6 @@
       </file>
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/contact_us/templates/contact_us.html">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="17">
-              <caret line="1" column="14" lean-forward="true" selection-start-line="1" selection-start-column="14" selection-end-line="1" selection-end-column="14" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/dashboard/templates/matched_tenders_list.html">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="17">
               <caret line="1" column="14" selection-start-line="1" selection-start-column="14" selection-end-line="1" selection-end-column="14" />
@@ -155,11 +140,8 @@
         <option value="$PROJECT_DIR$/tenderwiz/settings/production.py" />
         <option value="$PROJECT_DIR$/manage.py" />
         <option value="$PROJECT_DIR$/tenderwiz/wsgi.py" />
-        <option value="$PROJECT_DIR$/tenderwiz/settings/base_settings.py" />
         <option value="$PROJECT_DIR$/contact_us/templates/contact_us_form.html" />
-        <option value="$PROJECT_DIR$/static/css/main.css" />
         <option value="$PROJECT_DIR$/tenderwiz/settings/development.py" />
-        <option value="$PROJECT_DIR$/user_accounts/views.py" />
         <option value="$PROJECT_DIR$/homepage/templates/index.html" />
         <option value="$PROJECT_DIR$/tender_details/templates/tender_filter.html" />
         <option value="$PROJECT_DIR$/tenderwiz/templates/base.html" />
@@ -191,6 +173,9 @@
         <option value="$PROJECT_DIR$/contact_us/templates/contact_us.html" />
         <option value="$PROJECT_DIR$/contact_us/templates/email_sent_success.html" />
         <option value="$PROJECT_DIR$/about_us/templates/about_us.html" />
+        <option value="$PROJECT_DIR$/user_accounts/views.py" />
+        <option value="$PROJECT_DIR$/static/css/main.css" />
+        <option value="$PROJECT_DIR$/tenderwiz/settings/base_settings.py" />
       </list>
     </option>
   </component>
@@ -215,6 +200,17 @@
             <path>
               <item name="tenderwiz" type="b2602c69:ProjectViewProjectNode" />
               <item name="tenderwiz" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="tenderwiz" type="b2602c69:ProjectViewProjectNode" />
+              <item name="tenderwiz" type="462c0819:PsiDirectoryNode" />
+              <item name="static" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="tenderwiz" type="b2602c69:ProjectViewProjectNode" />
+              <item name="tenderwiz" type="462c0819:PsiDirectoryNode" />
+              <item name="static" type="462c0819:PsiDirectoryNode" />
+              <item name="css" type="462c0819:PsiDirectoryNode" />
             </path>
           </expand>
           <select />
@@ -275,6 +271,7 @@
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1382" height="744" extended-state="6" />
+    <editor active="true" />
     <layout>
       <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.20982143" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
@@ -334,16 +331,6 @@
     </breakpoint-manager>
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/tenderwiz/middleware.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="379">
-          <caret line="31" column="17" lean-forward="true" selection-start-line="31" selection-start-column="17" selection-end-line="31" selection-end-column="17" />
-          <folding>
-            <element signature="e#0#32#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/user_accounts/urls.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="52">
@@ -364,27 +351,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/user_accounts/models.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="40">
-          <caret line="126" lean-forward="true" selection-start-line="126" selection-end-line="126" />
-          <folding>
-            <element signature="e#0#28#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/requirements.txt">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="102">
           <caret line="6" column="17" selection-start-line="6" selection-start-column="17" selection-end-line="6" selection-end-column="17" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/tenderwiz/settings/base_settings.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="3621">
-          <caret line="213" column="1" selection-start-line="213" selection-start-column="1" selection-end-line="213" selection-end-column="1" />
         </state>
       </provider>
     </entry>
@@ -405,34 +375,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/static/css/main.css">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="228">
-          <caret line="55" selection-start-line="55" selection-end-line="55" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/tenderwiz/settings/production.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="526">
           <caret line="198" column="59" selection-start-line="198" selection-start-column="59" selection-end-line="198" selection-end-column="59" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/tenderwiz/settings/development.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="68">
-          <caret line="4" column="66" selection-start-line="4" selection-start-column="66" selection-end-line="4" selection-end-column="66" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/user_accounts/views.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="404">
-          <caret line="27" selection-start-line="27" selection-end-line="27" />
-          <folding>
-            <element signature="e#35#119#0" expanded="true" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -675,20 +621,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/dashboard/templates/dashboard.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="34">
-          <caret line="2" column="23" selection-start-line="2" selection-start-column="23" selection-end-line="2" selection-end-column="23" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/contact_us/templates/contact_us.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="17">
-          <caret line="1" column="14" lean-forward="true" selection-start-line="1" selection-start-column="14" selection-end-line="1" selection-end-column="14" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/contact_us/templates/contact_us_form.html">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="374">
@@ -706,12 +638,74 @@
     <entry file="file://$PROJECT_DIR$/about_us/templates/about_us.html">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="68">
-          <caret line="4" lean-forward="true" selection-start-line="4" selection-end-line="4" />
+          <caret line="4" selection-start-line="4" selection-end-line="4" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/tender_matching_engine/templates/email_template.html">
       <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/user_accounts/models.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="2074">
+          <caret line="131" column="73" selection-start-line="131" selection-start-column="73" selection-end-line="131" selection-end-column="73" />
+          <folding>
+            <element signature="e#0#28#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/dashboard/templates/dashboard.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="34">
+          <caret line="2" column="23" selection-start-line="2" selection-start-column="23" selection-end-line="2" selection-end-column="23" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/contact_us/templates/contact_us.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="17">
+          <caret line="1" column="14" selection-start-line="1" selection-start-column="14" selection-end-line="1" selection-end-column="14" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/user_accounts/views.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="281">
+          <caret line="239" column="23" selection-start-line="239" selection-start-column="23" selection-end-line="239" selection-end-column="86" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/contact_us/views.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="252">
+          <caret line="21" selection-start-line="21" selection-end-line="21" />
+          <folding>
+            <element signature="e#0#45#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/tenderwiz/settings/development.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="68">
+          <caret line="4" column="28" selection-start-line="4" selection-start-column="28" selection-end-line="4" selection-end-column="28" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/static/css/main.css">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="374">
+          <caret line="22" column="25" lean-forward="true" selection-start-line="22" selection-start-column="25" selection-end-line="22" selection-end-column="25" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/tenderwiz/settings/base_settings.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="303">
+          <caret line="198" column="103" lean-forward="true" selection-start-line="198" selection-start-column="103" selection-end-line="198" selection-end-column="103" />
+        </state>
+      </provider>
     </entry>
   </component>
 </project>
