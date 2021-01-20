@@ -10,7 +10,7 @@ from django.core.mail import EmailMessage
 from django.core import mail
 from django.conf import settings
 
-# Handles the homepage of the site.
+# Handles the homepage of the website.
 def homeView(request):
     if request.method == "post":
         tForm = TestimonialsForm(request.POST)
