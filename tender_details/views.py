@@ -18,7 +18,7 @@ def tenders_list_view(request):
             selectedCat = searchForm.cleaned_data['categorySelectionField']
             selectedProvince = searchForm.cleaned_data['provinceSelectionField']
 
-            # The line below filters the tenders according the the Selected Categories and Provinces.
+            # The line below filters the tenders according the the Selected Categories and Provinces...
             preSearchTender = Tender.objects.filter(tenderCategory__in=selectedCat).filter(tenderProvince__in=selectedProvince)
 
             foundTenders = Tender.objects.none()  # declare an empty queryset for tenders.
