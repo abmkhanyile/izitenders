@@ -190,7 +190,7 @@ EMAIL_HOST_USER = os.environ.get('EMAIL_HOST_USER')
 EMAIL_HOST_PASSWORD = os.environ.get('EMAIL_PASSWORD')
 EMAIL_PORT = 587
 EMAIL_USE_TLS = True
-DEFAULT_FROM_EMAIL = 'TradeWorld <ayatech.co@gmail.com>'
+DEFAULT_FROM_EMAIL = 'Leads Hub <ayatech.co@gmail.com>'
 
 
 AWS_STORAGE_BUCKET_NAME = os.environ.get('STORAGE_BUCKET_NAME')
