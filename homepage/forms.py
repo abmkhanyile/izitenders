@@ -5,15 +5,18 @@ from tender_details.models import Category, Province
 class TenderSearchForm(forms.Form):
     searchField = forms.CharField(max_length=150, widget=forms.TextInput(attrs={
         'id': 'searchField_id',
-        'class': 'form-control w-100',
+        'class': 'search_field',
         'placeholder': 'Search for tenders'
     }))
-    categorySelectionField = forms.ModelMultipleChoiceField(queryset=Category.objects.all(),
-                                                            widget=forms.SelectMultiple(attrs={
-                                                                'id': 'searchCategory',
+
+    categorySelectionField = forms.ModelChoiceField(queryset=Category.objects.all(), empty_label="(Select Category)",
+                                                            widget=forms.Select(attrs={
+                                                                'class': 'search_field',                                                                
                                                             }))
-    provinceSelectionField = forms.ModelMultipleChoiceField(queryset=Province.objects.all(), widget=forms.SelectMultiple(attrs={
-        'id': 'searchRegion',
+
+    provinceSelectionField = forms.ModelChoiceField(queryset=Province.objects.all(), empty_label="(Select Province)", widget=forms.Select(attrs={
+        'class': 'search_field',
+        
     }))
 
 

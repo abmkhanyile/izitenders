@@ -39,7 +39,7 @@
 
     <section id="header_section">
         <div class="data_wrapper">
-            <nav class="navbar navbar-expand-lg navbar-light p-0" style="background-color: #fae5a2">
+            <nav class="navbar navbar-expand-lg navbar-light p-0" style="background-color: white">
 
                 <a href="{% url 'dashboard' %}"><img src="{% static 'Media/images/logo.png'%}"/></a>
 
@@ -93,7 +93,7 @@
     <section id="header_section">
         <div class="data_wrapper">
 
-            <nav class="navbar navbar-expand-lg navbar-light p-0" style="background-color: #fae5a2">
+            <nav class="navbar navbar-expand-lg navbar-light p-0" style="background-color: white">
             <a href="{% url 'homepage' %}"><img src="{% static 'Media/images/logo.png'%}"/></a>
 
                 <!--<a class="navbar-brand" href="#"><h2 class="mb-0" style="font-family: Lobster; font-size: 28px; line-height: 20px; color: #ff3535;">LH&reg;</h2></a>-->
@@ -171,6 +171,20 @@
 
 <footer id="footer_section">
     <div class="data_wrapper pt-3 text-white" style="font-size: .8em;">
+        <div style="float:left;">
+            <ul class="list-unstyled">
+                <li>
+                    <a href="{% url 'about_us' %}" style="color: white;">About Leads Hub</a>
+                </li>
+                <li>
+                    <a href="{% url 'contact_us' %}" style="color: white;">Contact Us</a>
+                </li>
+                <li>
+                    <a href="#" style="color: white;">Careers</a>
+                </li>
+            </ul>
+        </div>
+        
         <div align="right">
             <ul class="list-unstyled">
             <li>
@@ -186,16 +200,18 @@
                 3880
             </li>
             <li>
-                info@tradeworld.co.za
+                info@leadshub.co.za
             </li>
         </ul>
         </div>
 
         <div style="font-size: .7em;" align="center">
             {% if user.is_authenticated %}
-                <a href="{% url 'dash_ts_and_cs' %}">Terms of conditions</a> | <a href="{% url 'dash_privacy_policy' %}">Privacy policy</a>
+                <a href="{% url 'dash_ts_and_cs' %}">Terms of conditions</a> | <a href="{% url 'dash_privacy_policy' %}">Privacy policy</a><br>
+                <a href="https://ayanda-khanyile.herokuapp.com/">This site was developed by Ayanda Khanyile</a>
             {% else %}
-            <a href="{% url 'termsAndConditions' %}">Terms of conditions</a> | <a href="{% url 'privacy_policy' %}">Privacy policy</a>
+            <a href="{% url 'termsAndConditions' %}">Terms of conditions</a> | <a href="{% url 'privacy_policy' %}">Privacy policy</a><br>
+            <a href="https://ayanda-khanyile.herokuapp.com/">This site was developed by Ayanda Khanyile</a>
             {% endif %}
         </div>
     </div>

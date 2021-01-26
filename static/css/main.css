@@ -5,7 +5,8 @@ html, body{
 
 /************header css***********************/
 #header_section{
-    background-color: #fae5a2;
+    /* background-color: #fae5a2; */
+    background-color: white;
     min-height: 100px;
 }
 
@@ -344,4 +345,39 @@ select{
     display: inline-block;
     text-align: left !important;
     justify-content: left;
+}
+
+.search_field{
+    border: 1px solid #2ab0ed;
+    height: 40px;
+    width: 100%;
+
+}
+
+
+@media only screen and (min-width: 750px) {
+    .search_field_container{
+        width: 40%;
+        display: inline-block; 
+        *display: inline;
+        vertical-align: top;
+    }
+}
+
+@media only screen and (min-width: 750px) {
+    .search_dropdown_container{
+        width: 20%;
+        display: inline-block; 
+        *display: inline;
+        vertical-align: top;
+    }
+}
+
+@media only screen and (min-width: 750px) {
+    .searchBtn_container{
+        width: 10%;
+        display: inline-block; 
+        *display: inline;
+        vertical-align: top;
+    }
 }

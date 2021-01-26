@@ -1,19 +1,22 @@
 <div class="container p-4 mb-3 bg-light">
     <form method="post">{% csrf_token %}
-        <div class="input-group mb-2 mt-2">
-            <div class="input-group-prepend" style="width: 60%;">
+        <div class="mb-2 mt-2">
+            <div class="search_field_container">
                 {{ search_form.searchField }}
             </div>
+            <div class="search_dropdown_container">
+                {{ search_form.categorySelectionField }}
+            </div>
+            <div class="search_dropdown_container">
+                {{ search_form.provinceSelectionField }}
+            </div>
 
-            {{ search_form.categorySelectionField }}
-            {{ search_form.provinceSelectionField }}
-
-            <div class="input-group-append">
+            <div class="searchBtn_container">
                 {% if user.is_authenticated %}
-                    <input type="submit" class="btn btn-primary" value="Search">
-                    {% else %}
-                    <a class="btn btn-primary subscribeDialogCall" role="button" href="javascript:void(0)" data-toggle="modal" data-target="#subscribeCallModal">Search</a>
-                    {% endif %}
+                    <input type="submit" value="Search" style="border: 1px solid #2ab0ed; height: 40px;">
+                {% else %}                  
+                    <a class="btn btn-primary subscribeDialogCall" href="javascript:void(0)" role="button" data-toggle="modal" data-target="#subscribeCallModal">Search</a>              
+                {% endif %}
             </div>
         </div>
     </form>
