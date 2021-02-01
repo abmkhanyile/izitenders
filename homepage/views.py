@@ -12,7 +12,6 @@ from django.conf import settings
 
 # Handles the homepage of the website.
 def homeView(request):
-    print(settings.AWS_STORAGE_BUCKET_NAME)
     if request.method == "post":
         tForm = TestimonialsForm(request.POST)
 

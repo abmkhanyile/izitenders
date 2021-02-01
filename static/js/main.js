@@ -124,7 +124,7 @@ $(document).ready(function () {
 
         });
 
-        //func below handles the remove btn event for the keywords.
+        //function below handles the remove btn event for the keywords.
         $('.removeBtn').on('click', function(){
             $('.keywordsAdded').each(function(event){
                 if(this.checked == true){
@@ -139,7 +139,7 @@ $(document).ready(function () {
         });
 
 
-        // selects all the chosen keywords for removal.
+        // selects all the chosen keywords for removal. 
         $('.selectAllChosen_kw').on('click', function(event){
             if(this.checked == true){
                 $('.keywordsAdded').each(function(){ this.checked = true; });
