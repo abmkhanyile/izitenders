@@ -16,12 +16,11 @@
     <meta charset="utf-8">
     <title>{% block title %}{% endblock %}</title>
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="referrer" content="no-referrer-when-downgrade">
     <meta name="description" content="">
     <link rel="stylesheet" href="https://ajax.googleapis.com/ajax/libs/jqueryui/1.12.1/themes/smoothness/jquery-ui.css">
-    <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.1/css/bootstrap.min.css" rel="stylesheet"
-          integrity="sha384-WskhaSGFgHYWDcbwN70/dfYBj47jz9qbsMId/iRN3ewGhXQFZCSftd1LZCfmhktB" crossorigin="anonymous">
-    <!--<link rel="stylesheet" type="text/css" href="{% static 'css/bootstrap_tokenfield_css/bootstrap-tokenfield.css' %}"/>-->
-    <!--<link rel="stylesheet" type="text/css" href="{% static 'css/bootstrap_tokenfield_css/tokenfield-typeahead.css' %}"/>-->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-eOJMYsd53ii+scO/bJGFsiCZc+5NDVN2yr8+0RDqr0Ql0h+rP48ckxlpbzKgwra6" crossorigin="anonymous">
+    
     <link href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-multiselect/0.9.15/css/bootstrap-multiselect.css"
           rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
@@ -30,110 +29,151 @@
     <link rel="shortcut icon" type="image/ico" href="{% static 'favicon.png' %}">
     <link rel="stylesheet" type="text/css" href="{% static 'css/main.css' %}"/>
     <link rel="stylesheet" type="text/css" href="{% static 'css/font-awesome/css/font-awesome.min.css' %}"/>
+    <link rel="stylesheet" type="text/css" href="{% static 'css/animate.css-main/animate.css' %}"/>
+    
 
 </head>
 <body>
 <div id="wrapper">
-
     {% if user.is_authenticated %}
+        <div class="contacts_container">
+            <div class="top_btns">
+                <a href="{% url 'logout' %}" class="top_btn_links">Logout</a>
+            </div>
+            <div class="contact_nums">
+                <span>Tel: +27 74 673 9232 | </span>
+                <span>+27 82 997 4609</span>
+            </div>
+            
+        </div>
 
-    <section id="header_section">
-        <div class="data_wrapper">
-            <nav class="navbar navbar-expand-lg navbar-light p-0" style="background-color: white">
+        
 
-                <a href="{% url 'dashboard' %}"><img src="{% static 'Media/images/logo.png'%}"/></a>
-
-                <button class="navbar-toggler" type="button" data-toggle="collapse"
-                        data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent"
-                        aria-expanded="false" aria-label="Toggle navigation">
-                    <span class="navbar-toggler-icon"></span>
-                </button>
-
-                <div class="collapse navbar-collapse" id="navbarSupportedContent">
-                    <ul class="navbar-nav ml-auto navbar_list">
-                        <li class="nav-item">
-                            <a class="nav-link" href="{% url 'dashboard' %}">Dashboard<span
-                                    class="sr-only">(current)</span></a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link" href="{% url 'dashboard_tenders' %}">Find Tenders</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link" href="{% url 'user_profile' %}">Manage Profile</a>
-                        </li>
-
-                        <li class="nav-item">
-                            <a class="nav-link" href="{% url 'billing' %}">Billing</a>
-                        </li>
-
-                        <li class="nav-item">
-                            <a class="nav-link" href="{% url 'dashboard_contact_us' %}">Contact Us</a>
-                        </li>
-
-                    </ul>
-                    <div class="media">
-                        <div class="mr-1 media-left">
-                            <a href="{% url 'user_profile' %}"><img src="{% static 'Media/images/login_avatar.png' %}"
-                                                                    width="40px" height="40px"
-                                                                    style="border-radius: 100px; margin-left: 5px;"
-                                                                    class="media-object"/></a>
-                        </div>
-                        <div class="media-body">
-                            <a class="btn btn-outline-success" role="button" href="{% url 'logout' %}"
-                               style="font-family: 'slabo'">Sign-Out</a>
-                        </div><!--end of content body div-->
+        <nav class="navbar navbar-expand-lg navbar-light bg-white">
+            <div class="container-fluid nav_container">
+              <a class="navbar-brand" href="{% url 'dashboard' %}"><img src="{% static 'Media/images/logo.png'%}"/></a>
+              <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+              </button>
+              <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                <ul class="nav navbar-nav navbar-right ms-auto mb-2 mb-lg-0">
+                  <li class="nav-item">
+                    <a class="nav-link active menu-item" aria-current="page" href="{% url 'dashboard' %}">Dashboard</a>
+                  </li>
+                  <li class="nav-item">
+                    <a class="nav-link menu-item" href="{% url 'dashboard_tenders' %}">Find Tenders</a>
+                  </li>
+                  <li class="nav-item">
+                    <a class="nav-link menu-item" href="{% url 'categories' %}">Tender Categories</a>
+                  </li>
+                  <li class="nav-item">
+                    <a class="nav-link menu-item" href="{% url 'user_profile' %}">Manage Profile</a>
+                  </li>
+                  <li class="nav-item">
+                    <a class="nav-link menu-item" href="{% url 'billing' %}">Billing</a>
+                  </li>
+                  <li class="nav-item">
+                    <a class="nav-link menu-item" href="{% url 'contact_us' %}">Contact Us</a>
+                  </li>
+                 
+                
+                <li class="nav-item">
+                    <div class="avatar_container ms-2" style="float: left;">
+        
+                        
+                        <div class="d-inline-block dropdown">
+                            <a class="dropdown-toggle" href="#" id="dropdownMenuLink" data-bs-toggle="dropdown" aria-expanded="false" style="text-decoration: none; color: #292b2c;">
+                                <img src="{% static 'media/images/avatars/profile_avatar.png' %}"
+                                             width="30px" height="30px"
+                                             style="border-radius: 100px; margin-right: 10px; border: 2px solid #fff;"/><span class="avatar_text text-dark">{{user.get_full_name}}</span>
+                            </a>
+                          
+                            <ul class="dropdown-menu" aria-labelledby="dropdownMenuLink">
+                              <li><a class="dropdown-item" href="{% url 'user_profile' %}">Profile</a></li>
+                              <li><a class="dropdown-item" href="#">Tender WatchList</a></li>
+                              <li><a class="dropdown-item" href="{% url 'logout' %}">Logout</a></li>
+                            </ul>
+                          </div>
                     </div>
-                </div>
-            </nav>
+                </li>
+            
+                </ul>
+                
+              </div>
+              
+            </div>
+          
+          </nav>
+
+        {% else %}
+
+        <div class="contacts_container">
+            <div class="top_btns">
+                <a href="{% url 'pricing' %}" class="top_btn_links">Register</a>
+                <a href="{% url 'login' %}" class="top_btn_links">Login</a>
+            </div>
+            <div class="contact_nums">
+                <span>Tel: +27 74 673 9232 | </span>
+                <span>+27 82 997 4609</span>
+            </div>
+            
         </div>
 
-    </section>
+        <nav class="navbar navbar-expand-lg navbar-light bg-white">
+            <div class="container-fluid nav_container">
+              <a class="navbar-brand" href="{% url 'homepage' %}"><img src="{% static 'Media/images/logo.png'%}"/></a>
+              <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+              </button>
+              <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                <ul class="nav navbar-nav navbar-right ms-auto mb-2 mb-lg-0">
+                  <li class="nav-item">
+                    <a class="nav-link active menu-item" aria-current="page" href="{% url 'homepage' %}">Home</a>
+                  </li>
+                  <li class="nav-item">
+                    <a class="nav-link menu-item" href="{% url 'about_us' %}">About Us</a>
+                  </li>
+                  <li class="nav-item">
+                    <a class="nav-link menu-item" href="{% url 'dashboard_tenders' %}">Tenders</a>
+                  </li>
+                  <li class="nav-item">
+                    <a class="nav-link menu-item" href="{% url 'contact_us' %}">Contact Us</a>
+                  </li>
+                 
+                
+                <li class="nav-item">
+                    <div class="avatar_container ms-2" style="float: left;">
+        
+                        
+                        <div class="d-inline-block dropdown">
+                            <a class="dropdown-toggle" href="#" id="dropdownMenuLink" data-bs-toggle="dropdown" aria-expanded="false" style="text-decoration: none; color: #292b2c;">
+                                <img src="{% static 'media/images/avatars/profile_avatar.png' %}"
+                                             width="30px" height="30px"
+                                             style="border-radius: 100px; margin-right: 10px; border: 2px solid #fff;"/><span class="avatar_text text-dark">My Leads Hub</span>
+                            </a>
+                          
+                            <ul class="dropdown-menu" aria-labelledby="dropdownMenuLink">
+                              <li><a class="dropdown-item" href="{% url 'user_profile' %}">Profile</a></li>
+                              <li><a class="dropdown-item" href="#">Tender Watchlist</a></li>
+                              <li><a class="dropdown-item" href="{% url 'login' %}">Login</a></li>
+                            </ul>
+                          </div>
+                    </div>
+                </li>
+            
+                </ul>
+                
+              </div>
+              
+            </div>
+          
+          </nav>
 
-    {% else %}
-    <section id="header_section">
-        <div class="data_wrapper">
-
-            <nav class="navbar navbar-expand-lg navbar-light p-0" style="background-color: white">
-            <a href="{% url 'homepage' %}"><img src="{% static 'Media/images/logo.png'%}"/></a>
-
-                <!--<a class="navbar-brand" href="#"><h2 class="mb-0" style="font-family: Lobster; font-size: 28px; line-height: 20px; color: #ff3535;">LH&reg;</h2></a>-->
-                <button class="navbar-toggler" type="button" data-toggle="collapse"
-                        data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent"
-                        aria-expanded="false" aria-label="Toggle navigation">
-                    <span class="navbar-toggler-icon"></span>
-                </button>
-
-                <div class="collapse navbar-collapse p-0" id="navbarSupportedContent">
-
-                    <ul class="navbar-nav ml-auto navbar_list p-0">
-                        <li class="nav-item">
-                            <a class="nav-link" href="{% url 'homepage' %}">Home<span
-                                    class="sr-only">(current)</span></a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link" href="{% url 'about_us' %}">About us</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link" href="{% url 'homepage' %}">Tenders</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link" href="{% url 'contact_us' %}">Contact Us</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="btn btn-primary btn-sm mr-1" role="button" href="{% url 'login' %}">Login</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="btn btn-danger btn-sm" role="button" href="{% url 'pricing' %}">Register</a>
-                        </li>
-                    </ul>
-
-                </div>
-            </nav>
-        </div>
+          {% endif %}
 
 
-    </section>
-    {% endif %}
+        
+   
 
 
     <!-- Modal -->
@@ -143,9 +183,7 @@
             <div class="modal-content">
                 <div class="modal-header">
                     <h5 class="modal-title" id="subscribeCallModalLongTitle">Please Register</h5>
-                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                        <span aria-hidden="true">&times;</span>
-                    </button>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                 </div>
                 <div class="modal-body">
                     <p>To gain full access, please register.</p>
@@ -158,97 +196,108 @@
     </div>
 
 
+
+
     <section id="mainContent">
-        <div class="data_wrapper">
+        
             {% block content %}
             {% endblock content %}
-        </div>
+ 
     </section>
 
     <div id="push_div"></div>
 
 </div>
 
-<footer id="footer_section">
-    <div class="data_wrapper pt-3 text-white" style="font-size: .8em;">
-        <div style="float:left;">
-            <ul class="list-unstyled">
-                <li>
-                    <a href="{% url 'about_us' %}" style="color: white;">About Leads Hub</a>
-                </li>
-                <li>
-                    <a href="{% url 'contact_us' %}" style="color: white;">Contact Us</a>
-                </li>
-                <li>
-                    <a href="#" style="color: white;">Careers</a>
-                </li>
+
+<footer>
+    
+    <div class="_container">
+        <div class="sec aboutus">
+            <h3>About Us</h3>
+            <p>
+                Leads Hub sources Leads and Tenders all over South Africa and Africa. Tenders are sourced from more than 1000 websites and over 200 newspapers. Leads and Tenders are consolidated and then matched accordingly to our subscribers. Each of our subscribers will then be sent an email containing tenders that match their business profile.
+            </p>
+
+            <ul class="sci">
+                <li><a href="#"><i class="fa fa-facebook" aria-hidden="true"></i></a></li>
+                <li><a href="#"><i class="fa fa-twitter" aria-hidden="true"></i></a></li>
+                <li><a href="#"><i class="fa fa-instagram" aria-hidden="true"></i></a></li>
+                <li><a href="#"><i class="fa fa-youtube-play" aria-hidden="true"></i></a></li>
+            </ul>
+            <a href="https://sacoronavirus.co.za/" target="_blank" rel="noopener noreferrer"><img src="{% static 'media/images/covid-19-image.png'%}" style="width: 75%;"/></a>
+        </div>
+
+        <div class="sec quickLinks">
+            <h3>Quick Links</h3>
+            <ul>
+                <li><a href="{% url 'about_us' %}">About</a></li>
+                <li><a href="{% url 'contact_us' %}">Contact</a></li>
+                <li><a href="#">FAQ</a></li>
+                <li><a href="#">Terms and Conditions</a></li>
+                <li><a href="#">Terms of Service</a></li>
+                <li><a href="#">Privacy Policy</a></li>
+                <li><a href="#">Cookie Policy</a></li>
             </ul>
         </div>
-        
-        <div align="right">
-            <ul class="list-unstyled">
-            <li>
-                Unit 5A, BFT Building
-            </li>
-            <li>
-                21 Union Street, Lot 122
-            </li>
-            <li>
-                Empangeni
-            </li>
-            <li>
-                3880
-            </li>
-            <li>
-                info@leadshub.co.za
-            </li>
-        </ul>
+
+        <div class="sec contact">
+            <h3>Contact Info</h3>
+            <ul class="info">
+                <li>
+                    <span><i class="fa fa-map-marker" aria-hidden="true" style="font-size: 20px;"></i></span>
+                    <span>
+                        21 Union Street<br>
+                        Lot 122<br>
+                        Empangeni<br>
+                        3880
+                    </span>
+                </li>
+                <li>
+                    <span><i class="fa fa-phone" aria-hidden="true" style="font-size: 20px;"></i></span>
+                        <p><a href="tel:27746739232">Tel: +27 74 673 9232</a>  
+                            <br><a href="tel:27861002425">Fax: +27 86 100 2425</a>
+                        </p>
+                    
+                </li>
+                <li>
+                    <span><i class="fa fa-whatsapp" aria-hidden="true" style="font-size: 20px;"></i></span>
+                        <p>
+                            <a href="tel:27829974609"> Whatsapp: +27 82 997 4609</a>
+                        </p>
+                </li>
+                <li>
+                    <span><i class="fa fa-envelope" aria-hidden="true" style="font-size: 20px;"></i></span>
+                    <span><a href="mailto:info@leadshub.co.za">info@leadshub.co.za</a></span>
+                </li>
+             
+            </ul>
+
         </div>
 
-        <div style="font-size: .7em;" align="center">
-            {% if user.is_authenticated %}
-                <a href="{% url 'dash_ts_and_cs' %}">Terms of conditions</a> | <a href="{% url 'dash_privacy_policy' %}">Privacy policy</a><br>
-                <a href="https://ayanda-khanyile.herokuapp.com/">This site was developed by Ayanda Khanyile</a>
-            {% else %}
-            <a href="{% url 'termsAndConditions' %}">Terms of conditions</a> | <a href="{% url 'privacy_policy' %}">Privacy policy</a><br>
-            <a href="https://ayanda-khanyile.herokuapp.com/">This site was developed by Ayanda Khanyile</a>
-            {% endif %}
-        </div>
+        
     </div>
 </footer>
+<div class="copy-right-text">
+    <span class="mb-2"><a href="https://ayanda-portfolio.herokuapp.com/">Developed by Ayanda Khanyile</a></span>
+    <p>Copyright &#169; 2021. All rights reserved.</p>
+</div>
 
 
-<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
-<script src="https://ajax.googleapis.com/ajax/libs/jqueryui/1.12.1/jquery-ui.min.js"></script>
-<script src='https://cdnjs.cloudflare.com/ajax/libs/jquery-easing/1.3/jquery.easing.min.js'></script>
+
+
+
+<script src="https://code.jquery.com/jquery-3.6.0.min.js" integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
+<script src="https://code.jquery.com/ui/1.12.1/jquery-ui.min.js" integrity="sha256-VazP97ZCwtekAsvgPBSUwPFKdrwD3unUfSGVYrahUqU=" crossorigin="anonymous"></script>
 <script src='https://ajax.aspnetcdn.com/ajax/jquery.validate/1.13.1/jquery.validate.js'></script>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"
-        integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q"
-        crossorigin="anonymous"></script>
-<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.1/js/bootstrap.min.js"
-        integrity="sha384-smHYKdLADwkXOn1EmN1qk/HfnUcbVRZyYmZ4qpPea6sjB/pTJ0euyQp0Mk8ck+5T"
-        crossorigin="anonymous"></script>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-multiselect/0.9.15/js/bootstrap-multiselect.min.js"></script>
-<!--<script type="text/javascript" src="{% static 'js/bootstrap_tokenfield/bootstrap-tokenfield.js' %}"></script>-->
+<!-- <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-multiselect/0.9.15/js/bootstrap-multiselect.min.js"></script> -->
+<script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.1/dist/umd/popper.min.js" integrity="sha384-SR1sx49pcuLnqZUnnPwx6FCym0wLsk5JZuNx2bPPENzswTNFaQU1RDvt3wT4gWFG" crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta3/dist/js/bootstrap.min.js" integrity="sha384-j0CNLUeiqtyaRmlzUHCPZ+Gy5fQu0dQ6eZ/xAww941Ai1SxSY+0EQqNXNE6DZiVc" crossorigin="anonymous"></script>
 <script type="text/javascript" src="{% static 'js/table_pagination/jquery.simplePagination.js' %}"></script>
 <script type="text/javascript" src="{% static 'js/main.js' %}"></script>
 
-<!--Start of Tawk.to Script-->
-<script type="text/javascript">
-var Tawk_API=Tawk_API||{}, Tawk_LoadStart=new Date();
-(function(){
-var s1=document.createElement("script"),s0=document.getElementsByTagName("script")[0];
-s1.async=true;
-s1.src='https://embed.tawk.to/5b6e0f83afc2c34e96e778d2/default';
-s1.charset='UTF-8';
-s1.setAttribute('crossorigin','*');
-s0.parentNode.insertBefore(s1,s0);
-})();
 
 
-
-</script>
-<!--End of Tawk.to Script-->
 
 
 <script type="text/javascript">
@@ -261,6 +310,22 @@ s0.parentNode.insertBefore(s1,s0);
         }
     });
 </script>
+
+<!--Start of Tawk.to Script-->
+<script type="text/javascript">
+    var Tawk_API=Tawk_API||{}, Tawk_LoadStart=new Date();
+    (function(){
+    var s1=document.createElement("script"),s0=document.getElementsByTagName("script")[0];
+    s1.async=true;
+    s1.src='https://embed.tawk.to/5b6e0f83afc2c34e96e778d2/default';
+    s1.charset='UTF-8';
+    s1.setAttribute('crossorigin','*');
+    s0.parentNode.insertBefore(s1,s0);
+    })();
+</script>
+<!--End of Tawk.to Script-->
+
+
 
 </body>
 </html>

@@ -4,7 +4,7 @@ from .forms import TenderSearchForm, TestimonialsForm
 from contact_us.forms import ContactForm
 from packages.models import Packages
 from tender_details.models import Tender, Province, Category
-from django.http import HttpResponse
+from django.http import HttpResponse, HttpResponseRedirect
 from django.core import serializers
 from django.core.mail import EmailMessage
 from django.core import mail
@@ -12,6 +12,9 @@ from django.conf import settings
 
 # Handles the homepage of the website. This is a landing page for the site.
 def homeView(request):
+    if request.user.is_authenticated:
+        return HttpResponseRedirect('/user_accounts/dashboard')
+
     if request.method == "post":
         tForm = TestimonialsForm(request.POST)
 
@@ -63,6 +66,8 @@ def homeView(request):
             elif package.package_id == 3:
                 corporate = package
 
+        latest_tenders = tenders[:30]
+
         return render(request, 'index.html', {'search_form': search_form,
                                               'contact_form': contact_form,
                                               't_form': t_form,
@@ -72,7 +77,10 @@ def homeView(request):
                                               'corporate': corporate,
                                               'tenders': tenders,
                                               'provinces': provinces,
-                                              'categories': categories})
+                                              'categories': categories,
+                                              'latestTenders':latest_tenders})
+
+
 
 #this view displays the number of tenders per province.
 def province_view(request, province_pk):
@@ -85,3 +93,7 @@ def province_view(request, province_pk):
 
 def Testimonial_done_view(request):
     return render(request, 'Testimonial_done.html')
+
+def Categories_view(request):
+    categories = Category.objects.all()
+    return render(request, 'tender_categories.html', {'categories':categories})

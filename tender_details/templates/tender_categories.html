@@ -1,0 +1,31 @@
+{% extends "base.html" %}
+{% load static %}
+{% block title %}Tender Categories{% endblock %}
+{% block content %}
+
+<div class="page_header">
+    <h3>Tender Categories</h3>
+</div>
+<div class="data_wrapper page p-3" style="min-height: 100vh;">
+    <div class="catContainer">
+        {% for category in categories %}
+        {% if user.is_authenticated %}
+        <a href="{% url 'dashboard_tenders' %}?cat_id={{ category.id }}" style="text-decoration: none;">
+            <div class="cats_cont">
+                <span style="color: #7B1FA2;">{{category}}</span><span>({{ category.tender_set.all.count }})</span>
+            </div>
+        </a>
+        {% else %}
+        <a href="javascript:void(0)" data-bs-toggle="modal" data-bs-target="#subscribeCallModal" style="text-decoration: none;">
+            <div class="cats_cont">
+                <span style="color: #7B1FA2;">{{category}}</span><span>({{ category.tender_set.all.count }})</span>
+            </div>
+        </a>
+        {% endif %}
+        
+    {% endfor %}  
+    </div>
+   
+</div>
+
+{% endblock %}

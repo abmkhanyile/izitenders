@@ -1,8 +1,12 @@
 $(document).ready(function () {
 
+    // $('#subscribeCallModal').on('shown.bs.modal', function () {
+    //     $('#subscribeCallModal').trigger('focus')
+    //   })
+
           //pagination feautre for all the data tables.
             $('.tenders_table').simplePagination({
-                perPage:15,
+                perPage:30,
                 previousButtonClass: "btn btn-primary btn-sm",
                 nextButtonClass: "btn btn-primary btn-sm"
             });
@@ -38,6 +42,8 @@ $(document).ready(function () {
             includeSelectAllOption: true,
             maxHeight: 300
         });
+
+        // $(".cat_outer_container").niceScroll(".cats_container",{cursorcolor:"aquamarine"});
 
 
         //auto complete ajax code.

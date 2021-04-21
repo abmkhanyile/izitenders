@@ -11,7 +11,8 @@ class TenderSearchForm(forms.Form):
     categorySelectionField = forms.ModelMultipleChoiceField(queryset=Category.objects.all(),
                                                             widget=forms.SelectMultiple(attrs={
                                                                 'id': 'searchCategory',
-                                                                'class': 'search_field'
+                                                                'class': 'search_field',
+                                                                'multiple': 'multiple',
                                                             }))
     provinceSelectionField = forms.ModelMultipleChoiceField(queryset=Province.objects.all(), widget=forms.SelectMultiple(attrs={
         'id': 'searchRegion',

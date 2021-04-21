@@ -1,152 +1,131 @@
-<div class="p-4 row">
-    <table class="table table-responsive mt-3 w-100">
-        <thead>
-        <tr>
-            <td scope="col" class="text-center">Package</td>
-        </tr>
-        </thead>
-        <tbody>
-        <tr style="background-color: #ffd9cc;">
-            <td class="package-name" scope="row">
-                <span style="color: #CD7F32; font-size: 2.0em;">Bronze</span>
-                <ul class="list-tick text-muted">
+<div class="row">
+    <div class="col-sm-12 col-lg-6">
+        <div class="packages_container">
+            <div class="package_name">
+                <h4>BRONZE</h4>
+            </div>  
+            <div class="package_txt">
+                <h5>Features:</h5>
+                <ul>
                     <li>Unlimited Search Keywords for Email Alerts</li>
                     <li>1 Email recipient</li>
                     <li>1 Province tenders</li>
+                    <li>Unlimited access to tenders through the Leads Hub dashboard.</li>
                 </ul>
-                <table>
-                    <thead>
-                        <tr>
-                            <td scope="col" class="text-center">X6 Months</td>
-                            <td scope="col" class="text-center">X12 Months</td>
-                        </tr>
-                    </thead>
-                    <tr>
-                        <td>
-                            <div class="package-price text-center">
-                                <span style="font-size: 22px; color: blue;">R{{ bronze.sixMonthPrice }}</span><span>/Month</span><br>
-                                <a class="btn btn-success btn-sm" role="button" href="{% url 'register' billing_cycle=0 pk=bronze.package_id  %}">select</a>
-                            </div>
-                        </td>
-                        <td>
-                            <div class="package-price text-center">
-                                <span style="font-size: 22px; color: blue;">R{{ bronze.annualPrice }}</span><span>/Annum</span><br>
-                                <a class="btn btn-success btn-sm" role="button" href="{% url 'register' billing_cycle=1 pk=bronze.package_id  %}">select</a>
-                            </div>
-                        </td>
-                    </tr>
-                </table>
-            </td>    
-        </tr>
+                <h5>Price:</h5>
+                <div class="prices_container">
+                    <div class="price" style="float: right;">
+                        <strong>X12 Months</strong><br>
+                        <span style="font-size: 22px; color: blue;">R{{ bronze.annualPrice }}</span><br>
+                        <a class="btn btn-success btn-sm" role="button" href="{% url 'register' billing_cycle=1 pk=bronze.package_id  %}">select</a>
+                    </div>                   
+                
+                    <div class="price">
+                        <strong>X6 Months</strong><br>
+                        <span style="font-size: 22px; color: blue;">R{{ bronze.sixMonthPrice }}</span><br>
+                        <a class="btn btn-success btn-sm" role="button" href="{% url 'register' billing_cycle=0 pk=bronze.package_id  %}">select</a>
+                    </div>                   
+                </div>
+            </div>
 
-        <tr style="background-color: #d1e0e0;">
-            <td class="package-name" scope="row">
-                <span style="color: #C0C0C0; font-size: 2.0em;">Silver</span>
-                <ul class="list-tick text-muted">
+        </div>
+    </div>
+
+    <div class="col-sm-12 col-lg-6">
+        <div class="packages_container">
+            <div class="package_name" style="background: #D8D8D8 !important;">
+                <h4>SILVER</h4>
+            </div>  
+            <div class="package_txt">
+                <h5>Features:</h5>
+                <ul>
                     <li>Unlimited Search Keywords for Email Alerts</li>
                     <li>5 Email recipient</li>
                     <li>3 Provinces</li>
+                    <li>Unlimited access to tenders through the Leads Hub dashboard.</li>
                 </ul>
-
-                <table>
-                    <thead>
-                        <tr>
-                            <td scope="col" class="text-center">X6 Months</td>
-                            <td scope="col" class="text-center">X12 Months</td>
-                        </tr>
-                    </thead>
-                    <tr>
-                        <td>
-                            <div class="package-price text-center">
-                                <span style="font-size: 22px; color: blue;">R{{ silver.sixMonthPrice }}</span><span>/Month</span><br>
+                <h5>Price:</h5>
+                <div class="prices_container">
+                    <div class="price" style="float: right;">
+                        <strong>X12 Months</strong><br>
+                        <span style="font-size: 22px; color: blue;">R{{ silver.annualPrice }}</span><br>
+                        <a class="btn btn-success btn-sm" role="button" href="{% url 'register' billing_cycle=1 pk=silver.package_id  %}">select</a>
+                    </div>                   
+                
+                    <div class="price">
+                        <strong>X6 Months</strong><br>
+                        <span style="font-size: 22px; color: blue;">R{{ silver.sixMonthPrice }}</span><br>
                                 <a class="btn btn-success btn-sm" role="button" href="{% url 'register' billing_cycle=0 pk=silver.package_id  %}">select</a>
-                            </div>
-                        </td>
-                        <td>
-                            <div class="package-price text-center">
-                                <span style="font-size: 22px; color: blue;">R{{ silver.annualPrice }}</span><span>/Annum</span><br>
-                                <a class="btn btn-success btn-sm" role="button" href="{% url 'register' billing_cycle=1 pk=silver.package_id  %}">select</a>
-                            </div>
-                        </td>
-                    </tr>
-                </table>
-            </td>
-            
-            
-        </tr>
+                    </div>                   
+                </div>
+            </div>
 
-        <tr style="background-color: #ffd1b3;">
-            <td class="package-name" scope="row">
-                <span style="color: #FFD700; font-size: 2.0em;">Gold</span>
-                <ul class="list-tick text-muted">
+        </div>
+    </div>
+
+    <div class="col-sm-12 col-lg-6">
+        <div class="packages_container">
+            <div class="package_name" style="background:  #FFD700 !important;">
+                <h4>Gold</h4>
+            </div>  
+            <div class="package_txt">
+                <h5>Features:</h5>
+                <ul>
                     <li>Unlimited Search Keywords for Email Alerts</li>
                     <li>20 Email recipient</li>
                     <li>All Provinces</li>
+                    <li>Unlimited access to tenders through the Leads Hub dashboard.</li>
                 </ul>
+                <h5>Price:</h5>
+                <div class="prices_container">
+                    <div class="price" style="float: right;">
+                        <strong>X12 Months</strong><br>
+                        <span style="font-size: 22px; color: blue;">R{{ gold.annualPrice }}</span><br>
+                        <a class="btn btn-success btn-sm" role="button" href="{% url 'register' billing_cycle=1 pk=gold.package_id  %}">select</a>
+                    </div>                   
+                
+                    <div class="price">
+                        <strong>X6 Months</strong><br>
+                        <span style="font-size: 22px; color: blue;">R{{ gold.sixMonthPrice }}</span><br>
+                        <a class="btn btn-success btn-sm" role="button" href="{% url 'register' billing_cycle=0 pk=gold.package_id  %}">select</a>
+                    </div>                   
+                </div>
+            </div>
 
-                <table>
-                    <thead>
-                        <tr>
-                            <td scope="col" class="text-center">X6 Months</td>
-                            <td scope="col" class="text-center">X12 Months</td>
-                        </tr>
-                    </thead>
-                    <tr>
-                        <td>
-                            <div class="package-price text-center">
-                                <span style="font-size: 22px; color: blue;">R{{ gold.sixMonthPrice }}</span><span>/Month</span><br>
-                                <a class="btn btn-success btn-sm" role="button" href="{% url 'register' billing_cycle=0 pk=gold.package_id  %}">select</a>
-                            </div>
-                        </td>
-                        <td>
-                            <div class="package-price text-center">
-                                <span style="font-size: 22px; color: blue;">R{{ gold.annualPrice }}</span><span>/Annum</span><br>
-                                <a class="btn btn-success btn-sm" role="button" href="{% url 'register' billing_cycle=1 pk=gold.package_id  %}">select</a>
-                            </div>
-                        </td>
-                    </tr>
-                </table>
-            </td>
-            
-            
-        </tr>
+        </div>
+    </div>
 
-        <tr style="background-color: #cccccc;">
-            <td class="package-name" scope="row" >
-                <span style="color: black; font-size: 2.0em;">Corporate</span>
-                <ul class="list-tick text-muted">
+    <div class="col-sm-12 col-lg-6">
+        <div class="packages_container">
+            <div class="package_name" style="background: #E5E4E2 !important;">
+                <h4>PLATINUM</h4>
+            </div>  
+            <div class="package_txt">
+                <h5>Features:</h5>
+                <ul>
                     <li>Unlimited Search Keywords for Email Alerts</li>
                     <li>21 to 50 Email recipients</li>
                     <li>All Provinces + Africa</li>
+                    <li>Unlimited access to tenders through the Leads Hub dashboard.</li>
                 </ul>
-                <table>
-                    <thead>
-                        <tr>
-                            <td scope="col" class="text-center">X6 Months</td>
-                            <td scope="col" class="text-center">X12 Months</td>
-                        </tr>
-                    </thead>
-                    <tr>
-                        <td>
-                            <div class="package-price text-center">
-                                <span style="font-size: 22px; color: blue;">R{{ corporate.sixMonthPrice }}</span><span>/Month</span><br>
+                <h5>Price:</h5>
+                <div class="prices_container">
+                    <div class="price" style="float: right;">
+                        <strong>X12 Months</strong><br>
+                        <span style="font-size: 22px; color: blue;">R{{ corporate.annualPrice }}</span><br>
+                        <a class="btn btn-success btn-sm" role="button" href="{% url 'register' billing_cycle=1 pk=corporate.package_id  %}">select</a>
+                    </div>                   
+                
+                    <div class="price">
+                        <strong>X6 Months</strong><br>
+                        <span style="font-size: 22px; color: blue;">R{{ corporate.sixMonthPrice }}</span><br>
                                 <a class="btn btn-success btn-sm" role="button" href="{% url 'register' billing_cycle=0 pk=corporate.package_id  %}">select</a>
-                            </div>
-                        </td>
-            
-                        <td>
-                            <div class="package-price text-center">
-                                <span style="font-size: 22px; color: blue;">R{{ corporate.annualPrice }}</span><span>/Annum</span><br>
-                                <a class="btn btn-success btn-sm" role="button" href="{% url 'register' billing_cycle=1 pk=corporate.package_id  %}">select</a>
-                            </div>
-                        </td>
-                    </tr>
-                </table>
-            </td>
+                    </div>                   
+                </div>
+            </div>
 
-            
-        </tr>
-
-        </tbody>
-    </table>
+        </div>
+    </div>
 </div>
+
+

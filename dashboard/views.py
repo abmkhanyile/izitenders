@@ -5,8 +5,10 @@ from django.db.models.functions import TruncDay
 from tender_details.models import Tender
 from django.urls import reverse
 from datetime import datetime, timedelta
+from django.contrib.auth.decorators import login_required
 
 #render the dashboard template
+@login_required
 def dashboard_view(request):
     user = request.user
 
@@ -46,6 +48,8 @@ def tenderList_view(request, date):
     args = {'tenders': tendersPerDate}
     return render(request, 'matched_tenders_list.html', args)
 
+    
+@login_required
 def tender_view(request, tender_pk):
     tender = Tender.objects.get(pk=tender_pk)
     args = {

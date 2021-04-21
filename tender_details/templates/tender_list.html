@@ -28,14 +28,12 @@
 
 
         {% if user.is_authenticated %}
-        <td><span class="text-secondary">Tender Ref: {{ tender.refNum }}</span><br><a href={% url 'tender' tender_pk=tender.id %}>{{ tender.summary|upper }}</a></td>
+        <td><span class="text-secondary">Tender Ref: {{ tender.refNum }}</span><br><a href={% url 'tender' tender_pk=tender.id %} style="text-decoration: none;">{{ tender.summary|upper }}</a></td>
         {% else %}
-        <td><span class="text-secondary">Tender Ref: {{ tender.refNum }}</span><br><a class="subscribeDialogCall" href="javascript:void(0)" data-toggle="modal" data-target="#subscribeCallModal">{{ tender.summary|upper }}</a></td>
+        <td><span class="text-secondary">Tender Ref: {{ tender.refNum }}</span><br><a class="subscribeDialogCall" href="javascript:void(0)" data-bs-toggle="modal" data-bs-target="#subscribeCallModal" style="text-decoration: none;">{{ tender.summary|upper }}</a></td>
         {% endif %}
         <td>{{ tender.siteInspectionDate|localtime }}</td>
         <td><span class="text-danger">{{ tender.closingDate|localtime }}</span></td>
-
-
     </tr>
     {% endfor %}
     </tbody>

@@ -10,7 +10,7 @@ html, body{
     min-height: 100px;
 }
 
-.data_wrapper, .contact_form_container{
+.data_wrapper, .contact_form_container, .container{
     margin-left: 50px;
     margin-right: 50px;
     margin-top: 0px;
@@ -19,8 +19,12 @@ html, body{
     padding: 5px;
 }
 
+.bg-cover {
+    background-size: cover !important;
+}
+
 @media only screen and (max-width: 750px) {
-    .data_wrapper, .contact_form_container{
+    .data_wrapper, .contact_form_container, .container{
         margin-left: 0px;
         margin-right: 0px;
         margin-top: 0px;
@@ -31,16 +35,24 @@ html, body{
 }
 
 
+.nav-tabs > a {
+    color: #495057;
+  }
+
+  .navigation_tabs > a.nav-link.active{
+     color: #ffc107 !important; 
+  }
 
 #wrapper{
     min-height: 100%;
-    background-color: #2b2a24;
+    background-color: #f0f2f5;
     margin: 0 auto -100px;
 }
 
 #mainContent{
+    margin-top: 0px;
     margin-bottom: 20px;
-    padding-top: 15px;
+    padding-top: 0px;
 }
 
 .container_div{
@@ -56,15 +68,209 @@ html, body{
 .clear{ clear:both; }
 
 /************footer css***********************/
-#footer_section{
-    background-color: black;
-    min-height: 100px;
+#footer_section {
+    background-color: #222222;
+    color: #6d6b6d;
+    min-height: 200px;
+    margin-top: 20px;
+  }
+
+  footer{
+    position: relative;
+    width: 100%;
+    height: auto;
+    padding-top: 50px;
+    background: #111;
+    /* display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap; */
+  }
+
+  footer ._container{
+    background-color: #111;
+    margin-left: 50px;
+    margin-right: 50px;
+    padding: 0px;
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    flex-direction: row;
+  }
+
+  footer ._container .sec{
+    margin-right: 30px;
+  }
+
+  footer ._container .sec.aboutus{
+    width: 40%;
+  }
+
+  footer ._container h3{
+    position: relative;
+    font-weight: 500;
+    color: #fff;
+    margin-bottom: 15px;
+  }
+
+  footer ._container h3:before{
+    content: '';
+    position: absolute;
+    bottom: -5px;
+    left: 0;
+    width: 50px;
+    height: 2px;
+    background: #ffc107;
+  }
+
+  footer p{
+    color: #999;
+  }
+
+
+.sci{
+  margin-top: 20px;
+  display: flex;
+  padding-inline-start: 0px;
 }
 
-#push_div{
-    height: 100px;
-    background-color: #2b2a24;
+.sci li{
+  list-style: none;
 }
+
+.sci li a{
+  display: inline-block;
+  width: 40px;
+  height: 40px;
+  background: #222;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-right: 10px;
+  text-decoration: none;
+  border-radius: 4px;
+}
+
+.sci li a:hover{
+  background: #ffc107;
+}
+
+.sci li a .fa{
+  color: #fff;
+  font-size: 20px;
+}
+
+.quickLinks{
+  position: relative;
+  width: 25%;
+
+}
+
+.quickLinks ul li{
+  list-style: none;
+} 
+
+.quickLinks ul li a{
+  color: #999;
+  text-decoration: none;
+  margin-bottom: 10px;
+  display: inline-block;
+}
+
+.quickLinks ul li a:hover{
+  color: #fff;
+}
+
+.quickLinks ul{
+  padding-inline-start: 0px;
+}
+
+.contact{
+  width: calc(35% - 60px);
+  margin-right: 0 !important;
+}
+
+.info{
+  padding-inline-start: 0px;
+}
+
+.contact .info{
+  position: relative;
+}
+
+.contact .info li{
+  display: flex;
+  margin-bottom: 16px;
+}
+
+.contact .info li span:nth-child(1){
+   color: #fff;
+   font-size: 14px;
+   margin-right: 10px;
+}
+
+.contact .info li span{
+  color: #999;
+}
+
+.contact .info li a{
+  color: #999;
+  text-decoration: none;
+}
+
+.contact .info li a:hover{
+  color: #fff;
+}
+
+.copy-right-text{
+  width: 100%;
+  background: #181818;
+  text-align: center;
+  padding: 8px 100px;
+  color: #999;
+  font-size: .8em;
+}
+
+.copy-right-text a{
+  text-decoration: none;
+  color: #999;
+}
+
+.copy-right-text a:hover{
+  color: #fff;
+}
+
+@media (max-width: 991px){
+  footer{
+    /* padding: 40px; */
+  }
+
+  footer ._container{
+    flex-direction: column;
+  }
+
+  footer ._container .sec{
+    margin-right: 0;
+    margin-bottom: 40px;
+  }
+
+  footer ._container .sec.aboutus, .quickLinks, .contact{
+    width: 100%;
+  }
+  
+}
+
+/* *******end of footer styling***************** */
+
+
+#push_div {
+    height: 100px;
+    background-color: #f0f2f5;
+  }
+
+   
+  .clear {
+    clear: both;
+  }
 
 /**********tender headers css*********************/
 .tender_headers{
@@ -267,6 +473,8 @@ select{
 
 .loginContainerDiv{
     width: 40%;
+    margin-left: auto;
+    margin-right: auto;
 }
 
 
@@ -348,8 +556,8 @@ select{
 }
 
 .search_field{
-    border: 1px solid #2ab0ed;
-    height: 40px;
+    border: 2px solid #2ab0ed;
+    height: 50px;
     width: 100%;
 
 }
@@ -380,4 +588,416 @@ select{
         *display: inline;
         vertical-align: top;
     }
+}
+
+/* styling the sliding text in the homepage */
+.s-wrap{
+    width: 100%;
+    overflow: hidden;
+    min-height: 200px;
+}
+
+.s-move{
+    display: flex;
+    position: relative;
+    top: 0;
+    right: 0;
+    /* animation: slideh linear 15s infinite; */
+    animation-name: slideh;
+    animation-timing-function: ease;
+    animation-duration: 15s;
+    animation-fill-mode: both;
+    animation-iteration-count: infinite;
+}
+
+.slide{
+    box-sizing: border-box;
+    width: 100%;
+    flex-shrink: 0;
+    /* padding: 10px; */
+}
+
+@keyframes slideh{
+    0% {right: 0;}
+    15% {right: 0;}
+    20% {right: 100%; }
+    33.3% {right: 0; }
+    40% {right: 200%;}
+    45% {right: 200%;}
+    60% {right: 300%;}
+    66% {right: 100%;}
+    100% {right: 100%;}
+    95% {right: 400%;}
+    100% {right: 500%;}
+    
+}
+
+
+.s-move:hover{
+    animation-play-state: paused;
+}
+
+.learnMoreButton{
+    padding: 15px 25px;
+    margin: 20px;
+    font-size: 16px;
+    /* font-weight: bold; */
+    letter-spacing: 1px;
+    border: 2px solid #ffc107;
+    color: #fff;
+    cursor: pointer;
+    background: linear-gradient(to right, transparent 50%, #ffc107 50%);
+    background-size: 200%;
+    background-position: left;
+    transition: background-position 0.5s;
+}
+
+.learnMoreButton:hover{
+    background-position: right;
+    color: #000;
+}
+
+.carousel-caption{
+    /* padding-bottom: 150px; */
+    position:absolute;
+    top: 20%;
+}
+
+.carousel-caption > h5{
+    text-transform: uppercase;
+    font-size: 36px;    
+} 
+
+
+.nav_container{
+    padding-left: 50px;
+    padding-right: 50px; 
+}
+
+@media only screen and (max-width: 750px) {
+    
+    .nav_container{
+        padding-left: 5px;
+        padding-right: 5px;
+    }
+}
+
+
+/* styling for the contacts div at the top of the page */
+.contacts_container{
+    width: 100%;
+    min-height: 30px;
+    background-color: #ececec;
+    padding: 10px 25px;
+    font-family: sans-serif;
+}
+
+.top_btns{
+    margin: 0px;
+    padding: 0px;
+    float: right;
+}
+
+.top_btn_links{
+    padding: 5px 15px;
+    background-color: #7B1FA2;
+    font-weight: bold;
+    text-transform: uppercase;
+    color: #fff;
+    border-radius: 25px;
+    text-decoration: none;
+    font-size: .9em;
+    
+}
+
+.top_btn_links:hover{
+    background-color: #ffc107;
+    color: #000;
+}
+
+/* styling the profile field in the header */
+.avatar_container{
+    background-color: #ececec;
+    padding: 5px 15px;
+    border-radius: 10px;
+}
+
+
+/* styling tender categories container */
+.tender_categories{
+    background-color: #f0f2f5;
+    /* width: 100%; */
+    min-height: 500px;
+    margin-top: 100px;
+    margin-bottom: 50px;
+}
+
+.tender_cat{
+    background-color: #ddd;
+    background-repeat: no-repeat;
+    background-position: center;
+    text-align: center;
+    color: #495057;
+    width: 100%;
+    min-height: 200px;
+    margin-bottom: 27px;
+    position: relative;
+}
+.tender_cat:hover{
+    background-color: #fff;
+}
+
+.cat_name_and_icon{
+    margin: 0;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    -ms-transform: translate(-50%, -50%);
+    transform: translate(-50%, -50%);
+}
+.cat_name{
+    font-size: 1.2em;
+    font-weight: bold;
+    color: grey;
+}
+
+.tender_cats_container{
+    /* display: flex;
+    flex-wrap: wrap; */
+    /* gap: 5px; */
+}
+
+.tender_cats_container > *{
+    /* flex: 0 1 24em; */
+}
+
+.section_headers{
+    text-align: center;
+    color: #495057;
+    /* color: #696969; */
+    margin-bottom: 50px;
+    position: relative;
+}
+
+.section_headers h3:before{
+    content: '';
+    position: absolute;
+    bottom: -5px;
+    left: 48%;
+    width: 50px;
+    height: 2px;
+    background: #ffc107;
+}
+
+/* styling for latest tenders */
+.lastet_tenders_container{
+    width: 100%;
+    min-height: 500px;
+    background: #7B1FA2;
+    padding-top: 50px;
+    padding-bottom: 50px;
+    margin-bottom: 100px;
+}
+
+.latest_tenders{
+    padding: 25px;
+    background: #fff;
+}
+
+/* styling our processes */
+.our-process{
+    width: 220px;
+    height: 220px;
+    border: 2px solid #7B1FA2;
+    border-radius: 25px;
+    text-align: center;
+    margin-bottom: 25px;
+    
+}
+
+.process_txt{
+    padding: 25px 10px;
+    color: #495057;
+}
+.tabs_container{
+    padding: 50px 50px;
+}
+
+@media only screen and (max-width: 750px) {
+    .tabs_container{
+        padding: 50px 5px;
+    }
+}
+
+.title{
+    border-top-left-radius: 21px;
+    border-top-right-radius: 21px;
+    background: #7B1FA2;
+    color: #fff;
+}
+
+/* styling the packages  */
+.packages_container{
+    width: 100%;
+    min-height: 200px;
+    border: 2px solid #7B1FA2;
+    margin-bottom: 25px;
+    
+}
+
+.package_name{
+    background: #CD7F32;
+    padding: 5px;
+    color: #fff;
+    text-align: center;
+}
+
+.package_txt{
+    padding: 10px 5px;
+    color: #495057;
+}
+
+.prices_container{
+    padding: 0px 50px;
+}
+
+@media only screen and (max-width: 450px) {
+    .prices_container{
+        padding: 0px 5px;
+    }
+}
+
+
+/* styling testimonials */
+.testimonials_container{
+    display: flex;
+    gap: 5px;
+    flex-wrap: wrap;
+
+}
+
+.testimonials_container > *{
+    flex: 0 1 33%;
+}
+
+.testimonial{
+    padding: 15px;
+    background: #ddd;
+    position: relative;
+}
+
+.testimonial_txt{
+    height: 300px;
+    overflow: hidden;
+}
+
+.testimonial_footer{
+    /* position: absolute;
+    bottom: 0; */
+    /* padding-bottom: 15px; */
+    padding-top: 15px;
+    background: #ddd;
+}
+
+
+/* scrollbar styling */
+/* Scroll 2 */
+.sc2::-webkit-scrollbar {
+    width: 5px;
+    height: 5px;
+  }
+  .sc2::-webkit-scrollbar-track {
+    background-color: rgba(255, 255, 255, 0.1);
+    border-radius: 10px;
+  }
+  .sc2::-webkit-scrollbar-thumb {
+    background-color: #11171a;
+    border-radius: 10px;
+  }
+
+/* tender link */
+.tender_link{
+    text-decoration: none;
+}
+
+
+/* styling live tenders */
+.tender_stats_container{
+    padding-top: 50px;
+    padding-bottom: 50px;
+    background: #ddd;
+    min-height: 200px;
+}
+.tender_stat{
+    text-align: center;
+    border: 2px solid #fff;
+    background: #fff;
+    padding-top: 25px;
+    padding-bottom: 25px;
+    border-radius: 20px;
+    color: #495057;
+    margin-bottom: 25px;
+}
+
+.tender_stat > h3 > span{
+    font-family: Arial, Helvetica, sans-serif;
+    color: #ffc107;
+}
+
+
+.arrow-right:after {
+    content: '\25ba';
+    padding-left: 0.5em;
+}
+
+.more-cats{
+    float: right;
+    text-decoration: none;
+    color: #7B1FA2;
+}
+
+.menu-item:hover{
+    padding: 5px 10px;
+    border-radius: 5px;
+    background: #ffc107;
+}
+
+/* styling page headers */
+.page_header{
+    width: 100%;
+    min-height: 100px;
+    background: #7B1FA2;
+    text-align: center;
+    color: #fff;
+    padding-top: 30px;
+    padding-bottom: 70px;
+}
+
+.page_header > h3{
+    font-weight: bold;
+}
+
+.page{
+    margin-top: -40px;
+    background: #fff;
+    border-radius: 10px;
+    box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
+}
+
+/* styling categories */
+.cats_cont{
+    padding: 10px 15px;
+    background-color: #ddd;
+    border-radius: 10px;
+}
+
+.catContainer{
+    display: flex;
+    flex-wrap: wrap;
+    gap: 4px;
+
+}
+
+.catContainer > *{
+    flex: 0 1 33%;
 }

@@ -3,7 +3,11 @@
 {% block title %}Login{% endblock %}
 {% block content %}
 
-        <div class="container_div p-3 pb-4 pt-4" style="min-height: 100%;" >
+        <div class="page_header">
+            
+        </div>
+
+        <div class="data_wrapper page p-3 pb-4 pt-4" >
             <div class="container mb-2 mt-2 loginContainerDiv">
 
                 {% if messages %}
@@ -22,10 +26,11 @@
                         <label for="username">Username:</label>
                         <input class="form-control" type="text" name="username" value="" id="username">
                     </div>
+                    <br>
                     <div class="row form-group">
                         <label for="password">Password:</label>
                         <input class="form-control" type="password" name="password" value="" id="password">
-                    </div>
+                    </div><br>
                     <input class="form-control btn btn-success btn-sm w-25 pull-right" type="submit" value="login" />
                     <a href="{% url 'password_reset'%}">Forgot Password</a>
                 </form>

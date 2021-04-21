@@ -24,6 +24,7 @@ from urllib.parse import urlencode, quote_plus
 import hashlib
 from django.utils import timezone
 from django.conf import settings
+from django.contrib.auth.decorators import login_required
 
 
 def login(request):
@@ -118,7 +119,7 @@ def register_view(request, billing_cycle, pk):
         return render(request, 'register.html', args)
 
 
-
+@login_required
 def profile_view(request):
     companyProfile = CompanyProfile.objects.get(pk=request.user.id)
     args = {'CompanyProfile': companyProfile}
@@ -276,6 +277,7 @@ def Invoice_view(request, inv_id):
 
 
 # billing view displays all the invoices
+@login_required
 def billing_view(request):
     comp = CompanyProfile.objects.get(pk=request.user.id)
     invoices = Invoices.objects.filter(company=comp)

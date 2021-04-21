@@ -4,94 +4,284 @@
 {% block content %}
 
 
-<nav>
-    <div class="nav nav-tabs nav-fill" id="nav-tab" role="tablist">
-        <a class="nav-item nav-link active" id="nav-home-tab" data-toggle="tab" href="#nav-home" role="tab"
-           aria-controls="nav-home" aria-selected="true"><i class="fa fa-folder-open fa-lg"></i><br>Tenders</a>
-        <a class="nav-item nav-link" id="nav-profile-tab" data-toggle="tab" href="#nav-profile" role="tab"
-           aria-controls="nav-profile" aria-selected="false"><i class="fa fa-tag fa-lg"></i><br/>Pricing</a>
-        <a class="nav-item nav-link" id="nav-contact-tab" data-toggle="tab" href="#nav-contact" role="tab"
-           aria-controls="nav-contact" aria-selected="false"><i class="fa fa-file-word-o fa-lg"
-                                                                aria-hidden="true"></i><br/>Testimonials</a>
-        <a class="nav-item nav-link" id="nav-about-tab" data-toggle="tab" href="#nav-about" role="tab"
-           aria-controls="nav-about" aria-selected="false"><i class="fa fa-phone fa-lg" aria-hidden="true"></i><br/>Contact
-            us</a>
+<div id="carouselExampleCaptions" class="carousel slide" data-bs-ride="carousel">
+  <div class="carousel-indicators">
+    <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
+    <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="1" aria-label="Slide 2"></button>
+    <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="2" aria-label="Slide 3"></button>
+  </div>
+  <div class="carousel-inner">
+    <div class="carousel-item active">
+      <div style="background: url({% static 'Media/images/slider_imgs/slide1.jpg' %}); min-height: 400px;" class="jumbotron bg-cover text-white container-fluid"></div>
+      <div class="carousel-caption d-none d-md-block">
+        <h5 class="animated animate__bounce">Increase your chances of winning a tender.</h5>
+        <p>Leads Hub sources Leads and Tenders all over South Africa and Africa.<br> Tenders are sourced from more than 1000 websites and over 200 newspapers. </p>
+        <button class="learnMoreButton">See All Features</button>
+      </div>
     </div>
-</nav>
-
-
-    <div class="mb-3" style="border: 1px solid #ddd; border-top-style: hidden;">
-
-    <div class="tab-content py-3 px-3 px-sm-0" id="nav-tabContent" style="background: white;">
-        <div class="tab-pane fade show active" id="nav-home" role="tabpanel" aria-labelledby="nav-home-tab">
-
-            {% include 'search_form.html' %}
-
-            <div class="row">
-                <div class="col-md-3 col-sm-12 col-xs-12">
-                    {% include 'tender_filter.html' %}
-                </div>
-
-                <div class="col-md-9 col-sm-12 col-xs-12">
-
-                    <div class="m-1">
-                        {% include 'tender_list.html' %}
-                    </div>
-
-                </div>
-            </div>
-
-
-        </div>
-        <div class="tab-pane fade" id="nav-profile" role="tabpanel" aria-labelledby="nav-profile-tab">
-            {% include 'prices.html' %}
-        </div>
-        <div class="tab-pane fade" id="nav-contact" role="tabpanel" aria-labelledby="nav-contact-tab">
-            {% include 'testimonials.html' %}
-        </div>
-        <div class="tab-pane fade" id="nav-about" role="tabpanel" aria-labelledby="nav-about-tab">
-            {% include 'contact_us_form.html' %}
-        </div>
+    <div class="carousel-item">
+      <div style="background: url({% static 'Media/images/slider_imgs/slide2.jpg' %}); min-height: 400px;" class="jumbotron bg-cover text-white container-fluid"></div>
+      <div class="carousel-caption d-none d-md-block">
+        <h5 class="animated animate__bounce">Tenders are matched to your products and services.</h5>
+        <p>Leads and Tenders are consolidated and then matched accordingly to our subscribers.<br>
+            Each of our subscribers will then be sent an email containing tenders that match their business profile.</p>
+          
+      </div>
     </div>
+    <div class="carousel-item">
+      <div style="background: url({% static 'Media/images/slider_imgs/slide3.jpg' %}); min-height: 400px;" class="jumbotron bg-cover text-white container-fluid"></div>
+      <div class="carousel-caption d-none d-md-block">
+        <h5>Matched tenders are emailed to you on a daily basis.</h5>
+        <p>Even though most tenders are publicly advertised, most of them go unnoticed because<br> they get advertised on local newspapers and municipality websites.</p>
+        
+      </div>
+    </div>
+  </div>
+  <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide="prev">
+    <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+    <span class="visually-hidden">Previous</span>
+  </button>
+  <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide="next">
+    <span class="carousel-control-next-icon" aria-hidden="true"></span>
+    <span class="visually-hidden">Next</span>
+  </button>
 </div>
 
-<div class="tiles_container_div p-3" style="background: white;">
+<div class="tender_stats_container">
+  <div class="data_wrapper">
+    <div class="section_headers">
+      <h3><strong>Tender Stats</strong></h3>
+    </div>
     <div class="row">
-        <div class="col-sm-4">
-            <a href="{% url 'about_us' %}">
-            <div class="p-3 bg-light deco_divs" align="center">
-                <i class="fa fa-question" style="font-size:60px;color:lightblue;text-shadow:2px 2px 4px #000000;"></i><br>
-                <strong>Why Leads Hub?</strong>
-            </div>
-        </a>
+      <div class="col-md-4">
+        <div class="tender_stat">
+          <i class="fa fa-clock-o mb-2" aria-hidden="true" style="font-size: 48px;"></i>
+          <h3>Latest Tenders</h3>
+          <h3><span>500</span></h3>
+        </div>
+          
+      </div>
 
+      <div class="col-md-4">
+        <div class="tender_stat">
+          <i class="fa fa-folder-open mb-2" aria-hidden="true" style="font-size: 48px;"></i>
+          <h3>Live Tenders</h3>
+          <h3><span>2500</span></h3>
+        </div>
+      </div>
 
+      <div class="col-md-4">
+        <div class="tender_stat">
+          <i class="fa fa-folder mb-2" aria-hidden="true" style="font-size: 48px;"></i>
+          <h3>Closed Tenders</h3>
+          <h3><span>125000</span></h3>
         </div>
-        <div class="col-sm-4">
-           <a href="#">
-            <div class="p-3 bg-light deco_divs" align="center">
-                <i class="fa fa-pencil" style="font-size:60px;color:lightblue;text-shadow:2px 2px 4px #000000;"></i><br>
-                <strong>Company Registration</strong>
-            </div>
-        </a>
-        </div>
-        <div class="col-sm-4">
-            <a href="{% url 'pricing' %}">
-            <div class="p-3 bg-light deco_divs" align="center">
-                <i class="fa fa-pencil-square-o" style="font-size:60px;color:lightblue;text-shadow:2px 2px 4px #000000;"></i><br>
-                <strong>Register</strong>
-            </div>
-        </a>
-        </div>
+      </div>
     </div>
+  </div>
 </div>
 
+<div class="tender_categories">
+  <div class="data_wrapper">
+    <div class="section_headers">
+      <h3><strong>Top Categories</strong></h3>
+    </div>
+    
+    <div class="row">
+      <div class="col-md-3 col-sm-6 col-xs-12">
+        <a href="#">
+        <div class="tender_cat">
+          <div class="cat_name_and_icon">
+            <i class="fa fa-building mb-2" aria-hidden="true" style="font-size: 48px; color: #7B1FA2;"></i><br>
+            <h4>Construction</h4>
+          </div>
+          
+        </div>
+      </a>
+      </div>
+  
+      <div class="col-md-3 col-sm-6 col-xs-12">
+        <a href="#">
+        <div class="tender_cat">
+          <div class="cat_name_and_icon">
+            <i class="fa fa-ambulance mb-2" aria-hidden="true" style="font-size: 48px; color: #7B1FA2;"></i><br>
+            <h4>Medical</h4>
+          </div>
+        </div>
+      </a>
+      </div>
+  
+      <div class="col-md-3 col-sm-6 col-xs-12">
+        <a href="#">
+          <div class="tender_cat">
+            <div class="cat_name_and_icon">
+              <i class="fa fa-desktop mb-2" aria-hidden="true" style="font-size: 48px; color: #7B1FA2;"></i><br>
+              <h4>Information Technology</h4>
+            </div>
+          </div>
+        </a>
+      </div>
+  
+      <div class="col-md-3 col-sm-6 col-xs-12">
+        <a href="#">
+          <div class="tender_cat">
+            <div class="cat_name_and_icon">
+              <i class="fa fa-users mb-2" aria-hidden="true" style="font-size: 48px; color: #7B1FA2;"></i><br>
+              <h4>Consultants</h4>
+            </div>
+          </div>
+        </a>
+      </div>
+
+      <div class="col-md-3 col-sm-6 col-xs-12">
+        <a href="#">
+          <div class="tender_cat">
+            <div class="cat_name_and_icon">
+              <i class="fa fa-bolt mb-2" aria-hidden="true" style="font-size: 48px; color: #7B1FA2;"></i><br>
+              <h4>Energy</h4>
+            </div>
+          </div>
+        </a>
+      </div>
+  
+      <div class="col-md-3 col-sm-6 col-xs-12">
+        <a href="#">
+          <div class="tender_cat">
+            <div class="cat_name_and_icon">
+              <i class="fa fa-bus mb-2" aria-hidden="true" style="font-size: 48px; color: #7B1FA2;"></i><br>
+              <h4>Transport</h4>
+            </div>
+          </div>
+        </a>
+      </div>
+  
+      <div class="col-md-3 col-sm-6 col-xs-12">
+        <a href="#">
+          <div class="tender_cat">
+            <div class="cat_name_and_icon">
+              <i class="fa fa-graduation-cap mb-2" aria-hidden="true" style="font-size: 48px; color: #7B1FA2;"></i><br>
+              <h4>Academic / Training</h4>
+            </div>
+          </div>
+        </a>
+      </div>
+  
+      <div class="col-md-3 col-sm-6 col-xs-12">
+        <a href="#">
+          <div class="tender_cat">
+            <div class="cat_name_and_icon">
+              <i class="fa fa-flask mb-2" aria-hidden="true" style="font-size: 48px; color: #7B1FA2;"></i><br>
+              <h4>Chemical / Petrochemical</h4>
+            </div>
+          </div>
+        </a>
+      </div>
+    </div> 
+    <a href="{% url 'categories' %}" class="more-cats">More Categories<span class="arrow-right"></span></a>
+  </div>
+</div>
+
+<div class="lastet_tenders_container">
+  <div class="section_headers" style="color: #fff !important;">
+    <h3><strong>Latest Tenders</strong></h3>
+  </div>
+  <div class="data_wrapper">
+      <div class="row">
+        <div class="col-xs-12">
+          <div class="latest_tenders">
+            {% include 'latest_tenders.html' %}
+          </div>        
+        </div>
+      </div>
+  </div>
+
+</div>
+  
 
 
+    <div class="data_wrapper">
+      <div class="section_headers">
+        <h3><strong>Features</strong></h3>
+      </div>
+      <div class="row">
+        <div class="col-xs-12">
+          <nav>
+            <div class="nav nav-tabs nav-fill navigation_tabs" id="nav-tab" role="tablist">
+                <a class="nav-item nav-link active" id="nav-home-tab" data-bs-toggle="tab" href="#nav-home" role="tab"
+                   aria-controls="nav-home" aria-selected="true"><i class="fa fa-cog" aria-hidden="true" style="font-size: 36px; padding-top: 20px;"></i><br>Our Process</a>
+                <a class="nav-item nav-link" id="nav-profile-tab" data-bs-toggle="tab" href="#nav-profile" role="tab"
+                   aria-controls="nav-profile" aria-selected="false"><i class="fa fa-tag fa-lg" style="font-size: 36px; padding-top: 20px;"></i><br/>Pricing</a>
+                <a class="nav-item nav-link" id="nav-contact-tab" data-bs-toggle="tab" href="#nav-contact" role="tab"
+                   aria-controls="nav-contact" aria-selected="false"><i class="fa fa-comments" aria-hidden="true" style="font-size: 36px; padding-top: 20px;"></i><br/>Testimonials</a>
+                <a class="nav-item nav-link" id="nav-about-tab" data-bs-toggle="tab" href="#nav-about" role="tab"
+                   aria-controls="nav-about" aria-selected="false"><i class="fa fa-phone fa-lg" aria-hidden="true" style="font-size: 36px; padding-top: 20px;"></i><br/>Contact
+                    us</a>
+            </div>
+        </nav>
 
+        <div class="mb-5" style="border: 1px solid #ddd; border-top-style: hidden;">
 
+            <div class="tab-content py-3 px-3 px-sm-0" id="nav-tabContent" style="background: white;">
+                <div class="tab-pane fade show active" id="nav-home" role="tabpanel" aria-labelledby="nav-home-tab">
+                  <div class="tabs_container">
+                    <div class="row">
+                      <div class="col-xs-12 col-sm-6 col-lg-3">
+                       <div class="our-process">
+                         <h4 class="title">Step 1</h4>
+                         <div class="process_txt">
+                          <span><strong>We source tenders from over 2000 websites, over 200 newspapers and a number of tender bulletins.</strong></span>
+                         </div>
+                       </div>
+                      </div>
+ 
+                      <div class="col-xs-12 col-sm-6 col-lg-3">
+                       <div class="our-process">
+                         <h4 class="title">Step 2</h4>
+                         <div class="process_txt"><span><strong>Tenders are uploaded to our database, along with tender documents.</strong></span></div>
+                         
+                       </div>
+                      </div>
+ 
+                      <div class="col-xs-12 col-sm-6 col-lg-3">
+                       <div class="our-process">
+                         <h4 class="title">Step 3</h4>
+                         <div class="process_txt"><span><strong>Tenders are categorized according to the business sector they belong. </strong></span></div>
 
+                       </div>
+                      </div>
+ 
+                      <div class="col-xs-12 col-sm-6 col-lg-3">
+                       <div class="our-process">
+                         <h4 class="title">Step 4</h4>
+                         <div class="process_txt"><span><strong>Tenders are matched to our subscribers and then emailed to the subscribers.</strong></span></div>
 
+                       </div>
+                      </div>
+                                           
+                    </div> 
+                  </div>
+                </div>
 
+                <div class="tab-pane fade" id="nav-profile" role="tabpanel" aria-labelledby="nav-profile-tab">
+                  <div class="tabs_container">
+                    {% include 'prices.html' %}
+                  </div>                  
+                </div>
+                <div class="tab-pane fade" id="nav-contact" role="tabpanel" aria-labelledby="nav-contact-tab">
+                  <div class="tabs_container sc2" style="max-height: 600px; overflow-y: auto;">
+                    {% include 'testimonials.html' %}
+                  </div>
+                </div>
+                <div class="tab-pane fade" id="nav-about" role="tabpanel" aria-labelledby="nav-about-tab">
+                    {% include 'contact_us_form.html' %}
+                </div>
+            </div>
+
+            
+        </div>
+        
+        </div>
+      </div>        
+    </div>
 
 {% endblock %}
