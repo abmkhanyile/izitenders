@@ -50,7 +50,7 @@ def tenders_list_view(request):
 
         if request.GET.get('topcat_id') is not None:
             topCat_id = request.GET.get('topcat_id')
-            cat = Category.objects.get(pk=topCat_id)
+            cat = Category.objects.get(topCat_id=topCat_id)
             tenders = cat.tender_set.all()
       
         searchForm = TenderSearchForm()
