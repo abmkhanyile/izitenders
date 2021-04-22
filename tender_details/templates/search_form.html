@@ -13,9 +13,9 @@
 
             <div class="searchBtn_container">
                 {% if user.is_authenticated %}
-                    <input type="submit" value="Search" style="border: 1px solid #2ab0ed; height: 40px;">
+                    <input type="submit" value="Search" style="border: 1px solid #7B1FA2; height: 50px;">
                 {% else %}                  
-                    <a class="btn btn-primary subscribeDialogCall" href="javascript:void(0)" role="button" data-toggle="modal" data-target="#subscribeCallModal">Search</a>              
+                    <a class="subscribeDialogCall search_btn btn" href="javascript:void(0)" role="button" data-bs-toggle="modal" data-bs-target="#subscribeCallModal">Search</a>              
                 {% endif %}
             </div>
         </div>

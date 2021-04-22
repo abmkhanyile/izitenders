@@ -6,6 +6,8 @@ from django.utils import timezone
 #Stores the categories.
 class Category(models.Model):
     catDescription = models.CharField(max_length=100)
+    topCat = models.BooleanField(default=False)
+    topCat_id = models.IntegerField(default=0)
 
     @property
     def get_num_of_assigned_tender(self):

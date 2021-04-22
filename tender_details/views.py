@@ -10,7 +10,7 @@ from django.core import mail
 from django.conf import settings
 from django.contrib.auth.decorators import login_required
 
-@login_required
+
 def tenders_list_view(request):
     if request.method == 'POST':
         searchForm = TenderSearchForm(request.POST)
@@ -46,6 +46,11 @@ def tenders_list_view(request):
         if request.GET.get('cat_id') is not None:
             c_id = request.GET.get('cat_id')
             cat = Category.objects.get(pk=c_id)
+            tenders = cat.tender_set.all()
+
+        if request.GET.get('topcat_id') is not None:
+            topCat_id = request.GET.get('topcat_id')
+            cat = Category.objects.get(pk=topCat_id)
             tenders = cat.tender_set.all()
       
         searchForm = TenderSearchForm()
