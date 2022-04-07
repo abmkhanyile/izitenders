@@ -1,6 +1,6 @@
-from django.conf.urls import url, include
 from .views import about_us_view
+from django.urls import re_path
 
 urlpatterns = [
-    url(r'^$', about_us_view, name='about_us'),
+    re_path(r'^$', about_us_view, name='about_us'),
 ]

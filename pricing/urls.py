@@ -1,6 +1,6 @@
-from django.conf.urls import url, include
+from django.urls import re_path
 from .views import pricing_view
 
 urlpatterns = [
-    url(r'^$', pricing_view, name='pricing'),
-    ]
+    re_path(r'^$', pricing_view, name='pricing'),
+]

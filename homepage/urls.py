@@ -1,12 +1,11 @@
-from django.urls import path
-from django.conf.urls import url
+from django.urls import path, re_path
 from .views import homeView, province_view, Testimonial_done_view, Categories_view
 
 
 
 urlpatterns = [
-    url(r'^$', homeView, name='homepage'),
-    url(r'^testimonial_done/$', Testimonial_done_view, name='Testimonial_done'),
-    url(r'^tender-categories/$', Categories_view, name='categories')
+    re_path(r'^$', homeView, name='homepage'),
+    re_path(r'^testimonial_done/$', Testimonial_done_view, name='Testimonial_done'),
+    re_path(r'^tender-categories/$', Categories_view, name='categories')
 
 ]

@@ -1,10 +1,10 @@
-from django.conf.urls import url
+from django.urls import re_path
 from .views import (
     contact_us_view,
     email_success_view,
 )
 
 urlpatterns = [
-    url(r'^$', contact_us_view, name='contact_us'),
-    url(r'^email_sent_success/$', email_success_view, name='email_success'),
+    re_path(r'^$', contact_us_view, name='contact_us'),
+    re_path(r'^email_sent_success/$', email_success_view, name='email_success'),
 ]

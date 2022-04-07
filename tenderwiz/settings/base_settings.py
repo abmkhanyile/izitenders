@@ -170,7 +170,7 @@ USE_TZ = True
 # https://docs.djangoproject.com/en/2.1/howto/static-files/
 
 STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles')
-# STATIC_URL = '/static/'
+STATIC_URL = '/static/'
 STATICFILES_DIRS = (os.path.join(BASE_DIR, '../static'),)
 
 
@@ -205,14 +205,14 @@ AWS_DEFAULT_ACL = None
 # Tell the staticfiles app to use S3Boto3 storage when writing the collected static files (when
 # you run `collectstatic`).
 
-# STATICFILES_STORAGE = 'whitenoise.storage.CompressedManifestStaticFilesStorage'
-STATICFILES_STORAGE = 'storages.backends.s3boto3.S3Boto3Storage'      #this line enables files to be served from aws s3
+STATICFILES_STORAGE = 'whitenoise.storage.CompressedManifestStaticFilesStorage'
+# STATICFILES_STORAGE = 'storages.backends.s3boto3.S3Boto3Storage'      #this line enables files to be served from aws s3
 
 DEFAULT_FILE_STORAGE = 'storages.backends.s3boto3.S3Boto3Storage'   
 
 STATICFILES_LOCATION = 'static'         
 
-STATIC_URL = 'https://{}/'.format(AWS_S3_CUSTOM_DOMAIN)       #uncomment this line to enable serving from aws s3
+# STATIC_URL = 'https://{}/'.format(AWS_S3_CUSTOM_DOMAIN)       #uncomment this line to enable serving from aws s3
 #
 MEDIAFILES_LOCATION = 'media'  
 MEDIA_URL = 'htts://{}/{}/'.format(AWS_S3_CUSTOM_DOMAIN, MEDIAFILES_LOCATION)    

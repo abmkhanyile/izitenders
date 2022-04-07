@@ -14,19 +14,18 @@ Including another URLconf
     2. Add a URL to urlpatterns:  path('blog/', include('blog.urls'))
 """
 from django.contrib import admin
-from django.urls import path, include
-from django.conf.urls import url
+from django.urls import path, include, re_path
 from tenderwiz.views import privacy_policy_view, termsAndConditions_view
 from homepage.views import province_view
 
 urlpatterns = [
-    url(r'^admin/', admin.site.urls),
-    url(r'^', include('homepage.urls')),
-    url(r'^user_accounts/', include('user_accounts.urls')),
-    url(r'^about_us/', include('about_us.urls')),
-    url(r'^contact_us/', include('contact_us.urls')),
-    url(r'^pricing/', include('pricing.urls')),
-    url(r'^privacy_policy/$', privacy_policy_view, name='privacy_policy'),
-    url(r'^province/(?P<province_pk>\d+)/$', province_view, name='province'),
-    url(r'^termsAndConditions/$', termsAndConditions_view, name='termsAndConditions')
+    re_path(r'^admin/', admin.site.urls),
+    re_path(r'^', include('homepage.urls')),
+    re_path(r'^user_accounts/', include('user_accounts.urls')),
+    re_path(r'^about_us/', include('about_us.urls')),
+    re_path(r'^contact_us/', include('contact_us.urls')),
+    re_path(r'^pricing/', include('pricing.urls')),
+    re_path(r'^privacy_policy/$', privacy_policy_view, name='privacy_policy'),
+    re_path(r'^province/(?P<province_pk>\d+)/$', province_view, name='province'),
+    re_path(r'^termsAndConditions/$', termsAndConditions_view, name='termsAndConditions')
 ]
