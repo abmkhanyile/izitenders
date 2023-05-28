@@ -170,7 +170,7 @@ USE_TZ = True
 # https://docs.djangoproject.com/en/2.1/howto/static-files/
 
 STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles')
-STATIC_URL = '/static/'
+# STATIC_URL = '/static/'
 STATICFILES_DIRS = (os.path.join(BASE_DIR, '../static'),)
 
 
@@ -193,26 +193,27 @@ EMAIL_USE_TLS = True
 DEFAULT_FROM_EMAIL = 'Leads Hub <ayatech.co@gmail.com>'
 
 
-AWS_STORAGE_BUCKET_NAME = os.environ.get('STORAGE_BUCKET_NAME')
-AWS_S3_REGION_NAME = 'eu-west-2'   #'us-east-2'
-AWS_ACCESS_KEY_ID = os.environ.get('ACCESS_KEY_ID')
-AWS_SECRET_ACCESS_KEY = os.environ.get('SECRET_ACCESS_KEY')
+LHAWS_STORAGE_BUCKET_NAME = os.environ.get('LHAWS_STORAGE_BUCKET_NAME')
+LHAWS_S3_REGION_NAME = 'eu-west-2'   #'us-east-2'
+LHAWS_ACCESS_KEY_ID = os.environ.get('LHAWS_ACCESS_KEY_ID')
+LHAWS_SECRET_ACCESS_KEY = os.environ.get('LHAWS_SECRET_ACCESS_KEY')
+
 # Tell django-storages the domain to use to refer to static files.
-AWS_S3_CUSTOM_DOMAIN = '%s.s3.amazonaws.com' % AWS_STORAGE_BUCKET_NAME
+AWS_S3_CUSTOM_DOMAIN = '%s.s3.amazonaws.com' % LHAWS_STORAGE_BUCKET_NAME
 AWS_S3_FILE_OVERWRITE = False
 AWS_DEFAULT_ACL = None
 
 # Tell the staticfiles app to use S3Boto3 storage when writing the collected static files (when
 # you run `collectstatic`).
 
-STATICFILES_STORAGE = 'whitenoise.storage.CompressedManifestStaticFilesStorage'
-# STATICFILES_STORAGE = 'storages.backends.s3boto3.S3Boto3Storage'      #this line enables files to be served from aws s3
+# STATICFILES_STORAGE = 'whitenoise.storage.CompressedManifestStaticFilesStorage'
+STATICFILES_STORAGE = 'storages.backends.s3boto3.S3Boto3Storage'      #this line enables files to be served from aws s3
 
 DEFAULT_FILE_STORAGE = 'storages.backends.s3boto3.S3Boto3Storage'   
 
 STATICFILES_LOCATION = 'static'         
 
-# STATIC_URL = 'https://{}/'.format(AWS_S3_CUSTOM_DOMAIN)       #uncomment this line to enable serving from aws s3
+STATIC_URL = 'https://{}/'.format(AWS_S3_CUSTOM_DOMAIN)       #uncomment this line to enable serving from aws s3
 #
 MEDIAFILES_LOCATION = 'media'  
 MEDIA_URL = 'htts://{}/{}/'.format(AWS_S3_CUSTOM_DOMAIN, MEDIAFILES_LOCATION)    

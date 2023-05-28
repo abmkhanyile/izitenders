@@ -17,4 +17,4 @@ smart-open = "*"
 xhtml2pdf = "*"
 
 [requires]
-python_version = "3.6"
+python_version = "3.10.4"

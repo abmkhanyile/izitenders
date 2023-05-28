@@ -33,6 +33,7 @@ def homeView(request):
             return redirect('/')
 
     else:
+        # print(settings.LHAWS_ACCESS_KEY_ID)
         tenders = Tender.objects.all()
         if request.GET.get('province_id') is not None:
             p_id = request.GET.get('province_id')
